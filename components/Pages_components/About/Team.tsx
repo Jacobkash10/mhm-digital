@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import image1 from '@/public/images/image-4-team-marketing-template-p-500.jpeg'
 import image2 from '@/public/images/image-5-team-marketing-template-p-500.jpeg'
@@ -5,19 +7,26 @@ import image3 from '@/public/images/image-6-team-marketing-template-p-500.jpeg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Facebook, Linkedin, Twitter } from 'lucide-react'
+import {motion} from 'framer-motion'
+import { opacite } from '../../../variants'
 
 const Team = () => {
   return (
-    <div className='pt-[200px] pb-[200px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+    <div className='py-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <div className='flex flex-col items-center justify-center'>
             <h5 className="text-red-500 text-xl font-semibold"> 
             Our Team
             </h5> 
             <h1 className='text-3xl md:text-[44px] text-center font-semibold leading-tight mb-10 max-w-xl'>
-            The amazing team behind Agencypro
+            The amazing team behind Mhm Digital
             </h1>
       </div>
-      <div className='mt-28 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 sm:gap-8'>
+      <motion.div 
+      variants={opacite("up", 0.3)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }} 
+      className='mt-28 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 sm:gap-8'>
             
             <div className='bg-white px-8 py-10 rounded-3xl relative shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]'>
                   <div className='absolute -top-1 left-1/2 -translate-x-1/2 -translate-y-1/2'>
@@ -105,14 +114,16 @@ const Team = () => {
                   </div>
             </div>
             
-      </div>
+      </motion.div>
             <div className='mt-16 flex flex-col items-center justify-center'>
                   <Link href={''}>
-                        <button className='flex items-center gap-2 bg-red-500 text-white 
-                        rounded-full px-10 py-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                        <motion.button
+                        whileHover={{ y: -10, transition: {type: 'spring'} }}  
+                        className='flex items-center gap-2 bg-red-500 text-white 
+                        rounded-full px-10 py-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
                               <h5 className='font-semibold text-[20px]'>Join Our Team</h5>
-                              <ArrowRight className='text-white' />
-                        </button>
+                              <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
+                        </motion.button>
                   </Link>
             </div>
     </div>

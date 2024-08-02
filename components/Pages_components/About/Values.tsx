@@ -1,13 +1,17 @@
+"use client"
+
 import React from 'react'
 import image1 from '@/public/images/icon-1-values-marketing-template.svg'
 import image2 from '@/public/images/icon-2-values-marketing-template.svg'
 import image3 from '@/public/images/icon-3-values-marketing-template.svg'
 import image4 from '@/public/images/icon-4-values-marketing-template.svg'
 import Image from 'next/image'
+import {motion} from 'framer-motion'
+import { opacite } from '../../../variants'
 
 const Values = () => {
   return (
-    <div className='pt-[200px] pb-[200px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+    <div className='py-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <div className='flex flex-col items-center justify-center'>
             <h5 className="text-red-500 text-xl font-semibold"> 
             Our Values
@@ -16,7 +20,12 @@ const Values = () => {
             The core values that drive everything we do
             </h1>
       </div>
-      <div className='mt-10 grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-8 bg-[url("/images/bg.jpeg")]'>
+      <motion.div 
+      variants={opacite("up", 0.5)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }}
+      className='mt-10 grid grid-cols-1 sm:grid-cols-2 grid-rows-2 gap-8 bg-[url("/images/bg.jpeg")]'>
             <div className='bg-white py-12 px-8 rounded-3xl border
             shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]
              flex flex-col lg:flex-row items-start gap-6
@@ -77,7 +86,7 @@ const Values = () => {
                         </p>
                   </div>
             </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

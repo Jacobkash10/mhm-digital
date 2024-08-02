@@ -1,17 +1,25 @@
+"use client"
+
 import Image from 'next/image'
 import React from 'react'
 import image1 from '@/public/images/icon-1-contact-marketing-template.svg'
 import image2 from '@/public/images/icon-2-contact-marketing-template.svg'
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { ArrowRight, Building, Mail, Smartphone, User, UserRound } from 'lucide-react'
-import Link from 'next/link'
+import { ArrowRight, Building, Mail, Smartphone, UserRound } from 'lucide-react'
+import {motion} from 'framer-motion'
+import { opacite } from '../../../variants'
 
 const Contact = () => {
   return (
-      <div className='px-8 xl:px-14 pb-[180px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+      <div className='px-4 xl:px-14 pb-[100px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
             <hr />
-            <div className='pt-[150px] flex flex-col xl:flex-row items-center justify-between gap-10'>
+            <motion.div
+            variants={opacite("up", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.2 }} 
+            className='pt-[100px] flex flex-col xl:flex-row items-center justify-between gap-10'>
                   <div className='w-full xl:w-[48%]'>
                         <div className="mb-3">
                               <h5 className="text-red-500 text-xl font-semibold"> 
@@ -69,16 +77,17 @@ const Contact = () => {
                                     <Textarea placeholder='Describe your project...' className='rounded-3xl pt-5 pb-20 px-6 text-xl placeholder:text-base' />
                               </div>
                               <div>
-                                    <Link href={''}>
-                                          <button className='flex items-center gap-2 bg-red-500 text-white rounded-full px-10 py-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
-                                                <h5 className='font-semibold text-base sm:text-[20px]'>Get in Touch</h5>
-                                                <ArrowRight className='text-white' />
-                                          </button>
-                                    </Link>
+                                    <motion.button 
+                                    whileHover={{ y: -10, transition: {type: 'spring'} }} 
+                                    className='flex items-center gap-2 bg-red-500 text-white rounded-full px-10 py-6 
+                                    shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
+                                          <h5 className='font-semibold text-base sm:text-[20px]'>Get in Touch</h5>
+                                          <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
+                                    </motion.button>
                               </div>
                         </form>
                   </div>
-            </div>
+            </motion.div>
       </div>
   )
 }

@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import image1 from '@/public/images/icon-1-packages-marketing-template.png'
 import image2 from '@/public/images/icon-2-packages-marketing-template.png'
@@ -5,10 +7,15 @@ import image3 from '@/public/images/icon-3-packages-marketing-template.png'
 import Image from 'next/image'
 import { ArrowRight, Check } from 'lucide-react'
 import Link from 'next/link'
+import {motion} from 'framer-motion'
+import { fadeIn } from '../../../variants'
 
 const Packages = () => {
   return (
-    <div className='pt-[100px] pb-[150px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1, transition: {duration: 1, delay: 0.4} }}  
+    className='pt-[100px] pb-[150px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <div className='flex flex-col items-center justify-center'>
             <h5 className="text-red-500 text-xl font-semibold"> 
             Packages
@@ -57,10 +64,13 @@ const Packages = () => {
                   </div>
                   <div className='mt-6'>
                   <Link href={''}>
-                        <button className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-5 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                        <motion.button
+                        whileHover={{ y: -10, transition: {type: 'spring'} }} 
+                        className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-5 
+                        shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
                               <h5 className='font-semibold text-[20px]'>Learn More</h5>
-                              <ArrowRight className='text-white' />
-                        </button>
+                              <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
+                        </motion.button>
                   </Link>
             </div>
             </div>
@@ -102,10 +112,13 @@ const Packages = () => {
                   </div>
                   <div className='mt-6'>
                   <Link href={''}>
-                        <button className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-5 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                        <motion.button 
+                        whileHover={{ y: -10, transition: {type: 'spring'} }}
+                        className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-5 
+                        shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
                               <h5 className='font-semibold text-[20px]'>Learn More</h5>
-                              <ArrowRight className='text-white' />
-                        </button>
+                              <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
+                        </motion.button>
                   </Link>
             </div>
             </div>
@@ -147,10 +160,13 @@ const Packages = () => {
                   </div>
                   <div className='mt-6'>
                   <Link href={''}>
-                        <button className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-5 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                        <motion.button
+                        whileHover={{ y: -10, transition: {type: 'spring'} }} 
+                        className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-5 
+                        shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
                               <h5 className='font-semibold text-[20px]'>Learn More</h5>
-                              <ArrowRight className='text-white' />
-                        </button>
+                              <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
+                        </motion.button>
                   </Link>
             </div>
             </div>
@@ -164,14 +180,17 @@ const Packages = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elitolem. Accumsan convallis
                   </p>
                   <Link href={''}>
-                        <button className='flex items-center gap-2 bg-red-500 text-white rounded-full px-10 py-5 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                        <motion.button 
+                        whileHover={{ y: -10, transition: {type: 'spring'} }}
+                        className='flex items-center gap-2 bg-red-500 text-white rounded-full px-10 py-5 
+                        shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
                               <h5 className='font-semibold text-[20px]'>Contact Us</h5>
-                              <ArrowRight className='text-white' />
-                        </button>
+                              <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
+                        </motion.button>
                   </Link>
             </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

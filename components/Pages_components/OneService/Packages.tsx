@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image';
 import React from 'react'
 import image1 from '@/public/images/icon-1-packages-marketing-template.png'
@@ -9,6 +11,8 @@ import {
       TabsList,
       TabsTrigger,
     } from "@/components/ui/tabs"
+import {motion} from 'framer-motion'
+import { fadeIn } from '../../../variants'
 
 interface Packages {
       id: string;
@@ -26,7 +30,12 @@ interface Props {
 
 const Packages: React.FC<Props> = ({service}) => {
   return (
-    <div className='mt-5'>
+    <motion.div 
+      variants={fadeIn("up", 0.3)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }}
+    className='mt-5'>
       <div className='flex flex-col items-center justify-center'>
             <h5 className="text-red-500 text-xl font-semibold"> 
             Packages
@@ -46,12 +55,14 @@ const Packages: React.FC<Props> = ({service}) => {
                         {service.map((pack, index) => (
                               <div className='border-b-2 xl:border-r-2 xl:border-b-0 pb-10 xl:pb-0 px-10 flex md:flex-row flex-col xl:flex-col items-center' key={index}>
                                     <div className='w-full'>
-                                          <div className='w-[25%] mb-8'>
+                                          <motion.div
+                                          whileHover={{ rotate: 360, transition: {type: 'spring', duration: 2} }} 
+                                          className='w-[25%] mb-8'>
                                                 <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
                                                       className='rounded-3xl' />
-                                          </div>
+                                          </motion.div>
                                           <h5 className='text-gray-500 mb-2 text-2xl'>{pack.name || 'Default name'}</h5>
-                                          <h4 className='text-3xl font-bold mb-6'>$ {pack.priceByYear || '1000'}/year</h4>
+                                          <h4 className='text-3xl font-bold mb-6'>$ {pack.priceByYear || '1000'}.00 / year</h4>
                                           <p className='text-gray-500 text-lg mb-8'>   
                                                 {pack.description || 'Default description'}
                                           </p>
@@ -68,10 +79,14 @@ const Packages: React.FC<Props> = ({service}) => {
                                           ))}
                                           <div className='mt-10'>
                                                 <Link href={`/learn-more/${pack.id}`}>
-                                                      <button className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                                                      <motion.button 
+                                                      whileHover={{ y: -10, transition: {type: 'spring'} }}
+                                                      className='flex items-center justify-center gap-2 w-full bg-red-500 text-white 
+                                                      rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
                                                             <h5 className='font-semibold text-base'>Learn More</h5>
-                                                            <ArrowRight className='text-white' />
-                                                      </button>
+                                                            <ArrowRight className='text-white group-hover:translate-x-2 transition-all 
+                                                            duration-500' />
+                                                      </motion.button>
                                                 </Link>
                                           </div>
                                     </div>
@@ -107,10 +122,14 @@ const Packages: React.FC<Props> = ({service}) => {
                                           ))}
                                           <div className='mt-10'>
                                                 <Link href={`/learn-more/${pack.id}`}>
-                                                      <button className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                                                      <motion.button
+                                                      whileHover={{ y: -10, transition: {type: 'spring'} }} 
+                                                      className='flex items-center justify-center gap-2 w-full bg-red-500 text-white 
+                                                      rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
                                                             <h5 className='font-semibold text-base'>Learn More</h5>
-                                                            <ArrowRight className='text-white' />
-                                                      </button>
+                                                            <ArrowRight className='text-white group-hover:translate-x-2 transition-all 
+                                                            duration-500' />
+                                                      </motion.button>
                                                 </Link>
                                           </div>
                                     </div>
@@ -120,7 +139,7 @@ const Packages: React.FC<Props> = ({service}) => {
             </TabsContent>
       </Tabs>
       
-    </div>
+    </motion.div>
   )
 }
 

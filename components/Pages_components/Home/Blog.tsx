@@ -1,14 +1,23 @@
+"use client"
+
 import React from 'react'
 import image1 from '@/public/images/thumbnail-image-5-blog-marketing-template-p-1080.jpeg'
 import image2 from '@/public/images/thumbnail-image-6-blog-marketing-template-p-1080.jpeg'
-import { ArrowRight, Minus, Search, TrendingUp } from 'lucide-react'
+import { Minus, Search, TrendingUp } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 import Image from 'next/image'
+import {motion} from 'framer-motion'
+import { opacite } from '../../../variants'
 
 const Blog = () => {
   return (
-    <div className='px-8 xl:px-14 pt-[200px] pb-[180px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+    <motion.div
+      variants={opacite("up", 0.3)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }} 
+    className='px-4 xl:px-14 py-[150px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <div className='flex flex-col lg:flex-row items-start lg:items-center justify-between mb-10 lg:mb-3'>
             <div className=''>
                   <div className="flex items-end gap-2"> 
@@ -23,9 +32,11 @@ const Blog = () => {
             </div>
             <div>
                   <Link href={''}>
-                        <button className=' bg-white text-red-500 rounded-full px-10 py-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                        <motion.button
+                        whileHover={{ y: -10, transition: {type: 'spring'} }} 
+                        className=' bg-white text-red-500 rounded-full px-10 py-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
                               <h5 className='font-semibold text-base md:text-[20px]'>Browse Articles</h5>
-                        </button>
+                        </motion.button>
                   </Link>
             </div>
       </div>
@@ -81,7 +92,7 @@ const Blog = () => {
                   </Card>
             </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

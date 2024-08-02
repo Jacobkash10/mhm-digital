@@ -1,3 +1,4 @@
+"use client"
 
 import React from 'react'
 import image1 from '@/public/images/company-logo-agencypro-x-webflow-template.svg'
@@ -7,11 +8,15 @@ import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 import Image from 'next/image'
 import Banner from '@/components/Pages_components/Services/Banner'
+import {motion} from 'framer-motion'
 
 const page = () => {
   return (
     <>
-      <div className='mt-[100px] pb-[150px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+      <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: {duration: 2, delay: 0.5} }}
+      className='mt-[100px] pb-[150px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
             <div className='flex flex-col xl:flex-row xl:items-center xl:gap-6 justify-between mb-10 xl:mb-3'>
                   <div className='w-full xl:w-[52%]'>
                         <div className="flex items-end gap-2"> 
@@ -82,7 +87,7 @@ const page = () => {
                   </Card>
             </div>
       </div>
-      </div>
+      </motion.div>
       <Banner />
     </>
   )

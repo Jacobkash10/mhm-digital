@@ -22,6 +22,7 @@ import { FormError } from '@/components/form-error'
 import { FormSuccess } from '@/components/form-success'
 import { Button } from '@/components/ui/button'
 import { register } from '@/actions/register'
+import {motion} from 'framer-motion'
 
     type Input = z.infer<typeof registerSchema>;
 
@@ -60,8 +61,11 @@ const Page = () => {
       }
 
   return (
-    <div className='pt-[80px] container pb-[100px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[25rem]'>
-      <div className='w-full flex flex-col items-center justify-center'>
+    <div className='pt-[80px] container pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem]'>
+      <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: {duration: 1, delay: 0.4} }} 
+      className='w-full flex flex-col items-center justify-center'>
                   <Form {...form}>
                         <form className='px-10 py-10 border rounded-2xl w-full lg:w-[55%]' onSubmit={form.handleSubmit(onSubmit)}>
                               <div className='flex flex-col items-center justify-center mb-5'>
@@ -157,7 +161,7 @@ const Page = () => {
                               </div>
                         </form>
                   </Form>
-            </div>
+            </motion.div>
     </div>
   )
 }

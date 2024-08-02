@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import image1 from '@/public/images/company-logo-agencypro-x-webflow-template.svg'
 import image2 from '@/public/images/enterprise-logo-agencypro-x-webflow-template.svg'
@@ -5,10 +7,17 @@ import { ArrowRight, Minus } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 import Image from 'next/image'
+import {motion} from 'framer-motion'
+import { opacite } from '../../../variants'
 
 const Case = () => {
   return (
-    <div className='px-8 xl:px-14 pt-[200px] pb-[200px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+    <motion.div
+    variants={opacite("up", 0.3)}
+    initial="hidden"
+    whileInView={"show"}
+    viewport={{ once: false, amount: 0.2 }} 
+    className='px-4 xl:px-14 py-[100px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <div className='flex-col flex items-start xl:flex-row xl:items-center justify-between mb-8 xl:mb-3'>
             <div className=''>
                   <div className="flex items-center gap-2"> 
@@ -84,20 +93,25 @@ const Case = () => {
       </div>
       <div className='mt-16 flex flex-col items-center justify-center'>
             <div className='flex flex-col sm:flex-row items-center gap-4'>
-                  <Link href={''}>
-                        <button className='flex items-center gap-2 bg-red-500 text-white rounded-full px-12 py-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                  <Link href={'/contact'}>
+                        <motion.div 
+                        whileHover={{ y: -10, transition: {type: 'spring'} }} 
+                        className='flex items-center gap-2 bg-red-500 text-white rounded-full px-12 py-6 
+                        shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
                               <h5 className='font-semibold text-base md:text-[20px]'>Get in Touch</h5>
-                              <ArrowRight className='text-white' />
-                        </button>
+                              <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
+                        </motion.div>
                   </Link>
-                  <Link href={''}>
-                        <button className=' bg-white text-red-500 rounded-full px-12 py-6  shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                  <Link href={'/case-studies'}>
+                        <motion.div 
+                        whileHover={{ y: -10, transition: {type: 'spring'} }} 
+                        className=' bg-white text-red-500 rounded-full px-12 py-6  shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
                               <h5 className='font-semibold text-base md:text-[20px]'>Browse Case Studies</h5>
-                        </button>
+                        </motion.div>
                   </Link>
             </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

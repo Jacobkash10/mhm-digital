@@ -8,10 +8,12 @@ import {
       AccordionItem,
       AccordionTrigger,
     } from "@/components/ui/accordion"
+import {motion} from 'framer-motion'
+import { fadeIn } from '../../../variants'
 
 const FAQ = () => {
   return (
-    <div className='pb-[150px] pt-[200px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+    <div className='py-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <div className='flex flex-col xl:flex-row xl:items-center justify-between gap-5 mb-10'>
             <div className='w-full xl:w-[52%]'>
                   <div className="flex items-end gap-2"> 
@@ -31,7 +33,12 @@ const FAQ = () => {
                   </p>
             </div>
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6'>
+      <motion.div 
+      variants={fadeIn("up", 0.3)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }}
+      className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6'>
             <div>
                   <Accordion type="single" collapsible 
                   className="w-full bg-white
@@ -62,8 +69,13 @@ const FAQ = () => {
                   </AccordionItem>
                   </Accordion>
             </div>
-      </div>
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6'>
+      </motion.div>
+      <motion.div 
+      variants={fadeIn("up", 0.3)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.2 }}
+      className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6'>
             <div>
                   <Accordion type="single" collapsible 
                   className="w-full bg-white
@@ -94,7 +106,7 @@ const FAQ = () => {
                   </AccordionItem>
                   </Accordion>
             </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
