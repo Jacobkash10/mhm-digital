@@ -82,7 +82,7 @@ const Page = () => {
     <div className='pt-[80px] container pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem]'>
       <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: {duration: 1, delay: 0.4} }}  
+      animate={{ opacity: 1, transition: {duration: 0.8, delay: 0.3} }}  
       className='w-full flex flex-col items-center justify-center'>
                   <Form {...form}>
                         <form className='px-10 py-10 border rounded-2xl w-full lg:w-[55%]' onSubmit={form.handleSubmit(onSubmit)}>

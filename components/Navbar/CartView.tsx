@@ -13,7 +13,7 @@ const CartView = ({openCart, open}: {openCart: () => void, open: boolean}) => {
       className='w-full z-50 absolute top-0 left-0 inset-0 flex items-center'>
             <div className='bg-[#000000b4] w-[62%] h-full' onClick={openCart}>
             </div>
-            <div className='w-[60%] md:w-[40%] bg-white shadow h-full'>
+            <div className='w-[80%] md:w-[40%] bg-white shadow h-full'>
                   <div className='border-b-2 py-6'>
                         <div className='flex justify-between items-center px-5'>
                               <h2 className='text-2xl font-bold'>Your Cart</h2>

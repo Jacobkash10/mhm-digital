@@ -15,7 +15,7 @@ const Banner = () => {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1, transition: {duration: 2, delay: 0.5} }}
     className='pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
-      <div className='mt-2 flex flex-col justify-center xl:flex xl:flex-row items-center gap-3'>
+      <div className='mt-8 md:mt-2 flex flex-col justify-center xl:flex xl:flex-row items-center gap-3'>
             <motion.div 
             variants={fadeIn("up", 0.5)}
             initial="hidden"
