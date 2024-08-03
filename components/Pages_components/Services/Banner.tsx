@@ -13,13 +13,13 @@ const Banner = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.2 }}
-    className='pb-[150px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+    className='pb-[150px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <motion.div 
       variants={fadeIn("up", 0.5)}
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: false, amount: 0.2 }}
-      className='flex flex-col xl:flex-row gap-7 xl:gap-0 xl:items-center justify-between py-10 xl:py-24 px-20 rounded-[50px] bg-red-500'>
+      className='flex flex-col xl:flex-row gap-7 xl:gap-0 xl:items-center justify-between py-10 xl:py-24 px-8 md:px-16 rounded-[50px] bg-red-500'>
             <h2 className='text-white text-3xl md:text-[38px] leading-relaxed font-bold max-w-xl'>Ready to grow your company? Get in touch today!</h2>
             <Link href={'/contact'}>
                   <button className=' bg-white text-red-500 rounded-full

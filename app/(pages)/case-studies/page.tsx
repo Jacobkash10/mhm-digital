@@ -38,12 +38,14 @@ const page = () => {
             <div className='flex flex-col lg:flex-row items-center justify-between gap-10'>
             <div className='w-full'>
                   <Card className='rounded-[50px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]'>
-                        <Link href={''}>
+                        <Link href={'/case-study/id'}>
                               <div>
                               <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
                                     className='rounded-t-[50px] w-full' />
                               </div>
-                              <div className='p-10'>
+                              <motion.div
+                              whileHover={{ scale: 1.05, transition: {duration: 0.3} }} 
+                              className='p-10'>
                                     <div className="flex items-center gap-2 mb-3">
                                           <h5 className="text-red-500 text-lg font-semibold"> 
                                                 Company
@@ -57,18 +59,20 @@ const page = () => {
                                     comeneer ilremsilom dolce issilm acalrm 
                                     leoinsion duycoqun consemleint.
                                     </p>
-                              </div>
+                              </motion.div>
                         </Link>
                   </Card>
             </div>
             <div className='w-full'>
                   <Card className='rounded-[50px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]'>
-                        <Link href={''}>
+                        <Link href={'/case-study/id'}>
                               <div>
                               <Image src={image2} alt='image1' priority width={0} height={0} sizes='100vw' 
                                     className='rounded-t-[50px] w-full' />
                               </div>
-                              <div className='p-10'>
+                              <motion.div
+                              whileHover={{ scale: 1.05, transition: {duration: 0.3} }}  
+                              className='p-10'>
                                     <div className="flex items-center gap-2 mb-3">
                                           <h5 className="text-red-500 text-lg font-semibold"> 
                                           Enterprise
@@ -82,7 +86,7 @@ const page = () => {
                                     comeneer ilremsilom dolce issilm acalrm 
                                     leoinsion duycoqun consemleint.
                                     </p>
-                              </div>
+                              </motion.div>
                         </Link>
                   </Card>
             </div>

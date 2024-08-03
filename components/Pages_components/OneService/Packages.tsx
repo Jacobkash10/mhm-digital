@@ -53,7 +53,8 @@ const Packages: React.FC<Props> = ({service}) => {
                   <div className='mt-10 py-16 px-2 bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] border 
                   rounded-[40px] flex flex-col gap-10 xl:grid grid-cols-3 xl:gap-0'>
                         {service.map((pack, index) => (
-                              <div className='border-b-2 xl:border-r-2 xl:border-b-0 pb-10 xl:pb-0 px-10 flex md:flex-row flex-col xl:flex-col items-center' key={index}>
+                              <div className='border-b-2 xl:border-r-2 last:border-none xl:border-b-0 pb-10 xl:pb-0 px-10 flex md:flex-row 
+                              flex-col xl:flex-col items-center' key={index}>
                                     <div className='w-full'>
                                           <motion.div
                                           whileHover={{ rotate: 360, transition: {type: 'spring', duration: 2} }} 
@@ -71,14 +72,15 @@ const Packages: React.FC<Props> = ({service}) => {
                                           <h4 className='text-xl font-semibold mb-2'>What's include?</h4>
                                           {pack.points.map((point, index) => (
                                                 <div className='mt-6 flex items-center gap-4' key={index}>
-                                                <span className='w-6 h-6 p-1 rounded-full bg-red-500 text-white flex items-center justify-center'>
+                                                <span className='w-6 h-6 p-1 rounded-full bg-red-500 text-white flex items-center 
+                                                justify-center'>
                                                       <Check />
                                                 </span>
                                                 <h5 className='text-lg font-medium text-gray-500'>{point || 'Defaul point'}</h5>
                                           </div>   
                                           ))}
                                           <div className='mt-10'>
-                                                <Link href={`/learn-more/${pack.id}`}>
+                                                <Link href={`/package/${pack.id}`}>
                                                       <motion.button 
                                                       whileHover={{ y: -10, transition: {type: 'spring'} }}
                                                       className='flex items-center justify-center gap-2 w-full bg-red-500 text-white 
@@ -98,14 +100,15 @@ const Packages: React.FC<Props> = ({service}) => {
                   <div className='mt-10 py-16 px-2 bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] border 
                   rounded-[40px] flex flex-col gap-10 xl:grid grid-cols-3 xl:gap-0'>
                         {service.map((pack, index) => (
-                              <div className='border-b-2 xl:border-r-2 xl:border-b-0 pb-10 xl:pb-0 px-10 flex md:flex-row flex-col xl:flex-col items-center' key={index}>
+                              <div className='border-b-2 xl:border-r-2 last:border-none xl:border-b-0 pb-10 xl:pb-0 px-10 flex md:flex-row 
+                              flex-col xl:flex-col items-center' key={index}>
                                     <div className='w-full'>
                                           <div className='w-[25%] mb-8'>
                                                 <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
                                                       className='rounded-3xl' />
                                           </div>
                                           <h5 className='text-gray-500 mb-2 text-2xl'>{pack.name || 'Default name'}</h5>
-                                          <h4 className='text-3xl font-bold mb-6'>$ {pack.priceByMonth || '1000'}/month</h4>
+                                          <h4 className='text-3xl font-bold mb-6'>$ {pack.priceByMonth || '1000'}.00 / month</h4>
                                           <p className='text-gray-500 text-lg mb-8'>   
                                                 {pack.description || 'Default description'}
                                           </p>
@@ -114,14 +117,15 @@ const Packages: React.FC<Props> = ({service}) => {
                                           <h4 className='text-xl font-semibold mb-2'>What's include?</h4>
                                           {pack.points.map((point, index) => (
                                                 <div className='mt-6 flex items-center gap-4' key={index}>
-                                                <span className='w-6 h-6 p-1 rounded-full bg-red-500 text-white flex items-center justify-center'>
+                                                <span className='w-6 h-6 p-1 rounded-full bg-red-500 text-white flex items-center 
+                                                justify-center'>
                                                       <Check />
                                                 </span>
                                                 <h5 className='text-lg font-medium text-gray-500'>{point || 'Defaul point'}</h5>
                                           </div>   
                                           ))}
                                           <div className='mt-10'>
-                                                <Link href={`/learn-more/${pack.id}`}>
+                                                <Link href={`/package/${pack.id}`}>
                                                       <motion.button
                                                       whileHover={{ y: -10, transition: {type: 'spring'} }} 
                                                       className='flex items-center justify-center gap-2 w-full bg-red-500 text-white 
