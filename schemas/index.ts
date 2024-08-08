@@ -23,3 +23,9 @@ export const loginSchema = z.object({
       .min(1, 'Password is required')
       .min(8, 'Password must have than 8 characters'),
 })
+
+export const addToCartSchema = z.object({
+      quantity: z.number(),
+      packageId: z.string(),
+      packageDuration: z.number(),
+})

@@ -52,8 +52,8 @@ const Footer = () => {
       className='px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
             <hr />
             <div className='pt-[100px]'>
-                  <div className='flex items-start justify-between w-full pb-5'>
-                        <div className='w-[33%]'>
+                  <div className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 w-full pb-5'>
+                        <div className='w-full'>
                               <h5 className='text-xl font-bold'>Menu</h5>
                               <div className='pt-6'>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
@@ -70,24 +70,56 @@ const Footer = () => {
                                     </p>
                               </div>
                         </div>
-                        <div className='w-[33%]'>
-                        <h5 className='text-xl font-bold'>Pages</h5>
+                        <div className='w-full'>
+                              <h5 className='text-xl font-bold'>Company</h5>
                               <div className='pt-6'>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/terms-and-conditions'}>Terms</Link>
+                                    </p>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/privacy'}>Privacy</Link>
+                                    </p>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/carrers'}>Carrers</Link>
+                                    </p>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/process'}>Our Process</Link>
+                                    </p>
+                              </div>
+                        </div>
+                        <div className='w-full'>
+                              <h5 className='text-xl font-bold'>Sites</h5>
+                              <div className='pt-6'>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/site-map'}>Site Map</Link>
+                                    </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
                                           <Link className='hover:underline' href={'/blog'}>Blog</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/jobs'}>Jobs</Link>
-                                    </p>
-                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/packages'}>Packages</Link>
+                                          <Link className='hover:underline' href={'/faq'}>FAQ</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
                                           <Link className='hover:underline' href={'/contact'}>Contact</Link>
                                     </p>
                               </div>
                         </div>
-                        <div className='w-[33%]'>
+                        <div className='w-full'>
+                              <h5 className='text-xl font-bold'>Tools</h5>
+                              <div className='pt-6'>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/'}>Marketing Tools</Link>
+                                    </p>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/'}>File Transfer</Link>
+                                    </p>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/packages'}>Social Proof</Link>
+                                    </p>
+                                    <p className='mb-3 text-base sm:text-lg text-gray-500'>
+                                          <Link className='hover:underline' href={'/'}>Analytics</Link>
+                                    </p>
+                              </div>
                         </div>
                   </div>
             </div>

@@ -102,5 +102,18 @@ model Package {
 
   service Service? @relation(fields: [serviceId], references: [id])
 
+  cart Cart[]
+
   @@map("packages")
+}
+
+model Cart {
+  id              String   @id @default(cuid())
+  userId          String?
+  packageId       String?
+  quantity        Int      @default(1)
+  packageDuration Int
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  package         Package? @relation(fields: [packageId], references: [id])
 }

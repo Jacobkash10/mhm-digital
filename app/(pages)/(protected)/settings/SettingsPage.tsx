@@ -47,7 +47,7 @@ export default function SettingsPage({user}: SettingsPageProps) {
   }
 
   return (
-    <main className="px-8 xl:px-14 xxl:px-[10rem] xll:px-[25rem] py-10">
+    <main className="px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem] py-10">
       <section className="mx-auto max-w-7xl space-y-6">
         <h1 className="text-3xl font-bold">Settings</h1>
         <Form {...form}>

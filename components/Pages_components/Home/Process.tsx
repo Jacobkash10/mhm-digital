@@ -56,27 +56,27 @@ const Process = () => {
                                                       <h2 className='text-2xl md:text-[30px] max-w-xl font-semibold leading-tight mb-4'>
                                                             Marketing Plan
                                                       </h2>
-                                                      <p className='text-base md:text-xl text-gray-500 max-w-xl'>
+                                                      <p className='text-sm md:text-xl text-gray-500 max-w-xl'>
                                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                                             Accusamus maxime ratione incidunt consequuntur
                                                       </p>
                                                       <div className='mt-8 flex items-center gap-4'>
-                                                            <span className='w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-500 text-white flex items-center justify-center'>
+                                                            <span className='w-4 h-4 sm:w-8 sm:h-8 rounded-full bg-blue-500 text-white flex items-center justify-center'>
                                                                   <Check />
                                                             </span>
-                                                            <h5 className='text-base md:text-xl font-medium'>Guaranteed Results</h5>
+                                                            <h5 className='text-sm md:text-xl font-medium'>Guaranteed Results</h5>
                                                       </div>
                                                       <div className='mt-4 flex items-center gap-4'>
-                                                            <span className='w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-500 text-white flex items-center justify-center'>
+                                                            <span className='w-4 h-4 sm:w-8 sm:h-8 rounded-full bg-blue-500 text-white flex items-center justify-center'>
                                                                   <Check />
                                                             </span>
-                                                            <h5 className='text-base md:text-xl font-medium'>10+ Years of Experience</h5>
+                                                            <h5 className='text-sm md:text-xl font-medium'>10+ Years of Experience</h5>
                                                       </div>
                                                       <div className='mt-4 flex items-center gap-4'>
-                                                            <span className='w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-500 text-white flex items-center justify-center'>
+                                                            <span className='w-4 h-4 sm:w-8 sm:h-8 rounded-full bg-blue-500 text-white flex items-center justify-center'>
                                                                   <Check />
                                                             </span>
-                                                            <h5 className='text-base md:text-xl font-medium'>Team of Industry Experts</h5>
+                                                            <h5 className='text-sm md:text-xl font-medium'>Team of Industry Experts</h5>
                                                       </div>
                                                 </div>
                                           </div>
@@ -85,8 +85,12 @@ const Process = () => {
                               </div>
                         </CarouselItem>
                         </CarouselContent>
-                        <CarouselPrevious className='h-[65px] w-[65px] hover:bg-red-500 hover:text-white shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]' />
-                        <CarouselNext className='h-[65px] w-[65px] hover:bg-red-500 hover:text-white shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]' />
+                        <div>
+                              <CarouselPrevious className='h-[65px] w-[65px] hover:bg-red-500 hover:text-white 
+                              shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]' />
+                              <CarouselNext className='h-[65px] w-[65px] hover:bg-red-500 hover:text-white 
+                              shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]' />
+                        </div>
                   </Carousel>
             </div>
             <div className='mt-5 lg:mt-20'>
