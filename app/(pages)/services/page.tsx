@@ -11,7 +11,7 @@ const page = async () => {
   return (
     <>
     <div className='mt-[100px] pb-[150px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
-      <div className='flex flex-col xl:flex-row xl:items-center justify-between mb-10 xl:mb-3'>
+      <div className='flex flex-col xl:flex-row xl:items-center justify-between mb-10 xl:mb-6'>
             <div className='w-full xl:w-[52%]'>
                   <div className="flex items-end gap-2"> 
                         <Minus className='text-red-500' />
@@ -22,11 +22,6 @@ const page = async () => {
                   <h2 className='text-3xl md:text-[55px] font-bold leading-tight mb-4'>
                   High-impact services
                   </h2>
-            </div>
-            <div className='w-full xl:w-[48%]'>
-                  <p className='text-lg text-gray-500'>
-                        Lorem ipsum consectetur amet dolor sit comeneer ilremsilom dolce issilm acalrm leoinsion duycoqun.
-                  </p>
             </div>
       </div>
       <div className='flex flex-col lg:grid grid-cols-2 grid-rows-2 gap-10'>

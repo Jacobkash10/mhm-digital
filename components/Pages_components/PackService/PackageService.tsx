@@ -1,29 +1,14 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {motion} from 'framer-motion'
 import image1 from '@/public/images/icon-1-packages-marketing-template.png'
 import Image from 'next/image'
 import { Check } from 'lucide-react'
 import image3 from '@/public/images/image-project-overview-marketing-template.svg'
-import {z} from 'zod'
-import { useTransition } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from "@hookform/resolvers/zod"
-import { addToCartSchema } from '@/schemas'
-import {
-      Form,
-      FormControl,
-      FormField,
-      FormItem,
-      FormMessage,
-} from "@/components/ui/form"
-import { useRouter } from "next/navigation";
-import { useToast } from '@/components/ui/use-toast';
-import { addToCart } from '@/actions/addToCart'
-import { FormError } from '@/components/form-error'
-
-type Input = z.infer<typeof addToCartSchema>;
+import { addToCart } from '@/lib/cartUtils'
+import { CartItem } from '@/types/carts';
+import { useRouter } from 'next/navigation'
 
 interface Props {
       servicePack: Packages
@@ -35,7 +20,7 @@ interface Packages {
     name: string;
     description: string;
     icon: string;
-    } | null;
+    }
     id: string;
     serviceId: string | null;
     name: string;
@@ -45,60 +30,31 @@ interface Packages {
     points: string[];
 }
 
-const PackService = ({servicePack}: Props) => {
+const PackageService = ({servicePack}: Props) => {
 
-  const [selectedPrice, setSelectedPrice] = useState<number>(servicePack.priceByMonth || 0)
-  const [selectedDuration, setSelectedDuration] = useState<number>(servicePack.priceByYear || 0)
-  const router = useRouter()
-  const {toast} = useToast()
-  const [error, setError] = useState<string | undefined>("")
-  const [isPending, startTransition] = useTransition()
+      const [selectedPrice, setSelectedPrice] = useState<number>(servicePack.priceByMonth || 0)
+      const [selectedDuration, setSelectedDuration] = useState<number>(servicePack.priceByYear || 0)
+      const router = useRouter()
 
-  const form = useForm<Input>({
-    resolver: zodResolver(addToCartSchema),
-    defaultValues: {
-          quantity: 1,
-          packageId: servicePack.id,
-          packageDuration: selectedDuration,
-    }
-  })
-
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedValue = event.target.value
-
-    if (selectedValue === 'priceByYear' || selectedValue === 'priceByMonth') {
-      setSelectedDuration(servicePack[selectedValue])
-      setSelectedPrice(servicePack[selectedValue])
-    }
+      const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedValue = event.target.value
     
-  };
+        if (selectedValue === 'priceByYear' || selectedValue === 'priceByMonth') {
+          setSelectedDuration(servicePack[selectedValue])
+          setSelectedPrice(servicePack[selectedValue])
+        }
+        
+      };
 
-  
-
-  const onSubmit = (values: z.infer<typeof addToCartSchema>) => {
-    setError('');
-
-    startTransition(() => {
-      addToCart(values)
-        .then((data) => {
-          setError(data.error);
-          if (!data.error) {
-            toast({
-              title: 'Success',
-              description: 'Package added to cart',
-              variant: 'default',
-            });
+      const handleAddToCart = () => {
+          const item: CartItem = { package: servicePack, quantity: 1, packageDuration: selectedDuration, packageId: servicePack.id };
+            addToCart(item); // Ajouter 1 exemplaire du package au panier
+            alert('Package ajouté au panier!');
             window.location.reload()
-          }
-        })
-        .catch((error) => {
-          console.error('Failed to add package to cart', error);
-          setError('Failed to add package to cart');
-        });
-    });
-  };
+          };
 
   return (
+    <>
     <div className='mt-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <motion.div
       initial={{ opacity: 0 }}
@@ -139,8 +95,7 @@ const PackService = ({servicePack}: Props) => {
                       <p className='text-[17px] leading-7 font-semibold text-gray-500'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae ipsum tempor feugiat augue.
                       </p>
-                      <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)}>
+                      <form onSubmit={handleAddToCart}>
                         <select onChange={handleSelectChange} required
                         className='mt-16 w-full bg-white shadow-sm px-5 py-5 rounded-[40px] border 
                       hover:border-black transition-all duration-300 cursor-pointer'>
@@ -152,21 +107,19 @@ const PackService = ({servicePack}: Props) => {
                             1 Month
                           </option>
                         </select>
-                        <h4 className='text-4xl font-extrabold mt-10'>
+                        <h4 className='text-3xl font-extrabold mt-10'>
                           $ {selectedPrice}.00 / {selectedPrice === servicePack.priceByMonth ? 'month' : 'year'}
                         </h4>
-                        <FormError message={error} />
                         <br />
                         <motion.button 
                         whileHover={{ y: -10, transition: {type: 'spring'} }}
                         className='bg-red-500 text-white rounded-full px-10 py-5 
                         shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] w-full mt-10'
-                        disabled={isPending}  type='submit'
+                        type='submit'
                         >
                           <h5 className='font-semibold text-[17px] text-center'>Add to Cart</h5>
                         </motion.button>
                         </form>
-                      </Form>
                     </div>
             </div>
         </motion.div>
@@ -192,7 +145,8 @@ const PackService = ({servicePack}: Props) => {
                   </div>
         </div>
     </div>
+    </>
   )
 }
 
-export default PackService
+export default PackageService

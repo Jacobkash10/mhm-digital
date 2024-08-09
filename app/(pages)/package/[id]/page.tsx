@@ -1,3 +1,4 @@
+import PackageService from '@/components/Pages_components/PackService/PackageService'
 import PackService from '@/components/Pages_components/PackService/PackService'
 import { db } from '@/lib/db'
 import React from 'react'
@@ -17,7 +18,8 @@ const page = async ({ params }: { params: { id: string } }) => {
   return (
     
     <>
-      <PackService servicePack={servicePack} />
+      {/* <PackService servicePack={servicePack} /> */}
+      <PackageService servicePack={servicePack} />
     </>
   )
 }

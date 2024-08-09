@@ -3,7 +3,9 @@
 import React, { useState } from 'react'
 import CartItem from './CartItem'
 import { Cart } from '@/types/carts'
+import { CartItem as CartI, Carts, Package } from '@/types/carts'
 import { CartContext } from '@/context/CartContext'
+import { getCart } from '@/lib/cartUtils'
 
 interface Props {
       carts: Cart
@@ -11,18 +13,18 @@ interface Props {
 
 const DataCart = ({carts}: any) => {
 
-      const [cartItems, setCartItems] = useState<[]>(carts)
-      console.log(cartItems)
+      const [cart, setCart] = useState<Carts>(getCart());
+      // const [cartItems, setCartItems] = useState<[]>(carts)
 
       const valueCartContext = { 
-            cartItems: cartItems,
-            setCartItems: setCartItems
+            cartItems: cart,
+            setCartItems: setCart
            }
 
   return (
-    <CartContext.Provider value={valueCartContext}>
-     <CartItem /> 
-    </CartContext.Provider>
+    <>
+     <CartItem cart={cart} /> 
+    </>
   )
 }
 
