@@ -50,7 +50,7 @@ const CartView = ({openCart, open, carts}: {openCart: () => void, open: boolean,
                                           {carts.items?.map((item) => (
                                                 <div key={item.packageId} className='mt-5 border-b py-4'>
                                                       <div className='row sm:flex items-start justify-between'>
-                                                            <div className='flex items-start gap-5'>
+                                                            <div className='row sm:flex items-start gap-5'>
                                                                   <div className='w-[20%]'>
                                                                         <p className='text-xs font-extrabold text-red-500 mb-2'>
                                                                               {item?.package?.service?.name}
