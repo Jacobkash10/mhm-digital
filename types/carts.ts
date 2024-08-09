@@ -31,7 +31,12 @@ export interface Package {
       priceByMonth: number;
       description: string;
       points: string[];
-      service: Service
+      service: {
+            id: string;
+      name: string;
+      description: string;
+      icon: string;
+      } | null
 }
 
 export interface CartItem {

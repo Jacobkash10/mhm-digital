@@ -20,7 +20,7 @@ interface Packages {
     name: string;
     description: string;
     icon: string;
-    }
+    } | null
     id: string;
     serviceId: string | null;
     name: string;
