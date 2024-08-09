@@ -8,8 +8,14 @@ import image1 from '@/public/images/icon-1-packages-marketing-template.png'
 import Image from 'next/image'
 import { Carts } from '../../types/carts';
 import { CartContext } from '@/context/CartContext'
+import { removeFromCart } from '@/lib/cartUtils'
 
 const CartView = ({openCart, open, carts}: {openCart: () => void, open: boolean, carts: Carts}) => {
+
+      const handleRemoveFromCart = (packageId: string) => {
+            removeFromCart(packageId);
+            alert('Package supprimé du panier!');
+          };
 
   return (
       <motion.div
@@ -82,7 +88,7 @@ const CartView = ({openCart, open, carts}: {openCart: () => void, open: boolean,
                                                             </div>
                                                             <div>
                                                                   <form action="">
-                                                                        <button>
+                                                                        <button onClick={() => handleRemoveFromCart(item.packageId)}>
                                                                               <h5 className='text-sm font-bold text-red-500'>
                                                                                     Remove
                                                                               </h5>
