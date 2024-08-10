@@ -44,6 +44,9 @@ const page = async () => {
                               Last name
                           </th>
                           <th scope="col" className="px-6 py-3">
+                              Email
+                          </th>
+                          <th scope="col" className="px-6 py-3">
                               Name service
                           </th>
                           <th scope="col" className="px-6 py-3">
@@ -70,6 +73,9 @@ const page = async () => {
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {order.order.client.lastName}
+                            </td>
+                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {order.order.client.email}
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {order.package.service?.name}
