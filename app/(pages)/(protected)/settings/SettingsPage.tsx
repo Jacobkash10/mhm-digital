@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -18,6 +17,9 @@ import { useForm } from "react-hook-form";
 import { updateProfile } from "./actions";
 import { User } from "next-auth";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
+import image from '@/public/images/setting.png'
+import {motion} from 'framer-motion'
 
 interface SettingsPageProps {
   user: User
@@ -45,36 +47,54 @@ export default function SettingsPage({user}: SettingsPageProps) {
       });
     }
   }
+  
 
   return (
-    <main className="px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem] py-10">
-      <section className="mx-auto max-w-7xl space-y-6">
-        <h1 className="text-3xl font-bold">Settings</h1>
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="max-w-sm space-y-2.5"
-          >
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter a username" {...field} />
-                  </FormControl>
-                  <FormDescription>Your public username</FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button className="bg-red-100" type="submit" disabled={form.formState.isSubmitting}>
-              Update
-            </Button>
-          </form>
-        </Form>
-      </section>
+    <main className=" px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem] py-10">
+      <div className="row md:flex items-center justify-between gap-4 md:gap-0 w-full">
+        <section className="w-full md:w-[50%] xl:w-[40%] space-y-6">
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-6 px-8 py-20 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+            >
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Username</FormLabel>
+                    <FormControl>
+                      <Input 
+                      placeholder="Enter a username" 
+                      {...field} 
+                      className="border rounded-full text-xl px-5 py-8 placeholder:text-base text-black font-bold" 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button 
+              className="flex items-center justify-center gap-2 w-full bg-red-500 text-white 
+              rounded-full px-10 py-8 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] hover:bg-red-400" 
+              type="submit" 
+              disabled={form.formState.isSubmitting}>
+                Update
+              </Button>
+            </form>
+          </Form>
+        </section>
+        <section className="w-full md:w-[50%]">
+          <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 6, delay: .4, repeat: Infinity }}
+          className="w-[90%]">
+            <Image src={image} alt='image1' priority width={0} height={0} sizes='100vw' 
+            className='w-full' />
+          </motion.div>
+        </section>
+      </div>      
     </main>
   );
 }

@@ -2,6 +2,7 @@ import { db } from '@/lib/db'
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { cache } from "react";
+import avatarPlaceholder from "@/assets/images/avatar_placeholder.png";
 
 interface PageProps {
   params: { id: string };
@@ -10,7 +11,7 @@ interface PageProps {
 const getUser = cache(async (id: string) => {
   return db.user.findUnique({
     where: { id },
-    select: { id: true, name: true, image: true, createdAt: true },
+    select: { id: true, name: true, image: true, createdAt: true, email: true },
   });
 });
 
@@ -37,22 +38,33 @@ export default async function Page({ params: { id } }: PageProps) {
   if (!user) notFound();
 
   return (
-    <div className="mx-3 my-10 flex flex-col items-center gap-3">
-      {user.image && (
-        <Image
+     <div className='mt-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem] py-10'>
+      <div className="mx-3 mb-10 flex flex-col items-center gap-3">
+        <h2>Profil</h2>
+        {user.image ? (
+          <Image
           src={user.image}
           width={100}
           alt="User profile picture"
           height={100}
           className="rounded-full"
-        />
-      )}
-      <h1 className="text-center text-xl font-bold">
-        {user?.name || `User ${id}`}
-      </h1>
-      <p className="text-muted-foreground">
-        User since {new Date(user.createdAt).toLocaleDateString()}
-      </p>
+          />
+        ) : (
+          <Image
+          src={avatarPlaceholder}
+          width={100}
+          alt="User profile picture"
+          height={100}
+          className="rounded-full"
+          />
+        )}
+        <h1 className="text-center text-xl font-bold mb-2">
+          {user?.name || `User ${id}`}
+        </h1>
+        <h1 className="text-center text-xl font-bold">
+          {user?.email}
+        </h1>
+      </div>
     </div>
   );
 }

@@ -136,7 +136,9 @@ const Page = () => {
                               <br />
                               <FormSuccess message={success} />
                               <div className='flex flex-col items-center justify-center mt-6'>
-                                          <Button disabled={isPending}  type='submit' className='flex items-center justify-center gap-2 w-full bg-red-500 text-white rounded-full px-10 py-8 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                                          <Button disabled={isPending}  type='submit' 
+                                          className='flex items-center justify-center gap-2 w-full bg-red-500 text-white 
+                                          rounded-full px-10 py-8 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
                                                 <h5 className='font-semibold text-[20px]'>Sign in</h5>
                                           </Button>
                               </div>
