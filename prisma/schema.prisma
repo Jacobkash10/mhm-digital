@@ -102,9 +102,36 @@ model Package {
 
   service Service? @relation(fields: [serviceId], references: [id])
 
-  cart Cart[]
+  cart   Cart[]
+  orders OrderPackage[]
 
   @@map("packages")
+}
+
+model Client {
+  id          String  @id @default(cuid())
+  firstName   String
+  lastName    String
+  phoneNumber String
+  email       String  @unique
+  orders      Order[]
+}
+
+model Order {
+  id       String         @id @default(cuid())
+  clientId String
+  price    Int
+  packages OrderPackage[]
+  client   Client         @relation(fields: [clientId], references: [id])
+}
+
+model OrderPackage {
+  orderId   String
+  packageId String
+  order     Order   @relation(fields: [orderId], references: [id])
+  package   Package @relation(fields: [packageId], references: [id])
+
+  @@id([orderId, packageId])
 }
 
 model Cart {

@@ -28,10 +28,10 @@ import {motion} from 'framer-motion'
 
 const Page = () => {
 
-      const router = useRouter();
+      const router = useRouter()
       const {toast} = useToast()
       const [error, setError] = useState<string | undefined>("");
-      const [success, setSuccess] = useState<string | undefined>("");
+      // const [success, setSuccess] = useState<string | undefined>("");
       const [isPending, startTransition] = useTransition()
       const form = useForm<Input>({
             resolver: zodResolver(registerSchema),
