@@ -4,7 +4,7 @@ import React from 'react'
 import { ArrowRight, Minus } from 'lucide-react';
 import Link from 'next/link';
 import {motion} from 'framer-motion'
-import { fadeIn } from '../../../variants'
+import { fadeIn,opacite } from '../../../variants'
 
 const Banner = () => {
   return (
@@ -14,7 +14,7 @@ const Banner = () => {
     className='pb-[150px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <div className='mt-16 flex flex-col justify-center items-center'>
             <motion.div 
-            variants={fadeIn("up", 0.5)}
+            variants={opacite("up", 0.5)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.7 }}
