@@ -12,7 +12,7 @@ const Banner = () => {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1, transition: {duration: 2, delay: 0.5} }}
     className='pb-[150px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
-      <div className='mt-16 flex flex-col justify-center items-center'>
+      <div className='mt-24 flex flex-col justify-center items-center'>
             <motion.div 
             variants={opacite("up", 0.5)}
             initial="hidden"
@@ -22,7 +22,7 @@ const Banner = () => {
                   <div className="flex items-center gap-2 mb-3"> 
                         <Minus className='text-red-500' />
                         <h5 className="text-red-500 text-lg font-bold"> 
-                              Marketing Agency
+                        Digital Growth Agency
                         </h5> 
                   </div>
                   <h1 className='text-[40px] sm:text-[64px] font-bold leading-tight mb-3 text-center max-w-3xl'>

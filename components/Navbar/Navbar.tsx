@@ -6,6 +6,8 @@ import UserOrSignIn from './componentsNav/UserOrSignIn';
 import CartItem from './componentsNav/CartItem';
 import { db } from '@/lib/db';
 import DataCart from './componentsNav/DataCart';
+import Image from 'next/image';
+import image1 from '@/public/images/LOGO .png'
 
 const Navbar = async () => { 
 
@@ -17,13 +19,11 @@ const Navbar = async () => {
   return (
       <div>
             <div className='flex items-center justify-between px-4 xl:px-14 py-8 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
-                  <div className='flex items-center gap-1'>
-                        <h5 className='w-10 h-10 bg-red-500 rounded-xl 
-                        shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] 
-                        flex flex-col items-center justify-center text-white font-bold'>
-                        M
-                        </h5>
-                        <Link className='text-[22px] sm:text-[28px] font-semibold' href={'/'}>Mhm Digital</Link>
+                  <div className='flex items-center gap-1 w-[35%] lg:w-[22%]'>
+                        <Link className='text-[22px] sm:text-[28px] font-bold uppercase' href={'/'}>
+                              <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw'
+                                    className='w-[100%]' />
+                        </Link>
                   </div>
                   <NavNormal />
                   <div className='flex items-center gap-4'>

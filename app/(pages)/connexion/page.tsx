@@ -27,6 +27,8 @@ import Google from '@/components/svg/Google'
 import { Button } from '@/components/ui/button'
 import { DEFAULT_LOGIN_REDERICT } from '@/routes'
 import {motion} from 'framer-motion'
+import Image from 'next/image';
+import image1 from '@/public/images/3.png'
 
     type Input = z.infer<typeof loginSchema>;
 
@@ -87,6 +89,8 @@ const Page = () => {
                   <Form {...form}>
                         <form className='px-10 py-10 border rounded-2xl w-full lg:w-[55%]' onSubmit={form.handleSubmit(onSubmit)}>
                               <div className='flex flex-col items-center justify-center mb-5'>
+                                    <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw'
+                                    className='w-[10%]' />
                                     <p>You don't have an account?</p>
                                     <Link href={'/inscription'} className='hover:underline duration-300 text-gray-500'>
                                           Sign up

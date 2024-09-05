@@ -19,7 +19,7 @@ const Services = async () => {
       <div className='bg-[#e1dfe252] py-[80px]'>
             
             <div className='px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%] relative'>
-                  <div className='pb-[140px] lg:pb-0'>
+                  <div className='pb-[70px] sm:pb-[90px] lg:pb-0'>
                         <div className="flex items-center gap-2 mb-3"> 
                               <Minus className='text-red-500' />
                               <h5 className="text-red-500 text-xl font-semibold"> 
@@ -43,9 +43,9 @@ const Services = async () => {
                                     })
                               }
                         </CarouselContent>
-                        <div className='absolute -top-[100px] left-36 lg:left-auto lg:right-16'>
+                        <div className='absolute -top-0 sm:-top-10 lg:-top-[100px] left-36 lg:left-auto lg:right-16'>
                               <CarouselPrevious 
-                              className='h-[70px] w-[70px] md:h-[85px] md:w-[85px] left-[-140px] md:-left-[160px] hover:bg-red-500 
+                              className='h-[70px] w-[70px] md:h-[85px] md:w-[85px] left-[-130px] md:-left-[140px] hover:bg-red-500 
                               hover:text-white shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]' />
                               <CarouselNext 
                               className='h-[70px] w-[70px] md:h-[85px] md:w-[85px] hover:bg-red-500 hover:text-white 

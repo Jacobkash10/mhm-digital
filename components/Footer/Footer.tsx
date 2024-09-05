@@ -6,6 +6,8 @@ import { Input } from '@/components/ui/input'
 import { ArrowRight } from 'lucide-react'
 import {motion} from 'framer-motion'
 import { opacite } from '../../variants'
+import Image from 'next/image'
+import image1 from '@/public/images/LOGO .png'
 
 const Footer = () => {
   return (
@@ -19,16 +21,15 @@ const Footer = () => {
             <div className='px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]
             py-[80px] flex flex-col lg:flex-row items-center justify-between gap-8'>
                   <div className='w-full lg:w-[48%]'>
-                        <div className='flex items-center gap-3'>
-                        <h5 className='w-9 h-9 bg-red-500 rounded-xl 
-                        shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] 
-                        flex flex-col items-center justify-center text-white font-bold'>
-                        M
-                        </h5>
-                        <Link className='text-xl sm:text-[28px] font-semibold' href={'/'}>Mhm Digital</Link>
+                        <div className='flex items-center gap-1 w-[40%] md:w-[30%]'>
+                              <Link href={'/'}>
+                                    <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw'
+                                    className='w-[100%]' />
+                              </Link>
                         </div>
                         <p className='text-base text-gray-500 pt-6'>
-                              Lorem ipsum consectetur amet dolor sit comeneer ilremsilom dolce issilm acalrm leoinsion duycoqun consemleint lorem.
+                              Lorem ipsum consectetur amet dolor sit comeneer ilremsilom dolce issilm acalrm 
+                              leoinsion duycoqun consemleint lorem.
                         </p>
                   </div>
                   <div className='w-full lg:w-[52%]'>

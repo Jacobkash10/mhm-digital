@@ -36,7 +36,7 @@ const Process = () => {
             <h2 className='text-3xl md:text-[44px] max-w-xl font-semibold leading-tight mb-4 text-center'>
                   A simple, yet effective three step process
             </h2>
-            <div className='mt-2 xs:mt-20 w-full px-14 lg;px-20'>
+            <div className='mt-2 xs:mt-20 w-full px-14 lg;px-20 relative'>
                   <Carousel className="max-w-full">
                         <CarouselContent>
                         <CarouselItem>
@@ -85,7 +85,7 @@ const Process = () => {
                               </div>
                         </CarouselItem>
                         </CarouselContent>
-                        <div>
+                        <div className=''>
                               <CarouselPrevious className='h-[65px] w-[65px] hover:bg-red-500 hover:text-white 
                               shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]' />
                               <CarouselNext className='h-[65px] w-[65px] hover:bg-red-500 hover:text-white 
