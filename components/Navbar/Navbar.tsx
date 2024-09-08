@@ -20,10 +20,10 @@ const Navbar = async () => {
       <div>
             <div className='flex items-center justify-between px-4 xl:px-14 py-8 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
                   <div className='w-[50%] sm:w-[45%] md:w-[35%] lg:w-[25%]'> 
-                        <Link className='text-[22px] sm:text-[28px] font-bold uppercase flex items-center gap-1' href={'/'}>
+                        <Link className='text-[22px] sm:text-[28px] font-bold flex items-center gap-1' href={'/'}>
                               <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw'
                                     className='w-[15%]' />
-                              Mhm Digital
+                              MHM Digital
                         </Link>
                   </div>
                   <NavNormal />
