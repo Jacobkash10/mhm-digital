@@ -24,7 +24,7 @@ const NavNormal = () => {
             },
       ]
       const pathName = usePathname()
-      
+
   return (
       <div className='hidden xl:flex items-center gap-7 text-[16px]'>
             {links.map((link, index) => (
