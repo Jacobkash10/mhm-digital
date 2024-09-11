@@ -102,33 +102,32 @@ const page = () => {
                 {carts.items?.map((item) => (
                   <div key={item.packageId} className='mt-5 border-b py-4 px-4 bg-slate-100'>
                         <div className='row sm:flex items-start justify-between'>
-                          <div className='row gap-5'>
-                            <div>
-                                  <p className='text-xs font-extrabold text-red-500 mb-2'>
-                                        {item?.package?.service?.name}
-                                  </p>
-                                  <h3 className='text-base font-extrabold'>
-                                        {item?.package?.name}
-                                  </h3>
-                                  <p className='font-semibold'>
-                                        $ { item.quantity * item.packageDuration}.00 USD
-                                        {/* $ {item.packageDuration}.00 USD */}
-                                  </p>
-                                  <p className='font-semibold'>
-                                        Quantité :
-                                        <span>{item.quantity}</span>
-                                  </p>
-                                  <h5 className='text-slate-500 font-bold'>
-                                        Package Duration : 
-                                        <span className='text-black'>
-                                              {item.packageDuration === item?.package?.priceByMonth
-                                              ? '1 Month' : '1 Year'
-                                              }
-                                        </span>
-                                  </h5>
-                            </div>
-                          </div>
-                      </div>
+                              <div className='row gap-5'>
+                                    <div>
+                                    <h3 className='text-base font-extrabold'>
+                                          {item?.package?.name ?? 'Package name not available'}
+                                    </h3>
+                                    <p className='font-semibold'>
+                                          $ {item.quantity * (item?.packageDuration ?? item?.package?.price ?? 0)}.00 USD
+                                    </p>
+                                    <p className='font-semibold'>
+                                          Quantité : <span>{item.quantity}</span>
+                                    </p>
+                                    {item?.package && (item.package.priceByMonth || item.package.priceByYear) ? (
+                                          <h5 className='text-slate-500 font-bold'>
+                                                Package Duration : 
+                                                <span className='text-black'>
+                                                {item.packageDuration === item.package.priceByMonth
+                                                      ? '1 Month'
+                                                      : item.packageDuration === item.package.priceByYear
+                                                      ? '1 Year'
+                                                      : ''}
+                                                </span>
+                                          </h5>
+                                    ) : null}
+                                    </div>
+                              </div>
+                        </div>
                   </div>
                 ))}
                 <div className='row sm:flex items-center justify-between mt-5'>

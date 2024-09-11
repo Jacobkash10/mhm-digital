@@ -16,8 +16,9 @@ export interface Cart {
             id: string;
             serviceId: string | null;
             name: string;
-            priceByYear: number;
-            priceByMonth: number;
+            priceByYear: number | null;
+            priceByMonth: number | null;
+            price: number | null;
             description: string;
             points: string[];
       } | null;
@@ -27,8 +28,9 @@ export interface Package {
       id: string;
       serviceId: string | null;
       name: string;
-      priceByYear: number;
-      priceByMonth: number;
+      priceByYear: number | null;
+      priceByMonth: number | null;
+      price: number | null;
       description: string;
       points: string[];
       service: {

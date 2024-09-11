@@ -19,6 +19,10 @@ const NavNormal = () => {
                   path: "/services"
             },
             {
+                  name: "packages",
+                  path: "/packages"
+            },
+            {
                   name: "case studies",
                   path: "/case-studies"
             },

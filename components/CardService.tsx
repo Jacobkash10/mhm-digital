@@ -34,7 +34,7 @@ const CardService = ({service}: Props) => {
     className="px-2 py-16">
             <Card className='rounded-[50px] bg-white border-none shadow-md group'>
                   <Link href={`/service/${service.id}`}>
-                        <CardContent className="px-10 py-12 ">
+                        <CardContent className="px-10 py-12 h-[400px] lg:h-[320px] xl:h-[270px]">
                               <motion.div 
                               whileHover={{ scale: 1.02, transition: {type: 'spring', duration: 0.7} }}
                               className='flex flex-col gap-5 lg:flex lg:flex-row items-start lg:gap-1'>
@@ -45,7 +45,9 @@ const CardService = ({service}: Props) => {
                                     <div className='w-[100%]'>
                                           <h4 className='text-3xl font-bold mb-3'>{service.name || 'Lorem'}</h4>
                                           <p className='text-[17.5px] font-semibold text-gray-500 mb-5 leading-7'>
-                                                {service.description || 'Lorem ipsum'}
+                                                {service.description 
+                                                ? `${service.description.substring(0, 50)}${service.description.length > 50 ? '...' : ''}` 
+                                                : 'Lorem ipsum'}
                                           </p>
                                           <h5 className='flex items-center gap-2 text-lg font-bold group-hover:text-red-500 transition-all
                                           duration-300'>

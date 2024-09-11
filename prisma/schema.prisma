@@ -86,21 +86,37 @@ model Service {
   description String
   icon        String
 
-  packages Package[]
+  subServices SubService[]
+  packages    Package[]
 
   @@map("services")
+}
+
+model SubService {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  serviceId   String
+  packages    Package[]
+
+  service Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+
+  @@map("sub_services")
 }
 
 model Package {
   id           String   @id @default(cuid())
   serviceId    String?
+  subServiceId String?
   name         String
-  priceByYear  Float
-  priceByMonth Float
+  priceByYear  Float?
+  priceByMonth Float?
+  price        Float?
   description  String
   points       String[]
 
-  service Service? @relation(fields: [serviceId], references: [id])
+  service    Service?    @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  subService SubService? @relation(fields: [subServiceId], references: [id], onDelete: Cascade)
 
   cart   Cart[]
   orders OrderPackage[]
@@ -122,14 +138,14 @@ model Order {
   clientId String
   price    Int
   packages OrderPackage[]
-  client   Client         @relation(fields: [clientId], references: [id])
+  client   Client         @relation(fields: [clientId], references: [id], onDelete: Cascade)
 }
 
 model OrderPackage {
   orderId   String
   packageId String
-  order     Order   @relation(fields: [orderId], references: [id])
-  package   Package @relation(fields: [packageId], references: [id])
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  package   Package @relation(fields: [packageId], references: [id], onDelete: Cascade)
 
   @@id([orderId, packageId])
 }
@@ -142,5 +158,5 @@ model Cart {
   packageDuration Int
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
-  package         Package? @relation(fields: [packageId], references: [id])
+  package         Package? @relation(fields: [packageId], references: [id], onDelete: Cascade)
 }

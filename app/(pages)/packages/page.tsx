@@ -1,16 +1,29 @@
-import FAQ from '@/components/Pages_components/Contact/FAQ'
-import Packages from '@/components/Pages_components/Package/Packages'
-import React from 'react'
+import FAQ from '@/components/Pages_components/Contact/FAQ';
+import Packages from '@/components/Pages_components/Package/Packages';
+import { db } from '@/lib/db';
+import React from 'react';
 
-const page = () => {
+const page = async () => {
+  // Récupération des services avec les sous-services et les packages
+  const services = await db.service.findMany({
+    include: {
+      packages: true,
+      subServices: {
+        include: {
+          packages: true,
+        },
+      },
+    },
+  });
+
   return (
     <div>
-      <Packages />
+      <Packages services={services} /> 
       <div className='bg-[#e1dfe23c]'>
-      <FAQ />
+        <FAQ />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

@@ -66,24 +66,26 @@ const CartView = ({openCart, open, carts}: {openCart: () => void, open: boolean,
                                                                   </div>
                                                                   <div>
                                                                         <h3 className='text-base font-extrabold'>
-                                                                              {item?.package?.name}
+                                                                              {item?.package?.name ?? 'Package name not available'}
                                                                         </h3>
                                                                         <p className='font-semibold'>
-                                                                              $ { item.quantity * item.packageDuration}.00 USD
-                                                                              {/* $ {item.packageDuration}.00 USD */}
+                                                                              $ {item.quantity * (item?.packageDuration ?? item?.package?.price ?? 0)}.00 USD
                                                                         </p>
                                                                         <p className='font-semibold'>
-                                                                              Quantité :
-                                                                              <span>{item.quantity}</span>
+                                                                              Quantité : <span>{item.quantity}</span>
                                                                         </p>
-                                                                        <h5 className='text-slate-500 font-bold'>
-                                                                              Package Duration : 
-                                                                              <span className='text-black'>
-                                                                                    {item.packageDuration === item?.package?.priceByMonth
-                                                                                    ? '1 Month' : '1 Year'
-                                                                                    }
-                                                                              </span>
-                                                                        </h5>
+                                                                        {item?.package && (item.package.priceByMonth || item.package.priceByYear) ? (
+                                                                              <h5 className='text-slate-500 font-bold'>
+                                                                                    Package Duration : 
+                                                                                    <span className='text-black'>
+                                                                                    {item.packageDuration === item.package.priceByMonth
+                                                                                          ? '1 Month'
+                                                                                          : item.packageDuration === item.package.priceByYear
+                                                                                          ? '1 Year'
+                                                                                          : ''}
+                                                                                    </span>
+                                                                              </h5>
+                                                                        ) : null}
                                                                   </div>
                                                             </div>
                                                             <div>

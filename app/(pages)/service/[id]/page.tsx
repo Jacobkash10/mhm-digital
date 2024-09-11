@@ -10,13 +10,18 @@ const page = async ({ params }: { params: { id: string } }) => {
                   id: id
             },
             include: {
-                  packages: true
+                  packages: true,
+                  subServices: {
+                        include: {
+                              packages: true
+                        }
+                  }
             }
       })
   return (
     <div className='py-[80px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <Service service={service} />
-      <Packages service={service?.packages} />
+      <Packages service={service?.packages} subServices={service?.subServices} />
     </div>
   )
 }
