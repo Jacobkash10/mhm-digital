@@ -74,7 +74,7 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
 
       {/* Afficher les services */}
       {services.length > 0 && (
-        <div className="flex justify-center gap-4 mb-10">
+        <div className="flex-wrap flex justify-center gap-4 mb-10">
           {services.map((service) => (
             <button
               key={service.id}
@@ -88,7 +88,7 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
                   setSelectedSubServiceId(null); // Pas de sous-services
                 }
               }}
-              className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white
+              className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white text-sm xl:text-base
                   ${selectedServiceId === service.id ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
             >
               {service.name}
@@ -100,12 +100,12 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
       {/* Afficher les sous-services si présents */}
       {selectedService?.subServices && (
         <>
-          <div className="flex justify-center gap-4 mb-10">
+          <div className="flex-wrap flex justify-center gap-4 mb-10">
             {selectedService.subServices.map((subService) => (
               <button
                 key={subService.id}
                 onClick={() => setSelectedSubServiceId(subService.id)}
-                className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white
+                className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white text-sm xl:text-base
                   ${selectedSubServiceId === subService.id ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
               >
                 {subService.name}
@@ -115,10 +115,10 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
 
           {/* Afficher le filtre pour sélectionner entre prix mensuel ou annuel uniquement si le service a des sous-services */}
           {hasSubServices && (
-            <div className="flex justify-center gap-4 mb-10">
+            <div className="flex-wrap flex justify-center gap-4 mb-10">
               <button
                 onClick={() => setSelectedPriceType('monthly')}
-                className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white
+                className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white text-sm xl:text-base
                   ${selectedPriceType === 'monthly' ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
               >
                 Price per Month

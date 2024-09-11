@@ -65,12 +65,12 @@ const Packages: React.FC<Props> = ({ service, subServices }) => {
       {/* Si des sous-services existent, afficher les filtres */}
       {subServices && subServices.length > 0 && (
         <>
-          <div className="flex justify-center gap-4 mb-10">
+          <div className="flex-wrap flex justify-center gap-4 mb-10">
             {subServices.map((subService) => (
               <button
                 key={subService.id}
                 onClick={() => setSelectedSubServiceId(subService.id)}
-                className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white
+                className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white text-sm xl:text-base
                   ${selectedSubServiceId === subService.id ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
               >
                 {subService.name}
@@ -79,10 +79,10 @@ const Packages: React.FC<Props> = ({ service, subServices }) => {
           </div>
 
           {/* le filtre pour sélectionner entre prix mensuel ou annuel */}
-          <div className="flex justify-center gap-4 mb-10">
+          <div className="flex-wrap flex justify-center gap-4 mb-10">
             <button
               onClick={() => setSelectedPriceType('monthly')}
-              className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white
+              className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white text-sm xl:text-base
                   ${selectedPriceType === 'monthly' ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
             >
               Price per Month
