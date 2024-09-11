@@ -40,7 +40,8 @@ const NavMobile = () => {
 
   return (
     <div className='xl:hidden'>
-      <button className='w-10 h-10 sm:w-10 sm:h-10 md:w-[3rem] md:h-[3rem] rounded-full flex items-center justify-center bg-red-500 text-white 
+      <button className='w-10 h-10 sm:w-10 sm:h-10 md:w-[3rem] md:h-[3rem] 
+      rounded-full flex items-center justify-center bg-red-500 text-white 
       shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
             <div onClick={toggle}>
                   {
@@ -52,7 +53,7 @@ const NavMobile = () => {
       </button>
       <div className={`absolute shadow-sm transition-all duration-500 
             ${open ? 'top-[8rem] bg-white min-h-fit left-0 bottom-0 z-50 transition-all duration-500 ease-in-out right-0' 
-            : 'top-[-600px] left-0 right-0'}`}>
+            : 'top-[-800px] left-0 right-0'}`}>
             <hr />
             <div className='px-8 flex flex-col items-start justify-start gap-10 py-24'>
             {links.map((link, index) => (
