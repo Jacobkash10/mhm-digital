@@ -136,7 +136,7 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
       )}
 
       <div className="mt-10 py-16 px-2 bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] border rounded-[40px] 
-      flex flex-col gap-10 xl:grid grid-cols-3 xl:gap-0">
+      flex flex-col gap-10 xl:grid grid-cols-3 xl:gap-0 mx-4 xl:mx-14 xxl:mx-[10rem] xll:mx-[20rem] xxx:mx-[22%] lll:mx-[25%]">
         {filteredPackages.map((pack, index) => (
           <div
             className="border-b-2 xl:border-r-2 last:border-none xl:border-b-0 pb-10 xl:pb-0 px-10 f
@@ -144,7 +144,7 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
             key={index}
           >
             <div className="w-full">
-              <div className="w-[25%] mb-8">
+              <div className="w-[20%] md:w-[15%] lg:w-[10%] xl:w-[25%] mb-8">
                 <Image
                   src={image1}
                   alt="image1"
@@ -185,7 +185,7 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
                   <motion.button
                     whileHover={{ y: -10, transition: { type: 'spring' } }}
                     className="flex items-center justify-center gap-2 w-full bg-red-500 text-white 
-                    rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group"
+                    rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group max-w-fit"
                   >
                     <h5 className="font-semibold text-base">Learn More</h5>
                     <ArrowRight className="text-white group-hover:translate-x-2 transition-all duration-500" />
