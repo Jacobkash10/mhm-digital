@@ -29,20 +29,24 @@ interface Props {
       servicePack: Packages
 }
 
+interface Service {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+}
+
 interface Packages {
-  service: {
-    id: string;
-    name: string;
-    description: string;
-    icon: string;
-    } | null;
-    id: string;
-    serviceId: string | null;
-    name: string;
-    priceByYear: number;
-    priceByMonth: number;
-    description: string;
-    points: string[];
+  id: string;
+  serviceId: string | null;
+  subServiceId: string | null;
+  name: string;
+  priceByYear: number | null;
+  priceByMonth: number | null;
+  price: number | null;
+  description: string;
+  points: string[];
+  service: Service | null;
 }
 
 const PackService = ({servicePack}: Props) => {
@@ -67,8 +71,8 @@ const PackService = ({servicePack}: Props) => {
     const selectedValue = event.target.value
 
     if (selectedValue === 'priceByYear' || selectedValue === 'priceByMonth') {
-      setSelectedDuration(servicePack[selectedValue])
-      setSelectedPrice(servicePack[selectedValue])
+      setSelectedDuration(Number(servicePack[selectedValue]))
+      setSelectedPrice(Number(servicePack[selectedValue]))
     }
     
   };
