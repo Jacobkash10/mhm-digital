@@ -1,12 +1,49 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import image1 from '@/public/images/icon-1-packages-marketing-template.png'
-import { ArrowRight, Check } from 'lucide-react';
+import image1 from '@/public/images/icon-1-packages-marketing-template.png';
+import { Check } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../variants';
+import { addToCart } from "@/lib/cartUtils";
+import { CartItem } from "@/types/carts";
+
+interface Service {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  packages: {
+    id: string;
+    serviceId: string | null;
+    subServiceId: string | null;
+    name: string;
+    priceByYear: number | null;
+    priceByMonth: number | null;
+    price: number | null;
+    description: string;
+    points: string[];
+  }[];
+  subServices: {
+    id: string;
+    name: string;
+    description: string;
+    serviceId: string;
+    packages: {
+      id: string;
+      serviceId: string | null;
+      subServiceId: string | null;
+      name: string;
+      priceByYear: number | null;
+      priceByMonth: number | null;
+      price: number | null;
+      description: string;
+      points: string[];
+    }[];
+  }[];
+}
 
 interface Packages {
   id: string;
@@ -18,34 +55,56 @@ interface Packages {
   price: number | null;
   description: string;
   points: string[];
-}
-
-interface SubService {
-  id: string;
-  name: string;
-  packages: Packages[];
+  service?: Service; 
 }
 
 interface Props {
-  service: Packages[];
-  subServices?: SubService[];
+  service: Service;
 }
 
-const Packages: React.FC<Props> = ({ service, subServices }) => {
+const PackagesComponent: React.FC<Props> = ({ service }) => {
   const [selectedSubServiceId, setSelectedSubServiceId] = useState<string | null>(null);
   const [selectedPriceType, setSelectedPriceType] = useState<'monthly' | 'yearly'>('monthly');
 
   // Sélectionner le premier sous-service par défaut lors du montage
   useEffect(() => {
-    if (subServices && subServices.length > 0) {
-      setSelectedSubServiceId(subServices[0].id);
+    if (service?.subServices && service?.subServices.length > 0) {
+      setSelectedSubServiceId(service.subServices[0].id);
     }
-  }, [subServices]);
+  }, [service?.subServices]);
 
-  // Fonction pour obtenir les packages filtrés
+  // Fonction pour obtenir les packages filtrés par sous-service
   const filteredPackages = selectedSubServiceId
-    ? subServices?.find(sub => sub.id === selectedSubServiceId)?.packages || []
-    : service;
+    ? service.subServices.find(sub => sub.id === selectedSubServiceId)?.packages || []
+    : service.packages;
+
+  // Fonction pour ajouter un package au panier
+  const handleAddToCart = (pack: Packages) => {
+      // Définir la durée en fonction du prix sélectionné et de l'existence des prix
+      const selectedDuration =
+        pack.priceByMonth && pack.priceByYear
+          ? selectedPriceType === 'monthly'
+            ? pack.priceByMonth 
+            : pack.priceByYear
+          : pack.price;
+
+      const price = selectedPriceType === 'monthly' ? pack.priceByMonth : pack.priceByYear;
+    
+    // Création de l'objet CartItem avec validation des données
+    const item: CartItem = {
+      packageId: pack.id,
+      quantity: 1, // Par défaut, ajouter 1 unité
+      packageDuration: selectedDuration, // Sélectionner la durée (mensuelle/annuelle)
+      package: { ...pack, service } // Vous pouvez ajuster ici ce que vous souhaitez ajouter pour "package"
+    };
+
+    // Appel à la fonction addToCart
+    addToCart(item);
+
+    // Notification utilisateur
+    alert(`${pack.name} a été ajouté au panier!`);
+    window.location.reload(); 
+  };
 
   return (
     <motion.div
@@ -63,10 +122,10 @@ const Packages: React.FC<Props> = ({ service, subServices }) => {
       </div>
 
       {/* Si des sous-services existent, afficher les filtres */}
-      {subServices && subServices.length > 0 && (
+      {service?.subServices && service.subServices.length > 0 && (
         <>
           <div className="flex-wrap flex justify-center gap-4 mb-10">
-            {subServices.map((subService) => (
+            {service.subServices.map((subService) => (
               <button
                 key={subService.id}
                 onClick={() => setSelectedSubServiceId(subService.id)}
@@ -78,7 +137,7 @@ const Packages: React.FC<Props> = ({ service, subServices }) => {
             ))}
           </div>
 
-          {/* le filtre pour sélectionner entre prix mensuel ou annuel */}
+          {/* Filtre pour sélectionner entre prix mensuel ou annuel */}
           <div className="flex-wrap flex justify-center gap-4 mb-10">
             <button
               onClick={() => setSelectedPriceType('monthly')}
@@ -107,27 +166,26 @@ const Packages: React.FC<Props> = ({ service, subServices }) => {
           >
             <div className="w-full">
               <div className="w-[25%] mb-8">
-                <Image
-                  src={image1}
-                  alt="image1"
-                  priority
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="rounded-3xl"
-                />
+                <Link href={`/package/${pack.id}`}>
+                  <Image
+                    src={image1}
+                    alt="image1"
+                    priority
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="rounded-3xl"
+                  />
+                </Link>
               </div>
+              
               <h5 className="text-gray-500 mb-2 text-2xl">{pack.name || 'Default name'}</h5>
 
-              {/* Affichage du prix : si sous-services présents, montrer le prix mensuel/annuel, sinon juste le prix */}
+              {/* Affichage du prix */}
               <h4 className="text-2xl font-bold mb-6">
-                {subServices && subServices.length > 0 ? (
-                  selectedPriceType === 'monthly'
-                    ? `$ ${pack.priceByMonth || '1000'}.00 USD / Month`
-                    : `$ ${pack.priceByYear || '12000'}.00 USD / Year`
-                ) : (
-                  `$ ${pack.price || '1000'}.00 USD`
-                )}
+                {selectedPriceType === 'monthly'
+                  ? `$ ${pack.priceByMonth || '1000'}.00 USD / Month`
+                  : `$ ${pack.priceByYear || '12000'}.00 USD / Year`}
               </h4>
 
               <p className="text-gray-500 text-lg mb-8">{pack.description || 'Default description'}</p>
@@ -143,16 +201,14 @@ const Packages: React.FC<Props> = ({ service, subServices }) => {
                 </div>
               ))}
               <div className="mt-10">
-                <Link href={`/package/${pack.id}`}>
-                  <motion.button
-                    whileHover={{ y: -10, transition: { type: 'spring' } }}
-                    className="flex items-center justify-center gap-2 w-full bg-red-500 text-white 
-                    rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group"
-                  >
-                    <h5 className="font-semibold text-base">Learn More</h5>
-                    <ArrowRight className="text-white group-hover:translate-x-2 transition-all duration-500" />
-                  </motion.button>
-                </Link>
+                <motion.button
+                  whileHover={{ y: -10, transition: { type: 'spring' } }}
+                  className="flex items-center justify-center gap-2 w-full bg-red-500 text-white 
+                  rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group"
+                  onClick={() => handleAddToCart(pack)} // Appel à la fonction handleAddToCart
+                >
+                  <h5 className="font-semibold text-base">Add to cart</h5>
+                </motion.button>
               </div>
             </div>
           </div>
@@ -162,4 +218,5 @@ const Packages: React.FC<Props> = ({ service, subServices }) => {
   );
 };
 
-export default Packages;
+export default PackagesComponent;
+

@@ -103,7 +103,7 @@ const CartView = ({openCart, open, carts}: {openCart: () => void, open: boolean,
                                           <div className='row sm:flex items-center justify-between mt-5'>
                                                 <h5 className='text-slate-500 font-bold'>Subtotal</h5>
                                                 <p className='font-semibold'>
-                                                      $ {carts.items?.map((item) => item.packageDuration * item.quantity)?.reduce((total, item) => 
+                                                      $ {carts.items?.map((item) => Number(item.packageDuration) * item.quantity)?.reduce((total, item) => 
                                                             { return total + item}, 0)}.00 USD
                                                 </p>
                                           </div>

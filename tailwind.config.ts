@@ -29,6 +29,9 @@ const config = {
       primary: "var(--font-plusJakartaSans)"
     },
     extend: {
+      backgroundImage: {
+        'hero': "url('../public/images/home_banner.jpg')",
+      },
       colors: {
         primary: '#1c1c22',
         accent: {

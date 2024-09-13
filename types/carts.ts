@@ -9,7 +9,7 @@ export interface Cart {
       id: string;
       userId: string | null;
       quantity: number;
-      packageDuration: number;
+      packageDuration: number | null;
       packageId: string;
       updatedAt: Date;
       package: {
@@ -35,17 +35,17 @@ export interface Package {
       points: string[];
       service: {
             id: string;
-      name: string;
-      description: string;
-      icon: string;
-      } | null
+            name: string;
+            description: string;
+            icon: string;
+      }
 }
 
 export interface CartItem {
       packageId: string;
       quantity: number;
-      packageDuration: number
-      package: Package
+      packageDuration: number | null;
+      package: Package;
 }
     
 export interface Carts {
