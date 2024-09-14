@@ -52,7 +52,7 @@ const NavMobile = () => {
             </div>
       </button>
       <div className={`absolute shadow-sm transition-all duration-500 
-            ${open ? 'top-[8rem] bg-white min-h-fit left-0 bottom-0 z-50 transition-all duration-500 ease-in-out right-0' 
+            ${open ? 'top-[6.3rem] bg-white min-h-fit left-0 bottom-0 z-50 transition-all duration-500 ease-in-out right-0' 
             : 'top-[-800px] left-0 right-0'}`}>
             <hr />
             <div className='px-8 flex flex-col items-start justify-start gap-10 py-24'>

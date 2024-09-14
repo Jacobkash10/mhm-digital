@@ -120,7 +120,7 @@ const page = () => {
                                                                   <FormLabel className='text-base font-bold'>Name*</FormLabel>
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
-                                                                              value={session?.user.name || ''}
+                                                                              value={session?.user.name ?? field.value}
                                                                               disabled={isPending} 
                                                                               className='border rounded-full text-xl px-4 py-7 
                                                                               placeholder:text-base hover:border-black/50 transition-all
@@ -141,7 +141,7 @@ const page = () => {
                                                                   <FormLabel className='text-base font-bold'>Email*</FormLabel>
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
-                                                                              value={session?.user.email || ''}
+                                                                              value={session?.user.email ?? field.value}
                                                                               disabled={isPending} 
                                                                               className='border rounded-full text-xl px-4 py-7 
                                                                               placeholder:text-base hover:border-black/50 transition-all
