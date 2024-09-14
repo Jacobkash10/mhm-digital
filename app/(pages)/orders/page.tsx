@@ -14,7 +14,7 @@ const page = async () => {
     include: {
       order: {
         include: {
-          client: true
+          user: true
         }
       },
       package: {
@@ -38,10 +38,7 @@ const page = async () => {
                   <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                       <tr>
                           <th scope="col" className="px-6 py-3">
-                              First name
-                          </th>
-                          <th scope="col" className="px-6 py-3">
-                              Last name
+                              Name
                           </th>
                           <th scope="col" className="px-6 py-3">
                               Email
@@ -69,13 +66,10 @@ const page = async () => {
                         <tr key={order.orderId} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 
                         even:dark:bg-gray-800 border-b dark:border-gray-700">
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {order.order.client.firstName}
+                                {order.order.user.name}
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {order.order.client.lastName}
-                            </td>
-                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {order.order.client.email}
+                                {order.order.user.email}
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {order.package.service?.name}
@@ -84,7 +78,7 @@ const page = async () => {
                                 {order.package.name}
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {order.order.price === order.package.priceByMonth ? '1 Month' : '1 Year'}
+                                {order.order.price === order.package.priceByMonth ? '1 Month' : 'No package duration'}
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {order.package.orders.length}

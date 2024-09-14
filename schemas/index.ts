@@ -31,8 +31,7 @@ export const addToCartSchema = z.object({
 })
 
 export const checkoutSchema = z.object({
-      firstName: z.string().min(1, "First name is required"),
-      lastName: z.string().min(1, "Last name is required"),
+      name: z.string().min(1, "First name is required"),
       phoneNumber: z.string().min(1, "Phone number is required"),
       email: z.string().email("Invalid email").min(1, "Email is required"),
       price: z.number(),

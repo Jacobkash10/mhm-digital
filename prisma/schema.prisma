@@ -22,14 +22,17 @@ enum UserRole {
 
 model User {
   id            String    @id @default(cuid())
-  name          String
   email         String    @unique
+  name          String
   password      String?
+  phoneNumber   String?
+  company       String?
   emailVerified DateTime?
   image         String?
   role          UserRole  @default(USER)
   accounts      Account[]
   sessions      Session[]
+  orders        Order[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -124,21 +127,12 @@ model Package {
   @@map("packages")
 }
 
-model Client {
-  id          String  @id @default(cuid())
-  firstName   String
-  lastName    String
-  phoneNumber String
-  email       String  @unique
-  orders      Order[]
-}
-
 model Order {
   id       String         @id @default(cuid())
-  clientId String
+  userId   String
   price    Int
   packages OrderPackage[]
-  client   Client         @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model OrderPackage {
