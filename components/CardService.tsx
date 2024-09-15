@@ -6,9 +6,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import image1 from '@/public/images/icon-1-service-marketing-template.svg'
-import image2 from '@/public/images/icon-2-service-marketing-template.svg'
-import image3 from '@/public/images/icon-3-service-marketing-template.svg'
-import image4 from '@/public/images/icon-4-service-marketing-template.svg'
 import {motion} from 'framer-motion'
 import { fadeIn } from '../variants'
 
@@ -21,6 +18,7 @@ interface Services {
       id: string
       description: string
       name: string
+      icon: string
 }
 
 const CardService = ({service}: Props) => {
@@ -39,8 +37,9 @@ const CardService = ({service}: Props) => {
                               whileHover={{ scale: 1.02, transition: {type: 'spring', duration: 0.7} }}
                               className='flex flex-col gap-5 lg:flex lg:flex-row items-start lg:gap-1'>
                                     <div className='w-[40%]'>
-                                          <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw'
-                                                className='rounded-3xl' />
+                                          {/* <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw'
+                                                className='rounded-3xl' /> */}
+                                          <img src={service.icon} alt="image-service" className='rounded-3xl' />
                                     </div>
                                     <div className='w-[100%]'>
                                           <h4 className='text-3xl font-bold mb-3'>{service.name || 'Lorem'}</h4>

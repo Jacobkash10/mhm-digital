@@ -5,9 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import image1 from '@/public/images/icon-1-service-marketing-template.svg'
-import image2 from '@/public/images/icon-2-service-marketing-template.svg'
-import image3 from '@/public/images/icon-3-service-marketing-template.svg'
-import image4 from '@/public/images/icon-4-service-marketing-template.svg'
 import {motion} from 'framer-motion'
 
 interface Props {
@@ -19,6 +16,7 @@ interface Services {
       id: string
       description: string
       name: string
+      icon: string
 }
 
 const ServiceItem = ({service}: Props) => {
@@ -33,8 +31,9 @@ const ServiceItem = ({service}: Props) => {
             <Link href={`/service/${service.id}`} className='flex flex-col xl:flex-row items-start gap-4 xl:gap-1 border rounded-[50px]
             bg-white px-10 py-12 shadow-[0_8px_30px_rgb(0,0,0,0.12)] group h-[400px] lg:h-[370px] xl:h-[280px]'>
                   <div className='w-[40%]'>
-                        <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
-                        className='rounded-3xl' />
+                        {/* <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
+                        className='rounded-3xl' /> */}
+                        <img src={service.icon} alt="image-service" className='rounded-3xl' />
                   </div>
                   <div className='w-[100%]'>
                         <h4 className='text-3xl font-bold mb-3'>{service.name || 'Default name'}</h4>

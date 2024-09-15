@@ -37,3 +37,12 @@ export const checkoutSchema = z.object({
       price: z.number(),
       packageIds: z.array(z.string()).nonempty("At least one package ID is required"),
     });
+
+export const contactSchema = z.object({
+      name: z.string().min(1, "First name is required"),
+      phoneNumber: z.string().min(1, "Phone number is required"),
+      email: z.string().email("Invalid email").min(1, "Email is required"),
+      service: z.string().min(1, "Service is required"),
+      description: z.string().optional(),
+      company: z.string().optional(),
+})

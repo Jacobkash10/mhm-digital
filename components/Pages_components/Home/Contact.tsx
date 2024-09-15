@@ -1,16 +1,79 @@
 "use client"
 
+import React, { useState, useTransition } from 'react'
+import {z} from 'zod'
+import { useRouter } from "next/navigation";
+import { useToast } from '@/components/ui/use-toast';
 import Image from 'next/image'
-import React from 'react'
 import image1 from '@/public/images/icon-1-contact-marketing-template.svg'
 import image2 from '@/public/images/icon-2-contact-marketing-template.svg'
+import {
+      Form as Forms,
+      FormControl,
+      FormField,
+      FormItem,
+      FormMessage,
+    } from "@/components/ui/form"
+import { FormError } from '@/components/form-error'
+import { FormSuccess } from '@/components/form-success'
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { ArrowRight, Building, Mail, Smartphone, UserRound } from 'lucide-react'
 import {motion} from 'framer-motion'
 import { opacite } from '../../../variants'
+import { contact } from '@/actions/contact'
+import { contactSchema } from '@/schemas';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-const Contact = () => {
+type Input = z.infer<typeof contactSchema>;
+
+interface Services {
+      id: string;
+      name: string;
+      description: string;
+      icon: string
+}
+
+interface Props {
+      services: Services[]
+}
+
+const Contact = ({services}: Props) => {
+
+      const router = useRouter()
+      const {toast} = useToast()
+      const [error, setError] = useState<string | undefined>("");
+      const [isPending, startTransition] = useTransition()
+      const form = useForm<Input>({
+            resolver: zodResolver(contactSchema),
+            defaultValues: {
+                  email: "",
+                  name: "",
+                  phoneNumber: "",
+                  service: "",
+                  description: "",
+                  company: "",
+            }
+        })
+
+      const onSubmit = (values: z.infer<typeof contactSchema>) => {
+            setError("")
+
+            startTransition(() => {
+                  contact(values)
+                  .then((data) => {
+                        setError(data.error)
+                        toast({
+                              title: "Success",
+                              description: "Message envoyé",
+                              variant: "default"
+                        })
+                        window.location.reload();
+                  })
+            })
+      }
+
   return (
       <div className='px-4 xl:px-14 pb-[100px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
             <hr />
@@ -44,48 +107,143 @@ const Contact = () => {
                         </div>
                         </div>
                   <div className='w-full xl:w-[52%]'>
-                        <form className='px-8 py-20 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)]'>
+                  <Forms {...form}>
+                        <form className='px-8 py-20 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
+                        onSubmit={form.handleSubmit(onSubmit)}>
                               <div className='flex flex-col sm:flex-row items-center justify-between gap-5 mb-7'>
                                     <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
-                                          <Input placeholder='Full Name' className='border-none rounded-full text-xl placeholder:text-base' />
+                                          {/* username */}
+                                          <FormField
+                                          control={form.control}
+                                          name="name"
+                                          render={({ field }) => (
+                                                <FormItem className='w-full'>
+                                                      <FormControl>
+                                                            <Input placeholder="Full name *" {...field}
+                                                                  disabled={isPending} 
+                                                                  className='border-none rounded-full text-xl placeholder:text-base' 
+                                                            />
+                                                      </FormControl>
+                                                      <FormMessage />
+                                                </FormItem>
+                                          )}
+                                          />
                                           <UserRound className='text-gray-400' size={36} />
                                     </div>
                                     <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
-                                          <Input placeholder='Email' className='border-none rounded-full text-xl placeholder:text-base' />
+                                          {/* email */}
+                                          <FormField
+                                          control={form.control}
+                                          name="email"
+                                          render={({ field }) => (
+                                                <FormItem className='w-full'>
+                                                      <FormControl>
+                                                            <Input placeholder="Email *" {...field}
+                                                                  disabled={isPending} 
+                                                                  className='border-none rounded-full text-xl placeholder:text-base' 
+                                                            />
+                                                      </FormControl>
+                                                      <FormMessage />
+                                                </FormItem>
+                                          )}
+                                          />
                                           <Mail className='text-gray-400' size={36} />
                                     </div>
                               </div>
                               <div className='flex flex-col sm:flex-row items-center justify-between gap-5 mb-7'>
                                     <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
-                                          <Input placeholder='Phone Number' className='border-none rounded-full text-xl placeholder:text-base' />
+                                          {/* phoneNumber */}
+                                          <FormField
+                                          control={form.control}
+                                          name="phoneNumber"
+                                          render={({ field }) => (
+                                                <FormItem className='w-full'>
+                                                      <FormControl>
+                                                            <Input placeholder="Pnone number *" {...field}
+                                                                  disabled={isPending} 
+                                                                  className='border-none rounded-full text-xl placeholder:text-base' 
+                                                            />
+                                                      </FormControl>
+                                                      <FormMessage />
+                                                </FormItem>
+                                          )}
+                                          />
                                           <Smartphone className='text-gray-400' size={36} />
                                     </div>
                                     <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
-                                          <Input placeholder='Company Name' className='border-none rounded-full text-xl placeholder:text-base' />
+                                          {/* company */}
+                                          <FormField
+                                          control={form.control}
+                                          name="company"
+                                          render={({ field }) => (
+                                                <FormItem className='w-full'>
+                                                      <FormControl>
+                                                            <Input placeholder="Company name" {...field}
+                                                                  disabled={isPending} 
+                                                                  className='border-none rounded-full text-xl placeholder:text-base' 
+                                                            />
+                                                      </FormControl>
+                                                      <FormMessage />
+                                                </FormItem>
+                                          )}
+                                          />
                                           <Building className='text-gray-400' size={36} />
                                     </div>
                               </div>
-                              <div className='flex flex-col sm:flex-row items-center justify-between gap-5 mb-7'>
-                                    <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
-                                          <Input placeholder='Service' className='border-none rounded-full text-xl placeholder:text-base' />
-                                    </div>
-                                    <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
-                                          <Input placeholder='Budget' className='border-none rounded-full text-xl placeholder:text-base' />
+                              <div className='mb-7'>
+                                    <div className='w-full flex items-center justify-between rounded-full gap-2'>
+                                    {/* service */}
+                                    <FormField
+                                                control={form.control}
+                                                name="service"
+                                                render={({ field }) => (
+                                                      <FormItem className='w-full'>
+                                                      <select onChange={field.onChange} defaultValue={field.value} required
+                                                      className='w-full bg-white px-5 py-5 rounded-[40px] border 
+                                                    hover:border-blue-400 transition-all duration-300 cursor-pointer'>
+                                                            <option value="" className='text-gray-400'>Select a service *</option>
+                                                            {
+                                                                  services.map((item, index) => (
+                                                                        <option key={index} value={item.name}>{item.name}</option>
+                                                                  ))
+                                                            }
+                                                      </select>
+                                                      </FormItem>
+                                                )}
+                                          />
                                     </div>
                               </div>
                               <div className='mb-7'>
-                                    <Textarea placeholder='Describe your project...' className='rounded-3xl pt-5 pb-20 px-6 text-xl placeholder:text-base' />
+                                    {/* description */}
+                                    <FormField
+                                          control={form.control}
+                                          name="description"
+                                          render={({ field }) => (
+                                                <FormItem className='w-full'>
+                                                      <FormControl>
+                                                            <Textarea placeholder="Describe your project..." {...field}
+                                                                  disabled={isPending} 
+                                                                  className='rounded-3xl pt-5 pb-20 px-6 text-xl placeholder:text-base' 
+                                                            />
+                                                      </FormControl>
+                                                      <FormMessage />
+                                                </FormItem>
+                                          )}
+                                    />
                               </div>
+                              <FormError message={error} />
+                              <br />
                               <div>
                                     <motion.button 
-                                    whileHover={{ y: -10, transition: {type: 'spring'} }} 
-                                    className='flex items-center gap-2 bg-red-500 text-white rounded-full px-10 py-6 
-                                    shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
+                                    whileHover={{ y: -12, transition: {type: 'spring'} }}
+                                    className='flex items-center gap-2 bg-red-500 text-white 
+                                    rounded-full px-10 py-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]' type='submit'>
                                           <h5 className='font-semibold text-base sm:text-[20px]'>Get in Touch</h5>
-                                          <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
+                                          <ArrowRight className='text-white' />
                                     </motion.button>
                               </div>
                         </form>
+                        </Forms>
                   </div>
             </motion.div>
       </div>

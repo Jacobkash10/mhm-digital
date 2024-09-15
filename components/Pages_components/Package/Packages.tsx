@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { ArrowRight, Check } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { CartItem } from '@/types/carts';
+import { addToCart } from '@/lib/cartUtils';
 
 interface Package {
   id: string;
@@ -27,7 +29,7 @@ interface Service {
   id: string;
   name: string;
   packages: Package[];
-  subServices?: SubService[]; // Utilisation de l'opérateur optionnel
+  subServices?: SubService[];
 }
 
 interface Props {
@@ -60,6 +62,48 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
   const filteredPackages = selectedSubServiceId
     ? selectedService?.subServices?.find(sub => sub.id === selectedSubServiceId)?.packages || []
     : selectedService?.packages || [];
+
+   // Fonction pour ajouter un package au panier
+const handleAddToCart = (pack: Package) => {
+  if (!selectedService) {
+    console.error('Le service sélectionné est introuvable');
+    return;
+  }
+
+  // Définir la durée en fonction du prix sélectionné
+  const selectedDuration =
+    pack.priceByMonth && pack.priceByYear
+      ? selectedPriceType === 'monthly'
+        ? pack.priceByMonth
+        : pack.priceByYear
+      : pack.price;
+
+  const price = selectedPriceType === 'monthly' ? pack.priceByMonth : pack.priceByYear;
+
+  // Création de l'objet CartItem avec un mapping du service
+  const item: CartItem = {
+    packageId: pack.id,
+    quantity: 1,
+    packageDuration: selectedDuration || 0, // S'assurer que la durée existe
+    package: { 
+      ...pack, 
+      service: {
+        id: selectedService.id,
+        name: selectedService.name,
+        description: "Description du service",  // Ajoutez une description si nécessaire
+        icon: "path_to_icon"  // Ajoutez une icône ou un placeholder
+      },
+      serviceId: selectedService.id,
+    }
+  };
+
+  // Ajouter l'item au panier
+  addToCart(item);
+
+  // Notification et rechargement de la page
+  alert(`Le package a été ajouté au panier!`);
+  window.location.reload();
+};
 
   return (
     <div
@@ -145,15 +189,17 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
           >
             <div className="w-full">
               <div className="w-[20%] md:w-[15%] lg:w-[10%] xl:w-[25%] mb-8">
-                <Image
-                  src={image1}
-                  alt="image1"
-                  priority
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="rounded-3xl"
-                />
+                <Link href={`/package/${pack.id}`}>
+                  <Image
+                    src={image1}
+                    alt="image1"
+                    priority
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="rounded-3xl"
+                  />
+                </Link>
               </div>
               <h5 className="text-gray-500 mb-2 text-2xl">{pack.name || 'Default name'}</h5>
 
@@ -181,16 +227,14 @@ const hasSubServices = selectedService?.subServices && selectedService.subServic
                 </div>
               ))}
               <div className="mt-10">
-                <Link href={`/package/${pack.id}`}>
                   <motion.button
                     whileHover={{ y: -10, transition: { type: 'spring' } }}
-                    className="flex items-center justify-center gap-2 w-full bg-red-500 text-white 
-                    rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group max-w-fit"
+                    className="flex items-center justify-center w-full bg-red-500 text-white
+                    rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group max-w-fit xl:max-w-full"
+                    onClick={() => handleAddToCart(pack)}
                   >
-                    <h5 className="font-semibold text-base">Learn More</h5>
-                    <ArrowRight className="text-white group-hover:translate-x-2 transition-all duration-500" />
+                    <h5 className="font-semibold text-base">Add to cart</h5>
                   </motion.button>
-                </Link>
               </div>
             </div>
           </div>

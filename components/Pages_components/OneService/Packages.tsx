@@ -93,16 +93,14 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
     // Création de l'objet CartItem avec validation des données
     const item: CartItem = {
       packageId: pack.id,
-      quantity: 1, // Par défaut, ajouter 1 unité
-      packageDuration: selectedDuration, // Sélectionner la durée (mensuelle/annuelle)
-      package: { ...pack, service } // Vous pouvez ajuster ici ce que vous souhaitez ajouter pour "package"
+      quantity: 1,
+      packageDuration: selectedDuration,
+      package: { ...pack, service }
     };
 
-    // Appel à la fonction addToCart
     addToCart(item);
 
-    // Notification utilisateur
-    alert(`${pack.name} a été ajouté au panier!`);
+    alert(`Le package a été ajouté au panier!`);
     window.location.reload(); 
   };
 
@@ -205,7 +203,7 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
                   whileHover={{ y: -10, transition: { type: 'spring' } }}
                   className="flex items-center justify-center gap-2 w-full bg-red-500 text-white 
                   rounded-full px-10 py-4 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group"
-                  onClick={() => handleAddToCart(pack)} // Appel à la fonction handleAddToCart
+                  onClick={() => handleAddToCart(pack)}
                 >
                   <h5 className="font-semibold text-base">Add to cart</h5>
                 </motion.button>

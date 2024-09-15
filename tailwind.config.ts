@@ -30,7 +30,7 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        'hero': "url('../public/images/home_banner.jpg')",
+        'hero': "url('../public/images/banner.jpeg')",
       },
       colors: {
         primary: '#1c1c22',

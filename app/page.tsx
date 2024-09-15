@@ -7,9 +7,13 @@ import Process from '@/components/Pages_components/Home/Process'
 import Services from '@/components/Pages_components/Home/Services'
 import Testimonial from '@/components/Pages_components/Home/Testimonial'
 import Why from '@/components/Pages_components/Home/Why'
+import { db } from '@/lib/db'
 import React from 'react'
 
-function page() {
+async function page () {
+
+  const services = await db.service.findMany()
+
   return (
     <div>
       <Banner />
@@ -20,7 +24,7 @@ function page() {
       <Case />
       <Testimonial />
       <Blog />
-      <Contact />
+      <Contact services={services} />
     </div>
   )
 }

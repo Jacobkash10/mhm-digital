@@ -154,3 +154,13 @@ model Cart {
   updatedAt       DateTime @updatedAt
   package         Package? @relation(fields: [packageId], references: [id], onDelete: Cascade)
 }
+
+model Contact {
+  id          String  @id @default(cuid())
+  name        String
+  email       String
+  phoneNumber String
+  company     String?
+  service     String
+  description String?
+}

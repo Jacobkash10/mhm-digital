@@ -17,6 +17,7 @@ interface Services {
       id: string
       description: string
       name: string
+      icon: string
 }
 
 const Service = ({service}: Props) => {
@@ -36,8 +37,9 @@ const Service = ({service}: Props) => {
                   <h2 className='text-3xl md:text-[50px] max-w-md md:max-w-xl font-bold leading-tight'>
                         {service.name || 'Default name'}
                   </h2>
-                  <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
-                  className='rounded-3xl' />
+                  {/* <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
+                  className='rounded-3xl' /> */}
+                  <img src={service.icon} alt="image-service" className='rounded-3xl' />
                   <p className='text-lg text-center xl:text-left text-gray-500 font-semibold leading-9'>
                         {service.description || 'Default description'}
                   </p>

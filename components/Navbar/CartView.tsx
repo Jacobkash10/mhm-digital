@@ -14,7 +14,7 @@ const CartView = ({openCart, open, carts}: {openCart: () => void, open: boolean,
 
       const handleRemoveFromCart = (packageId: string) => {
             removeFromCart(packageId);
-            alert('Package supprimé du panier!');
+            alert('Package a été supprimé du panier!');
           };
 
   return (
