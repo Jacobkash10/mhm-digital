@@ -51,7 +51,7 @@ export default function SettingsPage({user}: SettingsPageProps) {
 
   return (
     <main className=" px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem] py-10">
-      <div className="row md:flex items-center justify-between gap-4 md:gap-0 w-full">
+      <div className="flex flex-col items-center justify-center w-full">
         <section className="w-full md:w-[50%] xl:w-[40%] space-y-6">
           <Form {...form}>
             <form
@@ -84,15 +84,6 @@ export default function SettingsPage({user}: SettingsPageProps) {
               </Button>
             </form>
           </Form>
-        </section>
-        <section className="w-full md:w-[50%]">
-          <motion.div 
-          animate={{ rotate: 360 }}
-          transition={{ duration: 6, delay: .4, repeat: Infinity }}
-          className="w-[90%]">
-            <Image src={image} alt='image1' priority width={0} height={0} sizes='100vw' 
-            className='w-full' />
-          </motion.div>
         </section>
       </div>      
     </main>

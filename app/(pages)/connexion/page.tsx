@@ -142,14 +142,15 @@ const Page = () => {
                               <div className='flex flex-col items-center justify-center mt-6'>
                                           <Button disabled={isPending}  type='submit' 
                                           className='flex items-center justify-center gap-2 w-full bg-red-500 text-white 
-                                          rounded-full px-10 py-8 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]'>
+                                          rounded-full px-10 py-8 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] hover:bg-red-600'>
                                                 <h5 className='font-semibold text-[20px]'>Sign in</h5>
                                           </Button>
                               </div>
                               <h5 className='flex flex-col items-center justify-center mt-3'>Or</h5>
                         <hr />
                         <div className='flex items-center justify-center mt-4'>
-                              <Button onClick={() => onClick('google')} variant='outline' type='button' className='flex items-center gap-3 py-7 rounded-full w-full'>
+                              <Button onClick={() => onClick('google')} variant='outline' type='button' 
+                              className='flex items-center gap-3 py-7 rounded-full w-full hover:bg-slate-200'>
                                     <Google />
                                     <p className='text-xl font-light'>Connect with Google</p>
                               </Button>
