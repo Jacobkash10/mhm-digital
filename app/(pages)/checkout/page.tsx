@@ -36,6 +36,8 @@ const page = () => {
           name: "",
           email: "",
           phoneNumber: "",
+          billingAddress: "",
+          shippingAddress: "",
           price: carts.items?.map((item) => Number(item.packageDuration) * item.quantity)?.reduce((total, item) => 
             { return total + item}, 0),
           packageIds: carts.items.map((item) => item.packageId)
@@ -120,7 +122,7 @@ const page = () => {
                                                                   <FormLabel className='text-base font-bold'>Name*</FormLabel>
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
-                                                                              value={session?.user.name ?? field.value}
+                                                                              // value={session?.user.name || `${session?.user.name}`}
                                                                               disabled={isPending} 
                                                                               className='border rounded-full text-xl px-4 py-7 
                                                                               placeholder:text-base hover:border-black/50 transition-all
@@ -141,7 +143,7 @@ const page = () => {
                                                                   <FormLabel className='text-base font-bold'>Email*</FormLabel>
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
-                                                                              value={session?.user.email ?? field.value}
+                                                                              // value={session?.user.email || `${session?.user.email}`}
                                                                               disabled={isPending} 
                                                                               className='border rounded-full text-xl px-4 py-7 
                                                                               placeholder:text-base hover:border-black/50 transition-all
@@ -174,7 +176,7 @@ const page = () => {
                                                       />
                                                 </div>
                                           </div>
-                                          {/* <div className='px-8 py-10 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] mt-10'>
+                                          <div className='px-8 py-10 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] mt-10'>
                                                 <div className='flex justify-between items-center'>
                                                       <h3 className='text-xl font-bold'>Payment Info</h3>
                                                       <h3 className='text-xl font-semibold text-red-500'>* Required</h3>
@@ -182,10 +184,10 @@ const page = () => {
                                                 <div className='w-full mt-8'>
                                                       <FormField
                                                       control={form.control}
-                                                      name="firstName"
+                                                      name="shippingAddress"
                                                       render={({ field }) => (
                                                             <FormItem className='w-full'>
-                                                                  <FormLabel className='text-base font-bold'>Card Number*</FormLabel>
+                                                                  <FormLabel className='text-base font-bold'>Shipping address*</FormLabel>
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
                                                                               disabled={isPending} 
@@ -199,49 +201,27 @@ const page = () => {
                                                       )}
                                                       />
                                                 </div>
-                                                <div className='flex items-center justify-between gap-5 mt-8'>
-                                                      <div className='w-full'>
-                                                            <FormField
-                                                            control={form.control}
-                                                            name="firstName"
-                                                            render={({ field }) => (
-                                                                  <FormItem className='w-full'>
-                                                                        <FormLabel className='text-base font-bold'>Expiration Date*</FormLabel>
-                                                                        <FormControl>
-                                                                              <Input placeholder="" {...field}
-                                                                                    disabled={isPending} 
-                                                                                    className='border rounded-full text-xl px-4 py-7 
-                                                                                    placeholder:text-base hover:border-black/50 transition-all
-                                                                                    duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
-                                                                              />
-                                                                        </FormControl>
-                                                                        <FormMessage />
-                                                                  </FormItem>
-                                                            )}
-                                                            />
-                                                      </div>
-                                                      <div className='w-full'>
-                                                            <FormField
-                                                            control={form.control}
-                                                            name="firstName"
-                                                            render={({ field }) => (
-                                                                  <FormItem className='w-full'>
-                                                                        <FormLabel className='text-base font-bold'>Security Code*</FormLabel>
-                                                                        <FormControl>
-                                                                              <Input placeholder="" {...field}
-                                                                                    disabled={isPending} 
-                                                                                    className='border rounded-full text-xl px-4 py-7 
-                                                                                    placeholder:text-base hover:border-black/50 transition-all
-                                                                                    duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
-                                                                              />
-                                                                        </FormControl>
-                                                                        <FormMessage />
-                                                                  </FormItem>
-                                                            )}
-                                                            />
-                                                      </div>
+                                                <div className='w-full mt-8'>
+                                                      <FormField
+                                                      control={form.control}
+                                                      name="billingAddress"
+                                                      render={({ field }) => (
+                                                            <FormItem className='w-full'>
+                                                                  <FormLabel className='text-base font-bold'>Billing address*</FormLabel>
+                                                                  <FormControl>
+                                                                        <Input placeholder="" {...field}
+                                                                              disabled={isPending} 
+                                                                              className='border rounded-full text-xl px-4 py-7 
+                                                                              placeholder:text-base hover:border-black/50 transition-all
+                                                                              duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
+                                                                        />
+                                                                  </FormControl>
+                                                                  <FormMessage />
+                                                            </FormItem>
+                                                      )}
+                                                      />
                                                 </div>
-                                          </div> */}
+                                          </div>
                                           <div className='px-8 py-10 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] mt-10'>
                                                 <h3 className='text-xl font-bold'>Items in Order</h3>
                                                 <div className='mt-8'>

@@ -246,7 +246,6 @@ const handleAddToCart = (pack: Package) => {
                         Looking for a custom marketing package or campaign?
                   </h5>
                   <p className='text-lg text-gray-500 max-w-md text-center mb-6'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elitolem. Accumsan convallis
                   </p>
                   <Link href={'/contact'}>
                         <motion.button 

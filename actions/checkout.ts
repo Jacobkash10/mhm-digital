@@ -20,12 +20,12 @@ export const checkOut = async (values: z.infer<typeof checkoutSchema>) => {
             return {error: "Invalid fields!"}
       }
 
-      const {name, email, phoneNumber, packageIds, price} = validateFields.data
+      const {name, email, phoneNumber, packageIds, price, billingAddress, shippingAddress} = validateFields.data
 
       const existingUser = await db.user.upsert({
             where: { email },
-            update: { name, phoneNumber },
-            create: { name, phoneNumber, email }
+            update: { name, phoneNumber, billingAddress, shippingAddress },
+            create: { name, phoneNumber, email, billingAddress, shippingAddress }
       });
 
       // Crée des objets OrderPackage avec les identifiants des paquets

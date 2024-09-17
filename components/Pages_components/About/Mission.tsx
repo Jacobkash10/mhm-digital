@@ -25,23 +25,13 @@ const Mission = () => {
                         </h5> 
                   </div>
                   <h1 className='text-3xl md:text-[44px] text-center xl:text-left font-bold leading-tight mb-10 max-w-xl'>
-                        We started with a single mission: Help startups grow
+                  Empowering Startups to Succeed
                   </h1>
-                  <p className='text-lg xl:text-xl text-center xl:text-left text-gray-500 mb-10 max-w-2xl'>
-                        Lorem ipsum dolor sit amet, consectetur 
-                        adipiscing elit. Curabitur id neque, 
-                        malesuada sapien dictum lacinia sed tellus 
-                        integer. Ante phasellus morbi id sollicitudin 
-                        odio amet. Proin orci volutpat cras mauris quis. 
-                        Ante enim ut sapien volutpat id mattis.
+                  <p className='text-lg xl:text-[18px] font-medium text-center xl:text-left text-gray-500 mb-10 max-w-2xl'>
+                  Our mission is to help startups and businesses reach their full potential. We create tailored marketing strategies that drive growth and deliver measurable results, aligning our efforts with your unique goals.
                   </p>
-                  <p className='text-lg xl:text-xl text-center xl:text-left text-gray-500 max-w-2xl'>
-                        Interdum sed lectus et, at orci et cursus. 
-                        Diam erat rhoncus proin nulla ac aliquam at 
-                        ultrices et. Mi, odio morbi ullamcorper 
-                        suspendisse amet a mi feugiat pretium. 
-                        Lacus, tincidunt ac mauris viverra scelerisque 
-                        viverra praesent eu leo.
+                  <p className='text-lg xl:text-[18px] font-medium text-center xl:text-left text-gray-500 max-w-2xl'>
+                  We’re committed to leveraging innovative solutions and data-driven insights to support your success. As your trusted partner, we provide the expertise needed to navigate the market and achieve your objectives.
                   </p>
             </div>
             <motion.div 

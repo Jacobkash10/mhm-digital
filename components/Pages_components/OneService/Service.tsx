@@ -49,7 +49,7 @@ const Service = ({service}: Props) => {
                               whileHover={{ y: -10, transition: {type: 'spring'} }}
                               className='flex items-center gap-2 bg-red-500 text-white rounded-full px-10 py-5 
                               shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] group'>
-                                    <h5 className='font-semibold text-[17px]'>Request a quote</h5>
+                                    <h5 className='font-semibold text-[17px]'>Contact us</h5>
                                     <ArrowRight className='text-white group-hover:translate-x-2 transition-all duration-500' />
                               </motion.button>
                         </Link>

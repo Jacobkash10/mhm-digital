@@ -22,14 +22,11 @@ const Story = () => {
                         </h5> 
                   </div>
                   <h1 className='text-3xl md:text-[44px] font-bold leading-tight mb-10 sm:max-w-3xl xl:max-w-xl'>
-                  The story behind our Marketing Mhm Digital
+                  The Journey of MHM Digital
                   </h1>
             </div>
             <div className='w-full xl:w-[48%]'>
                   <p className='text-lg text-gray-500 mb-10'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Curabitur id neque, malesuada sapien dictum lacinia sed 
-                        tellus integer. Ante phasellus morbi id sollicitudin odio amet.
                   </p>
             </div>
       </motion.div>
@@ -41,34 +38,34 @@ const Story = () => {
       className='mt-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5'>
             <div className=' bg-white rounded-3xl py-8 px-6
                   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]'>
-                  <h3 className='text-[56px] font-bold text-red-500 mb-4'>2021</h3>
-                  <h5 className='text-2xl font-bold mb-2'>Founded</h5>
+                  <h3 className='text-[56px] font-bold text-red-500 mb-4'>2020</h3>
+                  <h5 className='text-2xl font-bold mb-2'>Started as a Freelancer</h5>
                   <p className='text-lg text-gray-500'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio vel ultricies dignissim.
+                  Began the journey with a vision to innovate.
                   </p>
             </div>
             <div className=' bg-white rounded-3xl py-8 px-6
                   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]'>
-                  <h3 className='text-[56px] font-bold text-blue-500 mb-4'>2022</h3>
-                  <h5 className='text-2xl font-bold mb-2'>First Employee</h5>
+                  <h3 className='text-[34px] font-bold text-blue-500 mb-4'>2021-2022</h3>
+                  <h5 className='text-2xl font-bold mb-2'>Expanded Reach and Built a Passionate Team</h5>
                   <p className='text-lg text-gray-500'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio vel ultricies dignissim.
+                  Worked with companies in Morocco and grew our team with individuals who share our vision and drive.
                   </p>
             </div>
             <div className=' bg-white rounded-3xl py-8 px-6
                   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]'>
                   <h3 className='text-[56px] font-bold text-blue-400 mb-4'>2023</h3>
-                  <h5 className='text-2xl font-bold mb-2'>25 Employees</h5>
+                  <h5 className='text-2xl font-bold mb-2'>Expanded to the USA</h5>
                   <p className='text-lg text-gray-500'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio vel ultricies dignissim.
+                  Broadened our horizons and market presence.
                   </p>
             </div>
             <div className=' bg-white rounded-3xl py-8 px-6
                   shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]'>
                   <h3 className='text-[56px] font-bold text-yellow-500 mb-4'>2024</h3>
-                  <h5 className='text-2xl font-bold mb-2'>100 Employees</h5>
+                  <h5 className='text-2xl font-bold mb-2'>New Goals and Focus</h5>
                   <p className='text-lg text-gray-500'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio vel ultricies dignissim.
+                  Setting ambitious goals and exploring new areas of growth
                   </p>
             </div>
       </motion.div>

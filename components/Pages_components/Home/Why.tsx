@@ -25,35 +25,33 @@ const Why = () => {
             <div className='w-full xl:w-[45%] flex flex-col justify-center items-center xl:block mt-[200px]'>
                   <div className="flex items-center gap-2 mb-3"> 
                         <Minus className='text-red-500' />
-                        <h5 className=" text-red-500 text-xl font-semibold"> 
-                        Why Marketing Agencypro
+                        <h5 className=" text-red-500 text-[18px] font-extrabold"> 
+                        Why Choose MHM Digital?
                         </h5> 
                   </div>
                   <h2 className='text-3xl md:text-[44px] max-w-xl font-bold leading-snug mb-4 text-center xl:text-left lg:max-w-lg'>
-                  Why working with us?
+                  Why work with us?
                   </h2>
                   <p className='text-lg text-gray-500 max-w-xl text-center xl:text-left'>
-                        Lorem ipsum consectetur amet dolor sit comeneer ilremsilom 
-                        dolce issilm acalrm leoinsion duycoqun consemleint lorem. 
-                        Lorem ipsum consectetur amet dolor sit.
+                  We transform your vision into reality, with strategies focused on elevating your brand and driving measurable success.
                   </p>
                   <div className='mt-8 flex items-center gap-4'>
                         <span className='w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center'>
                               <Check />
                         </span>
-                        <h5 className='text-xl font-medium'>Guaranteed Results</h5>
+                        <h5 className='text-xl font-medium'>Expert team dedicated to your growth</h5>
                   </div>
                   <div className='mt-4 flex items-center gap-4'>
                         <span className='w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center'>
                               <Check />
                         </span>
-                        <h5 className='text-xl font-medium'>10+ Years of Experience</h5>
+                        <h5 className='text-xl font-medium'>7+ years of experience</h5>
                   </div>
                   <div className='mt-4 flex items-center gap-4'>
                         <span className='w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center'>
                               <Check />
                         </span>
-                        <h5 className='text-xl font-medium'>Team of Industry Experts</h5>
+                        <h5 className='text-xl font-medium'>Proven success, guaranteed to deliver results</h5>
                   </div>
                   <div className='mt-10'>
                         <Link href={'/contact'}>

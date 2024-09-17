@@ -18,7 +18,7 @@ const Case = () => {
     whileInView={"show"}
     viewport={{ once: false, amount: 0.2 }} 
     className='px-4 xl:px-14 py-[100px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
-      <div className='flex-col flex items-start xl:flex-row xl:items-center justify-between mb-8 xl:mb-3'>
+      <div className='flex-col flex items-start xl:flex-row xl:items-center justify-between mb-8 xl:mb-5'>
             <div className=''>
                   <div className="flex items-center gap-2"> 
                         <Minus className='text-red-500' />
@@ -27,15 +27,12 @@ const Case = () => {
                         </h5> 
                   </div>
                   <h2 className='text-3xl md:text-[44px] max-w-xl font-bold leading-tight mb-4'>
-                        Not convinced? Take a look at some of our case studies
+                  See how we drive business success.
                   </h2>
             </div>
             <div>
                   <p className='text-base md:text-xl text-gray-500 max-w-xl'>
-                  Lorem ipsum consectetur amet dolor sit 
-                  comeneer ilremsilom dolce issilm acalrm 
-                  leoinsion duycoqun consemleint lorem. 
-                  Lorem ipsum consectetur amet dolor sit.
+                  Browse through our detailed examples to understand our approach and the results we've delivered.
                   </p>
             </div>
       </div>

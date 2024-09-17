@@ -27,10 +27,7 @@ const FAQ = () => {
                   </h2>
             </div>
             <div className='w-full xl:w-[48%]'>
-                  <p className='text-lg text-gray-500'>
-                  Lorem ipsum dolor sit amet, consecteturor adipiscing elit. 
-                  Tincidunt donec vulputate ipsum erat urna auctor.
-                  </p>
+                  <p></p>
             </div>
       </div>
       <motion.div 
@@ -47,9 +44,13 @@ const FAQ = () => {
                   p-5
                   ">
                   <AccordionItem value="item-1">
-                        <AccordionTrigger className='text-lg md:text-xl font-semibold'>Is it accessible?</AccordionTrigger>
+                        <AccordionTrigger className='text-lg md:text-xl font-bold'>
+                        1. What services does MHM Digital offer?
+                        </AccordionTrigger>
                         <AccordionContent className='text-gray-500 text-base md:text-lg'>
-                        Yes. It adheres to the WAI-ARIA design pattern.
+                        MHM Digital offers a range of services including Branding, Web Design & Development, 
+                        Digital Marketing (Social Media Marketing, SEO, PPC, Content Marketing, Email Marketing), 
+                        Mobile App Development, Animation, and Mobile & Online Notarization.
                         </AccordionContent>
                   </AccordionItem>
                   </Accordion>
@@ -62,9 +63,14 @@ const FAQ = () => {
                   p-5
                   ">
                   <AccordionItem value="item-1">
-                        <AccordionTrigger className='text-lg md:text-xl font-semibold'>Is it accessible?</AccordionTrigger>
+                        <AccordionTrigger className='text-lg md:text-xl font-bold'>
+                        2. How do I choose the right package for my needs?
+                        </AccordionTrigger>
                         <AccordionContent className='text-gray-500 text-base md:text-lg'>
-                        Yes. It adheres to the WAI-ARIA design pattern.
+                        We offer Starter, Growth, and Ultimate packages for each service to cater 
+                        to different needs and budgets. You can find detailed descriptions of 
+                        each package on our Packages page. If you need further assistance, feel 
+                        free to contact us.
                         </AccordionContent>
                   </AccordionItem>
                   </Accordion>
@@ -84,9 +90,12 @@ const FAQ = () => {
                   p-5
                   ">
                   <AccordionItem value="item-1">
-                        <AccordionTrigger className='text-lg md:text-xl font-semibold'>Is it accessible?</AccordionTrigger>
+                        <AccordionTrigger className='text-lg md:text-xl font-bold'>
+                        3. How can I get a quote for a custom project?
+                        </AccordionTrigger>
                         <AccordionContent className='text-gray-500 text-base md:text-lg'>
-                        Yes. It adheres to the WAI-ARIA design pattern.
+                        To get a personalized quote, please contact us with details about your project. 
+                        We’ll review your requirements and provide a tailored proposal.
                         </AccordionContent>
                   </AccordionItem>
                   </Accordion>
@@ -99,9 +108,14 @@ const FAQ = () => {
                   p-5
                   ">
                   <AccordionItem value="item-1">
-                        <AccordionTrigger className='text-lg md:text-xl font-semibold'>Is it accessible?</AccordionTrigger>
+                        <AccordionTrigger className='text-lg font-bold'>
+                        4. What is the process for starting a project with MHM Digital?
+                        </AccordionTrigger>
                         <AccordionContent className='text-gray-500 text-base md:text-lg'>
-                        Yes. It adheres to the WAI-ARIA design pattern.
+                        Once you reach out to us, we’ll discuss your project requirements and goals. 
+                        After agreeing on the scope and package, we’ll start with a marketing plan, 
+                        execute the strategy, and then focus on growth and scaling. Detailed steps 
+                        are outlined on our Our Process page.
                         </AccordionContent>
                   </AccordionItem>
                   </Accordion>

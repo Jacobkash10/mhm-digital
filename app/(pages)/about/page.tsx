@@ -15,8 +15,8 @@ function page() {
     <Mission />
     <Story />
     <Values />
-    <Office />
-    <Team />
+    {/* <Office /> */}
+    {/* <Team /> */}
     </>
   )
 }

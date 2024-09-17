@@ -4,6 +4,8 @@ import { CartContext } from "@/context/CartContext"
 import { useContext, useEffect } from "react"
 import { FaCartShopping } from "react-icons/fa6"
 import { Carts } from '@/types/carts'
+import Image from 'next/image';
+import image1 from '@/public/images/V1.png'
 
 
 export function Cart({openCart, carts}: {openCart: () => void, carts: Carts}) {

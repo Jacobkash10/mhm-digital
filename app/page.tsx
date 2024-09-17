@@ -22,8 +22,8 @@ async function page () {
       <About />
       <Process />
       <Case />
-      <Testimonial />
-      <Blog />
+      {/* <Testimonial /> */}
+      {/* <Blog /> */}
       <Contact services={services} />
     </div>
   )

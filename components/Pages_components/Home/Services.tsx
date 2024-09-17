@@ -22,7 +22,7 @@ const Services = async () => {
                   <div className='pb-[70px] sm:pb-[90px] lg:pb-0'>
                         <div className="flex items-center gap-2 mb-3"> 
                               <Minus className='text-red-500' />
-                              <h5 className="text-red-500 text-xl font-semibold"> 
+                              <h5 className="text-red-500 text-[18px] font-extrabold"> 
                                     Our Services
                               </h5> 
                         </div>

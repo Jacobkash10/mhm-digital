@@ -28,8 +28,7 @@ const Footer = () => {
                               </Link>
                         </div>
                         <p className='text-base text-gray-500 pt-6'>
-                              Lorem ipsum consectetur amet dolor sit comeneer ilremsilom dolce issilm acalrm 
-                              leoinsion duycoqun consemleint lorem.
+                        A digital growth agency helping businesses thrive with innovative solutions tailored to your needs.
                         </p>
                   </div>
                   <div className='w-full lg:w-[52%]'>
@@ -78,10 +77,12 @@ const Footer = () => {
                                           <Link className='hover:underline' href={'/terms-and-conditions'}>Terms</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/privacy'}>Privacy</Link>
+                                          <Link className='hover:underline' href={'/privacy'}>Privacy Policy</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/carrers'}>Carrers</Link>
+                                          <Link className='hover:underline' href={'https://www.linkedin.com/company/mhm-digital/'}>
+                                          Carrers
+                                          </Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
                                           <Link className='hover:underline' href={'/process'}>Our Process</Link>
@@ -95,7 +96,7 @@ const Footer = () => {
                                           <Link className='hover:underline' href={'/site-map'}>Site Map</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/blog'}>Blog</Link>
+                                          <Link className='hover:underline' href={'https://mhmdigital.us/blog'}>Blog</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
                                           <Link className='hover:underline' href={'/faq'}>FAQ</Link>
@@ -109,24 +110,27 @@ const Footer = () => {
                               <h5 className='text-xl font-bold'>Tools</h5>
                               <div className='pt-6'>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/'}>Marketing Tools</Link>
+                                          <Link className='hover:underline' href={'https://mhmdigital.io'}>Marketing Tools</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/'}>File Transfer</Link>
+                                          <Link className='hover:underline' href={'https://ft.mhmdigital.io'}>File Transfer</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/packages'}>Social Proof</Link>
+                                          <Link className='hover:underline' href={'https://sp.mhmdigital.io'}>Social Proof</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'/'}>Analytics</Link>
+                                          <Link className='hover:underline' href={'https://an.mhmdigital.io'}>Analytics</Link>
                                     </p>
                               </div>
                         </div>
                   </div>
             </div>
             <hr />
-            <div className='py-[20px]'>
-                  <p>Copyright © Mhm Digital</p>
+            <div className='py-[10px] flex items-center gap-1'>
+                  <p>Copyright ©2024</p>
+                  <Link className='text-blue-600' href={'/https://mhmdigital.agency/'}>
+                        MHM Digital Agency
+                  </Link>
             </div>
       </motion.div>
       </>

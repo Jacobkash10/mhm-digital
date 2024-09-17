@@ -12,7 +12,7 @@ const page =  async() => {
   return (
     <div>
       <Form services={services} />
-      <Office />
+      {/* <Office /> */}
       <FAQ />
       <Socials />
     </div>

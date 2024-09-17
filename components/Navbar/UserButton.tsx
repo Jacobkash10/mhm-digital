@@ -25,7 +25,7 @@ export default function UserButton({ user }: UserButtonProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon" className="flex-none rounded-full bg-white border-2 border-blue-300">
+        <Button size="icon" className="flex-none rounded-full bg-white border-4 border-blue-300">
           <Image
             src={user.image || avatarPlaceholder}
             alt="User profile picture"

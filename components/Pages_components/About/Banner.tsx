@@ -29,12 +29,10 @@ const Banner = () => {
                               </h5> 
                         </div>
                         <h1 className='text-3xl md:text-[50px] font-bold leading-tight mb-3 xl:max-w-xl'>
-                        A team of marketing experts
+                        A Team of Marketing Experts
                         </h1>
                         <p className='text-lg text-gray-500'>
-                        Lorem ipsum consectetur amet dolor sit comeneer 
-                        ilremsilom dolce issilm acalrm leoinsion duycoqun 
-                        consemleint lorem. Lorem ipsum consectetur amet dolor sit.
+                        At MHM Digital, we are a passionate team dedicated to driving your brand’s success. With a blend of creativity, strategy, and data-driven insights, we craft solutions that help businesses thrive in a competitive landscape.
                         </p>
                   </div>
                   <div className='w-[50%]'>

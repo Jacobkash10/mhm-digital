@@ -17,7 +17,7 @@ const Values = () => {
             Our Values
             </h5> 
             <h1 className='text-3xl md:text-[44px] text-center font-semibold leading-tight mb-10 max-w-xl'>
-            The core values that drive everything we do
+            What Drives Us
             </h1>
       </div>
       <motion.div 
@@ -37,7 +37,7 @@ const Values = () => {
                   <div className='w-full lg:w-[80%]'>
                         <h5 className='text-3xl font-bold mb-3'>Efficiency</h5>
                         <p className='text-lg text-gray-500'>
-                        Lorem ipsum consectetur amet sit comeneer ilrems dolce issilmolil sit.
+                        Delivering results with precision and speed.
                         </p>
                   </div>
             </div>
@@ -52,7 +52,7 @@ const Values = () => {
                   <div className='w-full lg:w-[80%]'>
                         <h5 className='text-3xl font-bold mb-3'>Accountability</h5>
                         <p className='text-lg text-gray-500'>
-                        Lorem ipsum consectetur amet sit comeneer ilrems dolce issilmolil sit.
+                        Taking responsibility and ownership in every project.
                         </p>
                   </div>
             </div>
@@ -67,7 +67,7 @@ const Values = () => {
                   <div className='w-full lg:w-[80%]'>
                         <h5 className='text-3xl font-bold mb-3'>Commitment</h5>
                         <p className='text-lg text-gray-500'>
-                        Lorem ipsum consectetur amet sit comeneer ilrems dolce issilmolil sit.
+                        Dedicated to achieving your goals and exceeding expectations.
                         </p>
                   </div>
             </div>
@@ -82,7 +82,7 @@ const Values = () => {
                   <div className='w-full lg:w-[80%]'>
                         <h5 className='text-3xl font-bold mb-3'>Team Work</h5>
                         <p className='text-lg text-gray-500'>
-                        Lorem ipsum consectetur amet sit comeneer ilrems dolce issilmolil sit.
+                        Collaborating effectively to achieve collective success.
                         </p>
                   </div>
             </div>

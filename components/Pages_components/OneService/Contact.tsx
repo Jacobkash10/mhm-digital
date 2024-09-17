@@ -29,18 +29,46 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 type Input = z.infer<typeof contactSchema>;
 
-interface Services {
+interface Service {
       id: string;
       name: string;
       description: string;
-      icon: string
-}
+      icon: string;
+      packages: {
+        id: string;
+        serviceId: string | null;
+        subServiceId: string | null;
+        name: string;
+        priceByYear: number | null;
+        priceByMonth: number | null;
+        price: number | null;
+        description: string;
+        points: string[];
+      }[];
+      subServices: {
+        id: string;
+        name: string;
+        description: string;
+        serviceId: string;
+        packages: {
+          id: string;
+          serviceId: string | null;
+          subServiceId: string | null;
+          name: string;
+          priceByYear: number | null;
+          priceByMonth: number | null;
+          price: number | null;
+          description: string;
+          points: string[];
+        }[];
+      }[];
+    }
 
 interface Props {
-      services: Services[]
+      service: Service;
 }
 
-const Contact = ({services}: Props) => {
+const Contact = ({service}: Props) => {
 
       const router = useRouter()
       const {toast} = useToast()
@@ -76,7 +104,7 @@ const Contact = ({services}: Props) => {
       }
 
   return (
-      <div className='px-4 xl:px-14 pb-[100px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
+      <div className=''>
             <hr />
             <motion.div
             variants={opacite("up", 0.3)}
@@ -204,16 +232,11 @@ const Contact = ({services}: Props) => {
                                                 name="service"
                                                 render={({ field }) => (
                                                       <FormItem className='w-full'>
-                                                      <select onChange={field.onChange} defaultValue={field.value} required
-                                                      className='w-full bg-white px-5 py-5 rounded-[40px] border 
-                                                    hover:border-blue-400 transition-all duration-300 cursor-pointer'>
-                                                            <option value="" className='text-gray-400'>Select a service *</option>
-                                                            {
-                                                                  services.map((item, index) => (
-                                                                        <option key={index} value={item.name}>{item.name}</option>
-                                                                  ))
-                                                            }
-                                                      </select>
+                                                            <select onChange={field.onChange} defaultValue={field.value} required
+                                                            className='w-full bg-white px-5 py-5 rounded-[40px] border 
+                                                            hover:border-blue-400 transition-all duration-300 cursor-pointer'>
+                                                                  <option defaultValue={service.name}>{service.name}</option>
+                                                            </select>
                                                       </FormItem>
                                                 )}
                                           />

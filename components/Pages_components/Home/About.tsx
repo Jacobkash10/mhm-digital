@@ -25,20 +25,19 @@ About = () => {
                         <div className='mt-[0px] w-full xl:w-[45%] flex flex-col justify-center items-center xl:block'>
                               <div className="flex items-center gap-2 mb-3"> 
                                     <Minus className='text-red-500' />
-                                    <h5 className="text-red-500 text-xl font-semibold"> 
+                                    <h5 className="text-red-500 text-[18px] font-extrabold"> 
                                           About Us
                                     </h5> 
                               </div>
                               <h2 className='text-3xl md:text-[40px] max-w-xl font-bold leading-tight mb-4 text-center xl:text-left lg:max-w-lg'>
-                                    We are like an extension of your marketing team
+                              Your dedicated partner in driving marketing success
                               </h2>
                               <p className='text-lg font-semibold text-gray-500 xl:max-w-xl text-center xl:text-left max-w-2xl leading-relaxed'>
-                                    Lorem ipsum consectetur amet dolor sit comeneer ilremsilom 
-                                    dolce issilm acalrm leoinsion duycoqun consemleint lorem. 
-                                    Lorem ipsum consectetur amet dolor sit. Lorem ipsum 
-                                    consectetur amet dolor sit comeneer ilremsilom dolce 
-                                    issilm acalrm leoinsion duycoqun consemleint lorem. 
-                                    Lorem ipsum consectetur amet dolor sit.
+                              We function as an extension of your marketing team, seamlessly integrating 
+                              our expertise to amplify your brand’s impact. Our approach is rooted in 
+                              collaboration, delivering personalized strategies that align with your business goals. 
+                              With a passion for innovation and a commitment to results, we help you grow, evolve, 
+                              and lead in your industry.
                               </p>
                               <div className='mt-10'>
                                     <Link href={'/about'}>

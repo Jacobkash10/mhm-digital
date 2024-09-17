@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import Image from 'next/image'
 import image1 from '@/public/images/icon-1-contact-marketing-template.svg'
 import image2 from '@/public/images/icon-2-contact-marketing-template.svg'
+import image3 from '@/public/images/V13.png'
 import { Textarea } from "@/components/ui/textarea"
 import { ArrowRight, Building, Mail, Smartphone, UserRound } from 'lucide-react'
 import {motion} from 'framer-motion'
@@ -18,13 +19,6 @@ import {
       FormItem,
       FormMessage,
     } from "@/components/ui/form"
-import {
-      Select,
-      SelectContent,
-      SelectItem,
-      SelectTrigger,
-      SelectValue,
-    } from "@/components/ui/select"
 import { FormError } from '@/components/form-error'
 import { contact } from '@/actions/contact'
 import { contactSchema } from '@/schemas';
@@ -88,27 +82,32 @@ const Form = ({services}: Props) => {
             className='pt-[150px] flex flex-col xl:flex-row items-center justify-between gap-10'>
                   <div className='w-full xl:w-[48%]'>
                         <div className="mb-3">
-                              <h5 className="text-red-500 text-xl font-semibold"> 
-                              Request a Quote
+                              <h5 className="text-red-500 text-[18px] font-extrabold"> 
+                              Get in touch 
                               </h5> 
                         </div>
-                        <h1 className='text-[32px] sm:text-[44px] font-bold leading-tight mb-3'>
-                        Get in touch today!
+                        <h1 className='text-[32px] sm:text-[40px] font-bold leading-tight mb-3'>
+                        Ready to elevate your brand? 
                         </h1>
-                        <p className='text-base sm:text-xl text-gray-500 mb-10'>
-                        Lorem ipsum consectetur amet dolor sit comeneer ilremsilom dolce issilm acalrm leoinsion duycoqun consemleint lorem.
+                        <p className='text-[18px] font-medium text-gray-500 mb-10'>
+                        Contact us to discuss your project and discover how we can help you achieve your goals.
                         </p>
                         <div className='flex items-center gap-3'>
                               <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
                               className='rounded-xl' />
-                              <h5 className='text-lg font-semibold'>contact@mhmdigital.com</h5>
+                              <h5 className='text-lg font-semibold'>contact@mhmdigital.us</h5>
                         </div>
                         <div className='flex items-center gap-3 pt-6'>
                               <Image src={image2} alt='image1' priority width={0} height={0} sizes='100vw' 
                               className='rounded-xl' />
-                              <h5 className='text-xl'>(487) 870 - 0710</h5>
+                              <h5 className='text-xl text-gray-500 font-bold'>+1 206 771 0038</h5>
                         </div>
+                        <div className='flex items-center gap-3 pt-6'>
+                              <Image src={image3} alt='image1' priority width={0} height={0} sizes='100vw' 
+                              className='rounded-lg w-[62px]' />
+                              <h5 className='text-xl text-gray-500 font-bold'>SEATTLE WA 98118</h5>
                         </div>
+                  </div>
                   <div className='w-full xl:w-[52%]'>
                         <Forms {...form}>
                         <form className='px-8 py-20 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 

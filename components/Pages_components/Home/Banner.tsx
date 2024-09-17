@@ -72,18 +72,19 @@ const Banner = () => {
       <div 
       className='mt-10 flex flex-col justify-center items-center bg-hero relative bg-no-repeat bg-cover z-0 rounded-[30px] overflow-hidden'>
             <motion.div
-            className='w-full flex items-center flex-col justify-center relative top-0 left-0 h-full z-10 bg-black/50 py-24'>
+            className='w-full flex items-center flex-col justify-center relative top-0 left-0 h-full z-10 bg-black/50 py-24 px-5'>
                   <div className="flex items-center gap-2 mb-3"> 
                         <Minus className='text-white' />
                         <h5 className="text-white text-lg font-bold"> 
                         Digital Growth Agency
                         </h5> 
                   </div>
-                  <h1 className='text-[40px] sm:text-[64px] text-white font-bold leading-tight mb-3 text-center max-w-3xl'>
-                  We help startups grow to the next level
+                  <h1 className='text-[40px] sm:text-[64px] text-white font-bold leading-tight mb-3 text-center '>
+                  We Help startups and businesses achieve exponential growth.
                   </h1>
-                  <p className='text-base font-semibold text-slate-200 text-center max-w-md lg:max-w-lg'>
-                        Lorem ipsum consectetur amet dolor sit comeneer ilrems dolce issilm acalrm leoinsion duycoqun cons.
+                  <p className='text-base font-semibold text-slate-200 text-center max-w-md lg:max-w-xl'>
+                  At MHM Digital, we drive your success with tailored strategies, innovative designs, and cutting-edge digital 
+                  solutions to elevate your brand.
                   </p>
                   <div className='flex flex-col justify-center gap-5 sm:flex sm:flex-row sm:justify-start items-center sm:gap-4 mt-10'>
                         <Link href={'/contact'}>
