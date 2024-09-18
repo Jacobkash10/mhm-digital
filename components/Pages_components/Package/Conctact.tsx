@@ -30,10 +30,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 type Input = z.infer<typeof contactSchema>;
 
 interface Props {
-      service: string;
+      serviceName: string
 }
 
-const Contact = ({service}: Props) => {
+const Contact = ({serviceName}: Props) => {
 
       const router = useRouter()
       const {toast} = useToast()
@@ -45,14 +45,13 @@ const Contact = ({service}: Props) => {
                   email: "",
                   name: "",
                   phoneNumber: "",
-                  service: service,
+                  service: serviceName,
                   description: "",
                   company: "",
             }
         })
 
       const onSubmit = (values: z.infer<typeof contactSchema>) => {
-            console.log("Données envoyées :", values)
             setError("")
 
             startTransition(() => {
@@ -70,7 +69,7 @@ const Contact = ({service}: Props) => {
       }
 
   return (
-      <div className=''>
+      <div className='px-4 xl:px-14 pb-[100px] xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
             <motion.div
             variants={opacite("up", 0.3)}
             initial="hidden"
@@ -192,7 +191,7 @@ const Contact = ({service}: Props) => {
                               <div className='mb-7'>
                                     <div className='w-full flex items-center justify-between rounded-full gap-2'>
                                     {/* service */}
-                                    <FormField
+                                          <FormField
                                                 control={form.control}
                                                 name="service"
                                                 render={({ field }) => (
@@ -200,7 +199,9 @@ const Contact = ({service}: Props) => {
                                                             <select onChange={field.onChange} defaultValue={field.value} required
                                                             className='w-full bg-white px-5 py-5 rounded-[40px] border 
                                                             hover:border-blue-400 transition-all duration-300 cursor-pointer'>
-                                                                  <option value={service} className='text-gray-400'>{service}</option>
+                                                                  <option value={serviceName} className='text-gray-400'>
+                                                                        {serviceName}
+                                                                  </option>
                                                             </select>
                                                       </FormItem>
                                                 )}

@@ -111,11 +111,11 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
         service.packages.length <= 0 ? 
         (
           <>
-          <div className='mt-40 flex flex-col items-center justify-center'>
-              <h1 className="text-2xl text-center font-bold leading-tight mb-10 max-w-xl">
+          <div className='mt-32 flex flex-col items-center justify-center'>
+              <h1 className="text-xl text-center font-semibold mb-5 max-w-xl">
                 {service.name} services, please contact us directly. We're here to assist you with all your notarial needs.
               </h1>
-              <Contact service={service} />
+              <Contact service={service.name} />
           </div>
           </>
         ) 

@@ -33,8 +33,8 @@ const page = () => {
   const form = useForm<Input>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: {
-          name: "",
-          email: "",
+          name: session?.user.name || '',
+          email: session?.user.email || '',
           phoneNumber: "",
           billingAddress: "",
           shippingAddress: "",
@@ -122,7 +122,7 @@ const page = () => {
                                                                   <FormLabel className='text-base font-bold'>Name*</FormLabel>
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
-                                                                              // value={session?.user.name || `${session?.user.name}`}
+                                                                              value={session?.user.name ?? ''}
                                                                               disabled={isPending} 
                                                                               className='border rounded-full text-xl px-4 py-7 
                                                                               placeholder:text-base hover:border-black/50 transition-all
@@ -143,7 +143,7 @@ const page = () => {
                                                                   <FormLabel className='text-base font-bold'>Email*</FormLabel>
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
-                                                                              // value={session?.user.email || `${session?.user.email}`}
+                                                                              value={session?.user.email ?? ''}
                                                                               disabled={isPending} 
                                                                               className='border rounded-full text-xl px-4 py-7 
                                                                               placeholder:text-base hover:border-black/50 transition-all
