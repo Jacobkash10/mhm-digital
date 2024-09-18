@@ -1,3 +1,5 @@
+import { Eye } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react'
 
 interface User {
@@ -14,6 +16,7 @@ interface User {
             userId: string;
             price: number;
             status: string | null;
+            createdAt?: Date | null;
         }[];
 }
 
@@ -23,22 +26,23 @@ interface Props {
 
 const Order = ({user}: Props) => {
 
-      console.log(user)
-
   return (
     <>
     <div className='pt-[100px] pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem]'>
-      <div className='w-full px-8 py-5 border'>
+      <div className='w-full px-8 py-5 bg-slate-50'>
         <h1 className='text-3xl md:text-[40px] font-bold leading-tight mb-3 xl:max-w-xl'>
             Orders
         </h1>
         <div className='mt-10'>
           <div className="relative overflow-x-auto">
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                  <thead className="text-xs text-white uppercase bg-black dark:bg-gray-700 dark:text-gray-400">
                       <tr>
                           <th scope="col" className="px-6 py-3">
                               Order ID
+                          </th>
+                          <th scope="col" className="px-6 py-3">
+                              Date
                           </th>
                           <th scope="col" className="px-6 py-3">
                               Total
@@ -60,13 +64,18 @@ const Order = ({user}: Props) => {
                                 {order.id}
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {order.price}
+                                null
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {order.price}
+                                $ {order.price}.00
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <button>View</button>
+                                {order.status ?? 'In Progress'}
+                            </td>
+                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              <Link href={`/order-details/${order.id}`}>
+                                <Eye className='bg-red-500 px-3 py-2 rounded-md' color='white' size={50} />
+                              </Link>
                             </td>
                         </tr>
                       ))

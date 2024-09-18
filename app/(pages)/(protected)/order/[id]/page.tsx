@@ -41,7 +41,7 @@ const page = async ({ params: { id } }: PageProps) => {
 
   return (
     <div>
-      {/* <Order user={user} /> */}
+      <Order user={user} />
     </div>
   )
 }
