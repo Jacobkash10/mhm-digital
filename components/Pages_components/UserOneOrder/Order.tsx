@@ -16,7 +16,6 @@ interface User {
             userId: string;
             price: number;
             status: string | null;
-            createdAt?: Date | null;
         }[];
 }
 
