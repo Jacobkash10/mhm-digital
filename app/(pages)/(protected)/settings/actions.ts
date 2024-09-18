@@ -14,7 +14,7 @@ export async function updateProfile(values: UpdateProfileValues) {
     throw Error('Unauthorized')
   }
 
-  const { name } = updateProfileSchema.parse(values);
+  const { name, phoneNumber, shippingAddress, billingAddress, company } = updateProfileSchema.parse(values);
 
   await db.user.update({
     where: {
@@ -22,6 +22,10 @@ export async function updateProfile(values: UpdateProfileValues) {
     },
     data: {
       name,
+      billingAddress,
+      phoneNumber,
+      shippingAddress,
+      company,
     }
   })
 

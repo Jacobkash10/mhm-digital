@@ -1,5 +1,4 @@
-import avatar from "@/public/images/avatar.png";
-import { Lock, LogOut, Settings, User as Use, } from "lucide-react";
+import { Lock, LogOut, Settings, User as Use, LayoutDashboard } from "lucide-react";
 import { User } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
@@ -72,6 +71,12 @@ export default function UserButton({ user }: UserButtonProps) {
                   Admin
                 </Link>
           </DropdownMenuItem>}
+          <DropdownMenuItem asChild>
+            <Link href={`/order/${user.id}`} className="cursor-pointer">
+              <LayoutDashboard className="mr-2 h-4 w-4" />
+              <span>Orders</span>
+            </Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild> 

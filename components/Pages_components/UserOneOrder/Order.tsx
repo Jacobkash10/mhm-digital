@@ -1,0 +1,84 @@
+import React from 'react'
+
+interface User {
+      id: string;
+      email: string;
+      name: string;
+      password: string | null;
+      phoneNumber: string | null;
+      company: string | null;
+      billingAddress: string | null;
+      shippingAddress: string | null;
+      orders: {
+            id: string;
+            userId: string;
+            price: number;
+            status: string | null;
+        }[];
+}
+
+interface Props {
+      user: User
+}
+
+const Order = ({user}: Props) => {
+
+      console.log(user)
+
+  return (
+    <>
+    <div className='pt-[100px] pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem]'>
+      <div className='w-full px-8 py-5 border'>
+        <h1 className='text-3xl md:text-[40px] font-bold leading-tight mb-3 xl:max-w-xl'>
+            Orders
+        </h1>
+        <div className='mt-10'>
+          <div className="relative overflow-x-auto">
+              <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                      <tr>
+                          <th scope="col" className="px-6 py-3">
+                              Order ID
+                          </th>
+                          <th scope="col" className="px-6 py-3">
+                              Total
+                          </th>
+                          <th scope="col" className="px-6 py-3">
+                              Status
+                          </th>
+                          <th scope="col" className="px-6 py-3">
+                              View Details
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      user?.orders.map((order, index) => (
+                        <tr key={order.id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 
+                        even:dark:bg-gray-800 border-b dark:border-gray-700">
+                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {order.id}
+                            </td>
+                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {order.price}
+                            </td>
+                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {order.price}
+                            </td>
+                            <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <button>View</button>
+                            </td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
+  )
+}
+
+export default Order
