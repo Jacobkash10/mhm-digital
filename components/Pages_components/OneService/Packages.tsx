@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import image1 from '@/public/images/icon-1-packages-marketing-template.png';
+import image2 from '@/public/images/icon-2-packages-marketing-template.png';
+import image3 from '@/public/images/icon-3-packages-marketing-template.png';
 import { Check } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -10,6 +12,8 @@ import { fadeIn } from '../../../variants';
 import { addToCart } from "@/lib/cartUtils";
 import { CartItem } from "@/types/carts";
 import Contact from './Contact';
+import { Label } from "@/components/ui/label"
+import { Switch } from "@/components/ui/switch"
 
 interface Service {
   id: string;
@@ -56,6 +60,7 @@ interface Packages {
   price: number | null;
   description: string;
   points: string[];
+  image?: string | null;
   service?: Service; 
 }
 
@@ -66,32 +71,28 @@ interface Props {
 const PackagesComponent: React.FC<Props> = ({ service }) => {
   const [selectedSubServiceId, setSelectedSubServiceId] = useState<string | null>(null);
   const [selectedPriceType, setSelectedPriceType] = useState<'monthly' | 'yearly'>('monthly');
+  const [isPriceTypeSwitchOn, setIsPriceTypeSwitchOn] = useState(true); // État pour le switch
 
-  // Sélectionner le premier sous-service par défaut lors du montage
   useEffect(() => {
     if (service?.subServices && service?.subServices.length > 0) {
       setSelectedSubServiceId(service.subServices[0].id);
     }
   }, [service?.subServices]);
 
-  // Fonction pour obtenir les packages filtrés par sous-service
   const filteredPackages = selectedSubServiceId
     ? service.subServices.find(sub => sub.id === selectedSubServiceId)?.packages || []
     : service.packages;
 
-  // Fonction pour ajouter un package au panier
   const handleAddToCart = (pack: Packages) => {
-      // Définir la durée en fonction du prix sélectionné et de l'existence des prix
-      const selectedDuration =
-        pack.priceByMonth && pack.priceByYear
-          ? selectedPriceType === 'monthly'
-            ? pack.priceByMonth 
-            : pack.priceByYear
-          : pack.price;
+    const selectedDuration =
+      pack.priceByMonth && pack.priceByYear
+        ? isPriceTypeSwitchOn
+          ? pack.priceByMonth
+          : pack.priceByYear
+        : pack.price;
 
-      const price = selectedPriceType === 'monthly' ? pack.priceByMonth : pack.priceByYear;
+    const price = isPriceTypeSwitchOn ? pack.priceByMonth : pack.priceByYear;
     
-    // Création de l'objet CartItem avec validation des données
     const item: CartItem = {
       packageId: pack.id,
       quantity: 1,
@@ -110,14 +111,12 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
       {
         service.packages.length <= 0 ? 
         (
-          <>
           <div className='mt-32 flex flex-col items-center justify-center'>
               <h1 className="text-xl text-center font-semibold mb-5 max-w-xl">
                 {service.name} services, please contact us directly. We're here to assist you with all your notarial needs.
               </h1>
               <Contact service={service.name} />
           </div>
-          </>
         ) 
         : 
         (
@@ -135,7 +134,6 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
               </h1>
             </div>
 
-            {/* Si des sous-services existent, afficher les filtres */}
             {service?.subServices && service.subServices.length > 0 && (
               <>
                 <div className="flex-wrap flex justify-center gap-4 mb-10">
@@ -151,21 +149,26 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
                   ))}
                 </div>
 
-                {/* Filtre pour sélectionner entre prix mensuel ou annuel */}
-                <div className="flex-wrap flex justify-center gap-4 mb-10">
-                  <button
-                    onClick={() => setSelectedPriceType('monthly')}
-                    className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white text-sm xl:text-base
-                        ${selectedPriceType === 'monthly' ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
-                  >
-                    Price per Month
-                  </button>
-                  <button
-                    onClick={() => setSelectedPriceType('yearly')}
-                    className={`px-4 py-2 rounded-full ${selectedPriceType === 'yearly' ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
-                  >
-                    Price per Year
-                  </button>
+                <div className="flex flex-col items-center gap-4 mb-10">
+                  <div className="flex items-center space-x-2 flex-col gap-3">
+                    <Switch
+                      id="price-type-switch"
+                      checked={isPriceTypeSwitchOn}
+                      onCheckedChange={(checked) => setIsPriceTypeSwitchOn(checked)}
+                      className={`${
+                        isPriceTypeSwitchOn ? 'bg-red-500' : 'bg-gray-200'
+                      } relative inline-flex items-center rounded-full`}
+                    >
+                      <span
+                        className={`${
+                          isPriceTypeSwitchOn ? 'translate-x-6' : 'translate-x-1'
+                        } inline-block transform rounded-full bg-white transition-transform`}
+                      />
+                    </Switch>
+                    <Label htmlFor="price-type-switch" className='text-xl font-semibold'>
+                      {isPriceTypeSwitchOn ? 'Monthly Price' : 'Yearly Price'}
+                    </Label>
+                  </div>
                 </div>
               </>
             )}
@@ -181,23 +184,49 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
                   <div className="w-full">
                     <div className="w-[25%] mb-8">
                       <Link href={`/package/${pack.id}`}>
-                        <Image
-                          src={image1}
-                          alt="image1"
-                          priority
-                          width={0}
-                          height={0}
-                          sizes="100vw"
-                          className="rounded-3xl"
-                        />
+                        {
+                          pack.name === 'Starter' &&
+                            <Image
+                            src={image1}
+                            alt="image1"
+                            priority
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            className="rounded-3xl"
+                          />
+                        }
+                        {
+                          pack.name === 'Growth' &&
+                            <Image
+                            src={image2}
+                            alt="image1"
+                            priority
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            className="rounded-3xl"
+                          />
+                        }
+                        {
+                          pack.name === 'Ultimate' &&
+                            <Image
+                            src={image3}
+                            alt="image1"
+                            priority
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            className="rounded-3xl"
+                          />
+                        }
                       </Link>
                     </div>
                     
                     <h5 className="text-gray-500 mb-2 text-2xl">{pack.name || 'Default name'}</h5>
 
-                    {/* Affichage du prix */}
                     <h4 className="text-2xl font-bold mb-6">
-                      {selectedPriceType === 'monthly'
+                      {isPriceTypeSwitchOn
                         ? `$ ${pack.priceByMonth || '1000'}.00 USD / Month`
                         : `$ ${pack.priceByYear || '12000'}.00 USD / Year`}
                     </h4>
@@ -236,4 +265,3 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
 };
 
 export default PackagesComponent;
-

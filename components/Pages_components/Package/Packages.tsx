@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import image1 from '@/public/images/icon-1-packages-marketing-template.png'
+import image1 from '@/public/images/icon-1-packages-marketing-template.png';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ArrowRight, Check } from 'lucide-react';
@@ -8,6 +8,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { CartItem } from '@/types/carts';
 import { addToCart } from '@/lib/cartUtils';
+import { Label } from "@/components/ui/label"
+import { Switch } from "@/components/ui/switch"
 import Contact from './Conctact';
 
 interface Package {
@@ -18,6 +20,7 @@ interface Package {
   price: number | null;
   description: string;
   points: string[];
+  image?: string | null;
 }
 
 interface SubService {
@@ -41,6 +44,7 @@ const Packages: React.FC<Props> = ({ services }) => {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
   const [selectedSubServiceId, setSelectedSubServiceId] = useState<string | null>(null);
   const [selectedPriceType, setSelectedPriceType] = useState<'monthly' | 'yearly'>('monthly');
+  const [isPriceTypeSwitchOn, setIsPriceTypeSwitchOn] = useState(true); // État pour le switch
 
   useEffect(() => {
     if (services.length > 0) {
@@ -141,21 +145,26 @@ const Packages: React.FC<Props> = ({ services }) => {
           </div>
 
           {hasSubServices && (
-            <div className="flex-wrap flex justify-center gap-4 mb-10">
-              <button
-                onClick={() => setSelectedPriceType('monthly')}
-                className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white text-sm xl:text-base
-                  ${selectedPriceType === 'monthly' ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
-              >
-                Price per Month
-              </button>
-              <button
-                onClick={() => setSelectedPriceType('yearly')}
-                className={`px-4 py-2 rounded-full hover:bg-red-500 transition-all duration-300 hover:text-white
-                  ${selectedPriceType === 'yearly' ? 'bg-red-500 text-white' : 'bg-gray-200'}`}
-              >
-                Price per Year
-              </button>
+            <div className="flex flex-col items-center gap-4 mb-10">
+              <div className="flex items-center space-x-2 flex-col gap-3">
+                <Switch
+                  id="price-type-switch"
+                  checked={isPriceTypeSwitchOn}
+                  onCheckedChange={(checked) => setIsPriceTypeSwitchOn(checked)}
+                  className={`${
+                    isPriceTypeSwitchOn ? 'bg-red-500' : 'bg-gray-200'
+                  } relative inline-flex items-center rounded-full`}
+                >
+                  <span
+                    className={`${
+                      isPriceTypeSwitchOn ? 'translate-x-6' : 'translate-x-1'
+                    } inline-block transform rounded-full bg-white transition-transform`}
+                  />
+                </Switch>
+                <Label htmlFor="price-type-switch" className='text-xl font-semibold'>
+                  {isPriceTypeSwitchOn ? 'Monthly Price' : 'Yearly Price'}
+                </Label>
+              </div>
             </div>
           )}
         </>
@@ -174,21 +183,13 @@ const Packages: React.FC<Props> = ({ services }) => {
               <div className="w-full">
                 <div className="w-[20%] mb-8">
                   <Link href={`/package/${pack.id}`}>
-                    <Image
-                      src={image1}
-                      alt="image1"
-                      priority
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="rounded-3xl"
-                    />
+                    <img src={pack.image ?? ''} alt="image-package" className='rounded-3xl' />
                   </Link>
                 </div>
                 <h5 className="text-gray-500 mb-2 text-2xl">{pack.name || 'Default name'}</h5>
                 <h4 className="text-2xl font-bold mb-6">
                   {hasSubServices ? (
-                    selectedPriceType === 'monthly'
+                    isPriceTypeSwitchOn
                       ? `$ ${pack.priceByMonth ?? '1000'}.00 USD / Month`
                       : `$ ${pack.priceByYear ?? '12000'}.00 USD / Year`
                   ) : (
@@ -230,11 +231,10 @@ const Packages: React.FC<Props> = ({ services }) => {
               </h1>
               <Contact serviceName={selectedService?.name || ''} />
           </div>
-          </>
+        </>
       )}
     </div>
   );
 };
 
 export default Packages;
-

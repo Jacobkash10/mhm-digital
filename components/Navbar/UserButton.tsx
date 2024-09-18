@@ -15,6 +15,11 @@ import {
 } from "../ui/dropdown-menu";
 import { signOut } from "next-auth/react";
 // import { signOut } from "@/auth";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
 
 interface UserButtonProps {
   user: User;
@@ -26,13 +31,23 @@ export default function UserButton({ user }: UserButtonProps) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button size="icon" className="flex-none rounded-full">
-          <Image
-            src={user.image || avatar}
-            alt="User profile picture"
-            width={40}
-            height={40}
-            className="aspect-square rounded-full bg-red-500 object-cover"
-          />
+          {
+            user.image ? 
+            (<Image
+              src={user.image || ''}
+              alt="User profile picture"
+              width={40}
+              height={40}
+              className="aspect-square rounded-full bg-red-500 object-cover"
+            />) 
+            : 
+            (
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            )
+          }
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">

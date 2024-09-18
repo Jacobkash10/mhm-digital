@@ -29,6 +29,7 @@ interface Packages {
   price: number | null;
   description: string;
   points: string[];
+  image?: string | null;
 }
 
 const PackageService = ({ servicePack }: Props) => {
@@ -81,7 +82,7 @@ const PackageService = ({ servicePack }: Props) => {
                 }}
                 className="w-[20%] mb-2"
               >
-                <Image
+                {/* <Image
                   src={image1}
                   alt="image1"
                   priority
@@ -89,7 +90,8 @@ const PackageService = ({ servicePack }: Props) => {
                   height={0}
                   sizes="100vw"
                   className="rounded-3xl"
-                />
+                /> */}
+                <img src={servicePack.image ?? ''} alt="image-package" className='rounded-3xl' />
               </motion.div>
               <h1 className="text-[40px] sm:text-[62px] font-bold leading-tight mb-3 text-left max-w-xl lg:max-w-4xl">
                 {servicePack.name}

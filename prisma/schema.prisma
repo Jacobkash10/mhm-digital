@@ -119,6 +119,7 @@ model Package {
   price        Float?
   description  String
   points       String[]
+  image        String?
 
   service    Service?    @relation(fields: [serviceId], references: [id], onDelete: Cascade)
   subService SubService? @relation(fields: [subServiceId], references: [id], onDelete: Cascade)
