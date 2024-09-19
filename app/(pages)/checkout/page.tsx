@@ -4,7 +4,6 @@ import React, { useState, useTransition } from 'react'
 import { useRouter } from "next/navigation";
 import { useToast } from '@/components/ui/use-toast';
 import {motion} from 'framer-motion'
-import { Mail, Minus, Smartphone, UserRound } from 'lucide-react'
 import { getCart, removeFromCart } from '@/lib/cartUtils'
 import { Carts } from '@/types/carts'
 import { Input } from '@/components/ui/input'
@@ -80,8 +79,7 @@ const page = () => {
                         variant: "default"
                     });
         
-                    router.push("/orders");
-                    window.location.reload()
+                    router.push(`/order-now`);
                 } catch (error) {
                     setError("Une erreur s'est produite.");
                 }
@@ -123,7 +121,7 @@ const page = () => {
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
                                                                               value={session?.user.name ?? ''}
-                                                                              disabled={isPending} 
+                                                                              disabled
                                                                               className='border rounded-full text-xl px-4 py-7 
                                                                               placeholder:text-base hover:border-black/50 transition-all
                                                                               duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
@@ -144,7 +142,7 @@ const page = () => {
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
                                                                               value={session?.user.email ?? ''}
-                                                                              disabled={isPending} 
+                                                                              disabled
                                                                               className='border rounded-full text-xl px-4 py-7 
                                                                               placeholder:text-base hover:border-black/50 transition-all
                                                                               duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 

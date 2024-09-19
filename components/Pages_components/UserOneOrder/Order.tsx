@@ -30,12 +30,12 @@ const Order = ({user}: Props) => {
     <div className='pt-[100px] pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem]'>
       <div className='w-full px-8 py-5 bg-slate-50'>
         <h1 className='text-3xl md:text-[40px] font-bold leading-tight mb-3 xl:max-w-xl'>
-            Orders
+            {user.name} Orders
         </h1>
         <div className='mt-10'>
           <div className="relative overflow-x-auto">
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                  <thead className="text-xs text-white uppercase bg-black dark:bg-gray-700 dark:text-gray-400">
+                  <thead className="text-xs text-white uppercase bg-red-500 dark:bg-gray-700 dark:text-gray-400">
                       <tr>
                           <th scope="col" className="px-6 py-3">
                               Order ID
@@ -73,7 +73,8 @@ const Order = ({user}: Props) => {
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               <Link href={`/order-details/${order.id}`}>
-                                <Eye className='bg-red-500 px-3 py-2 rounded-md' color='white' size={50} />
+                                <Eye className='text-red-500 hover:text-blue-500 transition-all duration-300' 
+                                 size={32} />
                               </Link>
                             </td>
                         </tr>

@@ -226,8 +226,9 @@ const Packages: React.FC<Props> = ({ services }) => {
         // Formulaire à afficher si aucun package disponible
         <>
           <div className='mt-5 flex flex-col items-center justify-center'>
-              <h1 className="text-xl text-center font-semibold mb-2 max-w-xl">
-                {selectedService?.name} services, please contact us directly. We're here to assist you with all your notarial needs.
+              <h1 className="text-[20px] text-center text-gray-500 font-normal mb-2 max-w-xl">
+                <span className='font-bold text-black'>{selectedService?.name} </span> 
+                services, please contact us directly. We're here to assist you with all your notarial needs.
               </h1>
               <Contact serviceName={selectedService?.name || ''} />
           </div>

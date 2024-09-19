@@ -113,83 +113,91 @@ const Form = ({services}: Props) => {
                         <form className='px-8 py-20 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
                         onSubmit={form.handleSubmit(onSubmit)}>
                               <div className='flex flex-col sm:flex-row items-center justify-between gap-5 mb-7'>
-                                    <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
+                                    <div className='w-full'>
                                           {/* username */}
                                           <FormField
                                           control={form.control}
                                           name="name"
                                           render={({ field }) => (
                                                 <FormItem className='w-full'>
-                                                      <FormControl>
-                                                            <Input placeholder="Full name *" {...field}
-                                                                  disabled={isPending} 
-                                                                  className='border-none rounded-full text-xl placeholder:text-base' 
-                                                            />
-                                                      </FormControl>
+                                                      <div className='flex items-center justify-between gap-2'>
+                                                            <UserRound className='text-gray-400' size={36} />
+                                                            <FormControl>
+                                                                  <Input placeholder="Full name *" {...field}
+                                                                        disabled={isPending} 
+                                                                        className='border h-14 rounded-full text-sm placeholder:text-base' 
+                                                                  />
+                                                            </FormControl>
+                                                      </div>
                                                       <FormMessage />
                                                 </FormItem>
                                           )}
                                           />
-                                          <UserRound className='text-gray-400' size={36} />
                                     </div>
-                                    <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
+                                    <div className='w-full'>
                                           {/* email */}
                                           <FormField
                                           control={form.control}
                                           name="email"
                                           render={({ field }) => (
                                                 <FormItem className='w-full'>
-                                                      <FormControl>
-                                                            <Input placeholder="Email *" {...field}
-                                                                  disabled={isPending} 
-                                                                  className='border-none rounded-full text-xl placeholder:text-base' 
-                                                            />
-                                                      </FormControl>
+                                                      <div className='flex items-center justify-between gap-2'>
+                                                            <Mail className='text-gray-400' size={36} />
+                                                            <FormControl> 
+                                                                        <Input placeholder="Email *" {...field}
+                                                                              disabled={isPending} 
+                                                                              className='border h-14 rounded-full text-sm placeholder:text-base' 
+                                                                        />      
+                                                            </FormControl>
+                                                      </div>
                                                       <FormMessage />
                                                 </FormItem>
                                           )}
                                           />
-                                          <Mail className='text-gray-400' size={36} />
                                     </div>
                               </div>
                               <div className='flex flex-col sm:flex-row items-center justify-between gap-5 mb-7'>
-                                    <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
+                                    <div className='w-full'>
                                           {/* phoneNumber */}
                                           <FormField
                                           control={form.control}
                                           name="phoneNumber"
                                           render={({ field }) => (
                                                 <FormItem className='w-full'>
-                                                      <FormControl>
-                                                            <Input placeholder="Pnone number *" {...field}
-                                                                  disabled={isPending} 
-                                                                  className='border-none rounded-full text-xl placeholder:text-base' 
-                                                            />
-                                                      </FormControl>
+                                                      <div className='flex items-center justify-between gap-2'>
+                                                            <Smartphone className='text-gray-400' size={36} />
+                                                            <FormControl>
+                                                                  <Input placeholder="Pnone number *" {...field}
+                                                                        disabled={isPending} 
+                                                                        className='border h-14 rounded-full text-sm placeholder:text-base' 
+                                                                  />
+                                                            </FormControl>
+                                                      </div>
                                                       <FormMessage />
                                                 </FormItem>
                                           )}
                                           />
-                                          <Smartphone className='text-gray-400' size={36} />
                                     </div>
-                                    <div className='w-full flex items-center justify-between border rounded-full p-3 gap-2'>
+                                    <div className='w-full'>
                                           {/* company */}
                                           <FormField
                                           control={form.control}
                                           name="company"
                                           render={({ field }) => (
                                                 <FormItem className='w-full'>
-                                                      <FormControl>
-                                                            <Input placeholder="Company name" {...field}
-                                                                  disabled={isPending} 
-                                                                  className='border-none rounded-full text-xl placeholder:text-base' 
-                                                            />
-                                                      </FormControl>
+                                                      <div className='flex items-center justify-between gap-2'>
+                                                            <Building className='text-gray-400' size={36} />
+                                                            <FormControl>
+                                                                  <Input placeholder="Company name" {...field}
+                                                                        disabled={isPending} 
+                                                                        className='border h-14 rounded-full text-sm placeholder:text-base' 
+                                                                  />
+                                                            </FormControl>
+                                                      </div>
                                                       <FormMessage />
                                                 </FormItem>
                                           )}
                                           />
-                                          <Building className='text-gray-400' size={36} />
                                     </div>
                               </div>
                               <div className='mb-7'>
