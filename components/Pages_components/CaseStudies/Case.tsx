@@ -29,7 +29,7 @@ const Case = () => {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 2, delay: 0.5 } }}
-        className='pb-[150px] px-8 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'
+        className='pb-[150px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'
       >
         <div className='mb-6'>
           {/* Liste des catégories pour filtrer */}
