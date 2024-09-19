@@ -52,7 +52,7 @@ export default async function Page({ params: { id } }: PageProps) {
   if (!user) notFound();
 
   return (
-     <div className='mt-[10px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem] py-10'>
+     <div className='mt-[10px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%] py-10'>
       <div className="mb-10 flex flex-col items-center gap-3">
         <h2>Profil</h2>
         <div className='space-y-6 px-5 md:px-8 py-20 border rounded-[50px] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] w-full lg:w-[70%]'>

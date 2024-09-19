@@ -33,7 +33,31 @@ const page = () => {
                         </p>
                   </div>
             </motion.div>
-            <div>
+            <div className='border-t py-20'>
+                  <div className='flex items-center justify-between flex-wrap'>
+                        <div>
+                              <p className='font-bold mb-4 text-[18px]'>Services</p>
+                              <h3 className='text-gray-400 font-normal'>Paid Adversiting</h3>
+                        </div>
+                        <div>
+                              <p className='font-bold mb-4 text-[18px]'>Platforms</p>
+                              <h3 className='text-gray-400 font-normal'>Facebook Creators</h3>
+                        </div>
+                        <div>
+                              <p className='font-bold mb-4 text-[18px]'>Project Timeline</p>
+                              <h3 className='text-gray-400 font-normal'>2020 - 2021</h3>
+                        </div>
+                        <div>
+                              <p className='font-bold mb-4 text-[18px]'>Website</p>
+                              <h3 className='text-gray-400 font-normal'>facebook.com</h3>
+                        </div>
+                        <div>
+                              <p className='font-bold mb-4 text-[18px]'>Increased in ROI revenue</p>
+                              <h3 className='text-red-500 font-semibold'>56%</h3>
+                        </div>
+                  </div>
+            </div>
+            <div className='mt-[50px]'>
                   <div>
                         <Image src={image2} alt='image1' priority width={0} height={0} sizes='100vw' 
                         className='rounded-[50px] w-full' />

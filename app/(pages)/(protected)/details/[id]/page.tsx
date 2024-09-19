@@ -1,15 +1,12 @@
-import { cache } from 'react';
-import { db } from '@/lib/db';
-import { notFound } from 'next/navigation';
-import React from 'react';
+import { db } from '@/lib/db'
+import React from 'react'
 
-interface PageProps {
-  params: { id: string };
-}
+const page = async ({ params }: { params: { id: string } }) => {
 
-const getOrder = cache(async (id: string) => {
-  return db.order.findUnique({
-    where: { id },
+  const { id } = params
+
+  const order = await db.order.findFirstOrThrow({
+    where: { id: id },
     include: {
       user: true,
       packages: {
@@ -23,29 +20,7 @@ const getOrder = cache(async (id: string) => {
             }
       }
     }
-  });
-});
-
-export async function generateStaticParams() {
-  const allOrders = await db.order.findMany();
-
-  return allOrders.map(({ id }) => ({ id }));
-}
-
-export async function generateMetadata({ params: { id } }: PageProps) {
-  const order = await getOrder(id);
-
-  return {
-    title: `Order ${order?.id || 'Details'}`,
-  };
-}
-
-const OrderDetails = async ({ params: { id } }: PageProps) => {
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-
-  const order = await getOrder(id);
-
-  if (!order) notFound();
+  })
 
   return (
     <div className='pt-[100px] pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
@@ -121,7 +96,7 @@ const OrderDetails = async ({ params: { id } }: PageProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OrderDetails;
+export default page

@@ -17,7 +17,7 @@ const Case = () => {
   ];
 
   // Obtenir les catégories uniques
-  const categories = Array.from(new Set(cases.map(item => item.category)));
+  const categories = Array.from(new Set(cases.map(item => item.category)))
 
   // Filtrer les cases en fonction de la catégorie sélectionnée
   const filteredCases = selectedCategory

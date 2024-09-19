@@ -12,7 +12,14 @@ interface PageProps {
       return db.user.findUnique({
         where: { id },
         include: {
-            orders: true
+            orders: {
+              select: {
+                id: true,
+                userId: true,
+                price: true,
+                status: true,
+              }
+            }
         }
       });
     });

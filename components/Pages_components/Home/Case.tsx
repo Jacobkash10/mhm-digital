@@ -11,6 +11,12 @@ import {motion} from 'framer-motion'
 import { opacite } from '../../../variants'
 
 const Case = () => {
+
+      const cases = [
+            {id: 1, category: "Websites", desc: "Lorem ipsum", img1: "/images/company-logo-agencypro-x-webflow-template.svg", title: "lorem.com"},
+            {id: 2, category: "Logos", desc: "Lorem ipsum", img1: "/images/enterprise-logo-agencypro-x-webflow-template.svg", title: "lorem-logo"},
+          ];
+
   return (
     <motion.div
     variants={opacite("up", 0.3)}
@@ -37,56 +43,41 @@ const Case = () => {
             </div>
       </div>
       <div className='flex flex-col lg:flex-row items-center justify-between gap-10'>
-            <div className='w-full'>
-                  <Card className='rounded-[50px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]'>
-                        <Link href={''}>
-                              <div>
-                              <Image src={image1} alt='image1' priority width={0} height={0} sizes='100vw' 
-                                    className='rounded-t-[50px] w-full' />
-                              </div>
-                              <div className='p-10 w-full'>
-                                    <div className="flex items-center gap-2 mb-3">
-                                          <h5 className="text-red-500 text-lg font-semibold"> 
-                                                Company
-                                          </h5> 
-                                    </div>
-                                    <h2 className='text-xl sm:text-2xl max-w-xl font-bold leading-tight mb-3'>
-                                    How we increased sign up rate by 56% on Creators Program
-                                    </h2>
-                                    <p className='text-base md:text-xl text-gray-500 max-w-xl'>
-                                    Lorem ipsum consectetur amet dolor sit 
-                                    comeneer ilremsilom dolce issilm acalrm 
-                                    leoinsion duycoqun consemleint.
-                                    </p>
-                              </div>
-                        </Link>
-                  </Card>
+      {cases.map((item) => (
+            <div className='w-full' key={item.id}>
+              <Card className='rounded-[50px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]'>
+                <Link href={`/case-study/${item.id}`}>
+                  <div>
+                    <Image
+                      src={item.img1}
+                      alt='image1'
+                      priority
+                      width={0}
+                      height={0}
+                      sizes='100vw'
+                      className='rounded-t-[50px] w-full'
+                    />
+                  </div>
+                  <motion.div
+                    whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+                    className='p-10'
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <h5 className="text-red-500 text-lg font-semibold">
+                        {item.category}
+                      </h5> 
+                    </div>
+                    <h2 className='text-2xl max-w-xl font-bold leading-tight mb-3'>
+                      {item.title}
+                    </h2>
+                    <p className='text-base md:text-lg text-gray-500 max-w-xl'>
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                </Link>
+              </Card>
             </div>
-            <div className='w-full'>
-                  <Card className='rounded-[50px] shadow-[0_8px_30px_rgb(0,0,0,0.12)]'>
-                        <Link href={''}>
-                              <div>
-                              <Image src={image2} alt='image1' priority width={0} height={0} sizes='100vw' 
-                                    className='rounded-t-[50px] w-full' />
-                              </div>
-                              <div className='p-10 w-full'>
-                                    <div className="flex items-center gap-2 mb-3">
-                                          <h5 className="text-red-500 text-lg font-semibold"> 
-                                          Enterprise
-                                          </h5> 
-                                    </div>
-                                    <h2 className='text-xl sm:text-2xl max-w-xl font-bold leading-tight mb-3'>
-                                          How we scalated 12 positions on Enterprise App Store rankings
-                                    </h2>
-                                    <p className='text-base md:text-xl text-gray-500 max-w-xl'>
-                                    Lorem ipsum consectetur amet dolor sit 
-                                    comeneer ilremsilom dolce issilm acalrm 
-                                    leoinsion duycoqun consemleint.
-                                    </p>
-                              </div>
-                        </Link>
-                  </Card>
-            </div>
+          ))}
       </div>
       <div className='mt-16 flex flex-col items-center justify-center'>
             <div className='flex flex-col sm:flex-row items-center gap-4'>

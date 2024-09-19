@@ -27,7 +27,7 @@ const Order = ({user}: Props) => {
 
   return (
     <>
-    <div className='pt-[100px] pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[25rem]'>
+    <div className='pt-[100px] pb-[100px] px-4 xl:px-14 xxl:px-[10rem] xll:px-[20rem] xxx:px-[22%] lll:px-[25%]'>
       <div className='w-full px-8 py-5 bg-slate-50'>
         <h1 className='text-3xl md:text-[40px] font-bold leading-tight mb-3 xl:max-w-xl'>
             {user.name} Orders
