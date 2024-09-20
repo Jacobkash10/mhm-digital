@@ -93,7 +93,6 @@ const Check = () => {
                     const orderId = data.orderId;
         
                     router.push(`/details/${orderId}`);
-                    window.location.reload()
                 } catch (error) {
                     setError("Une erreur s'est produite.");
                 }

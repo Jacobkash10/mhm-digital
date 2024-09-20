@@ -7,7 +7,7 @@ import getSession from "@/lib/getSession";
 import nodemailer from 'nodemailer';
 import handlebars from 'handlebars';
 
-// Fonction pour envoyer l'email de confirmation avec un template inline
+// Fonction pour envoyer l'email de confirmation au client
 const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
     const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -19,8 +19,8 @@ const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
         },
     });
 
-    // Template d'e-mail intégré en HTML
-    const htmlTemplate = `
+    // Template d'e-mail pour le client
+    const clientTemplate = `
         <h2>Confirmation de votre commande</h2>
         <p>Bonjour {{name}},</p>
         <p>Merci pour votre commande. Voici les détails :</p>
@@ -38,8 +38,8 @@ const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
     `;
 
     // Compiler le template
-    const compiledTemplate = handlebars.compile(htmlTemplate);
-    const htmlToSend = compiledTemplate({
+    const compiledClientTemplate = handlebars.compile(clientTemplate);
+    const clientHtmlToSend = compiledClientTemplate({
         name: orderDetails.name,
         orderId: orderDetails.id,
         phoneNumber: orderDetails.phoneNumber,
@@ -50,18 +50,74 @@ const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
     });
 
     const mailOptions = {
-        from: 'info@mhmdigital.us',  // Adresse de l'expéditeur
-        replyTo: orderDetails.email,  // Adresse de réponse (celle de l'utilisateur)
-        to: userEmail,  // Destinataire (l'utilisateur)
+        from: 'info@mhmdigital.us',
+        replyTo: orderDetails.email,
+        to: userEmail,
         subject: `Confirmation de votre commande - ID ${orderDetails.id}`,
-        html: htmlToSend,  // Contenu HTML compilé
+        html: clientHtmlToSend,
     };
 
     try {
         await transporter.sendMail(mailOptions);
         console.log('E-mail de confirmation envoyé avec succès.');
     } catch (error) {
-        console.error('Erreur lors de l\'envoi de l\'e-mail:', error);
+        console.error('Erreur lors de l\'envoi de l\'e-mail de confirmation:', error);
+    }
+};
+
+// Fonction pour envoyer l'email récapitulatif à l'admin (info@mhmdigital.us)
+const sendAdminEmail = async (orderDetails: any) => {
+    const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: parseInt(process.env.SMTP_PORT || "465"),
+        secure: true,
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+        },
+    });
+
+    // Template d'e-mail pour l'admin
+    const adminTemplate = `
+        <h2>Nouvelle commande reçue</h2>
+        <p>Un utilisateur a passé une nouvelle commande. Voici les détails :</p>
+        <ul>
+            <li>Nom du client : {{name}}</li>
+            <li>E-mail du client : {{email}}</li>
+            <li>Téléphone : {{phoneNumber}}</li>
+            <li>ID de la commande : {{orderId}}</li>
+            <li>Montant total : {{price}}€</li>
+            <li>Adresse de facturation : {{billingAddress}}</li>
+            <li>Adresse de livraison : {{shippingAddress}}</li>
+            <li>Paquets commandés : {{packages}}</li>
+        </ul>
+    `;
+
+    // Compiler le template
+    const compiledAdminTemplate = handlebars.compile(adminTemplate);
+    const adminHtmlToSend = compiledAdminTemplate({
+        name: orderDetails.name,
+        email: orderDetails.email,
+        phoneNumber: orderDetails.phoneNumber,
+        orderId: orderDetails.id,
+        price: orderDetails.price,
+        billingAddress: orderDetails.billingAddress,
+        shippingAddress: orderDetails.shippingAddress,
+        packages: orderDetails.packages.join(', '),
+    });
+
+    const mailOptions = {
+        from: 'info@mhmdigital.us',
+        to: 'info@mhmdigital.us',
+        subject: `Nouvelle commande - ID ${orderDetails.id}`,
+        html: adminHtmlToSend,
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        console.log('E-mail récapitulatif envoyé à l\'admin avec succès.');
+    } catch (error) {
+        console.error('Erreur lors de l\'envoi de l\'e-mail à l\'admin:', error);
     }
 };
 
@@ -104,7 +160,7 @@ export const checkOut = async (values: z.infer<typeof checkoutSchema>) => {
         }
     });
 
-    // Envoi de l'email de confirmation
+    // Envoi des deux e-mails (client et admin)
     await sendConfirmationEmail({
         name,
         phoneNumber,
@@ -115,6 +171,17 @@ export const checkOut = async (values: z.infer<typeof checkoutSchema>) => {
         shippingAddress,
         packages: packageIds,
     }, email);
+
+    await sendAdminEmail({
+        name,
+        phoneNumber,
+        email,
+        id: newOrder.id,
+        price,
+        billingAddress,
+        shippingAddress,
+        packages: packageIds,
+    });
 
     return { orderId: newOrder.id };
 };
