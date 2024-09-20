@@ -68,6 +68,7 @@ const Form = ({services}: Props) => {
                               description: "Message envoyé",
                               variant: "default"
                         })
+                        window.location.reload();
                   })
             })
       }

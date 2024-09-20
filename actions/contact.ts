@@ -23,10 +23,10 @@ export async function contact(values: z.infer<typeof contactSchema>) {
   transporter.use('compile', hbs({
     viewEngine: {
       extname: '.hbs',
-      layoutsDir: path.resolve('./templates'), 
+      layoutsDir: path.join(__dirname, 'templates'), 
       defaultLayout: false,
     },
-    viewPath: path.resolve('./templates'),
+    viewPath: path.join(__dirname, 'templates'),
     extName: '.hbs',
   }));
 
