@@ -23,10 +23,10 @@ const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
     transporter.use('compile', hbs({
         viewEngine: {
             extname: '.hbs',
-            layoutsDir: path.join(process.cwd(), 'templates'),
+            layoutsDir: path.join(process.cwd(), 'public/templates'),
             defaultLayout: false,
         },
-        viewPath: path.join(process.cwd(), 'templates'),
+        viewPath: path.join(process.cwd(), 'public/templates'),
         extName: '.hbs', 
     }));
 
