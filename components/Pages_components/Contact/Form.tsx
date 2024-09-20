@@ -23,7 +23,7 @@ import { FormError } from '@/components/form-error'
 import { contact } from '@/actions/contact'
 import { contactSchema } from '@/schemas';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod'
 
 type Input = z.infer<typeof contactSchema>;
 

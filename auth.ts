@@ -1,49 +1,54 @@
-import NextAuth from "next-auth"
-import { UserRole } from "@prisma/client"
-import { PrismaAdapter } from "@auth/prisma-adapter"
+import NextAuth from "next-auth";
+import { UserRole } from "@prisma/client";
+import { PrismaAdapter } from "@auth/prisma-adapter";
 
-import { db } from "@/lib/db"
-import authConfig from "@/auth.config"
-import { getUserById } from "@/data/user"
+import { db } from "@/lib/db";
+import authConfig from "@/auth.config";
+import { getUserById } from "@/data/user";
 
- 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-      pages: {
-            signIn: "/connexion",
-            error: "/auth/error"
-      },
-      events: {
-            async linkAccount({user}) {
-                  await db.user.update({
-                        where: {id: user.id},
-                        data: {emailVerified: new Date()}
-                  })
-            }
-      },
-      callbacks: {
-            async session({token, session}) {
-                  if (token.sub && session.user) {
-                        session.user.id = token.sub
-                  }
+  pages: {
+    signIn: "/connexion",
+    error: "/auth/error",
+  },
+  events: {
+    async linkAccount({ user }) {
+      await db.user.update({
+        where: { id: user.id },
+        data: { emailVerified: new Date() },
+      });
+    },
+  },
+  callbacks: {
+    async session({ token, session }) {
+      if (token.sub && session.user) {
+        session.user.id = token.sub;
+      }
 
-                  if (token.role && session.user) {
-                        session.user.role = token.role as UserRole
-                  }
-                  return session
-            },
-            async jwt({token}) {
-                  if (!token.sub) return token
+      if (token.role && session.user) {
+        session.user.role = token.role as UserRole;
+      }
 
-                  const existingUser = await getUserById(token.sub)
+      // Pas besoin de manipuler manuellement 'expires'
+      return session;
+    },
+    async jwt({ token }) {
+      if (!token.sub) return token;
 
-                  if (!existingUser) return token
+      const existingUser = await getUserById(token.sub);
 
-                  token.role = existingUser.role
+      if (!existingUser) return token;
 
-                  return token
-            }
-      },
-      adapter: PrismaAdapter(db),
-      session: { strategy: 'jwt' },
-      ...authConfig,
-})
+      token.role = existingUser.role;
+
+      return token;
+    },
+  },
+  adapter: PrismaAdapter(db),
+  session: {
+    strategy: "jwt",
+    maxAge: 86400,
+    updateAge: 3600,
+  },
+  ...authConfig,
+});
