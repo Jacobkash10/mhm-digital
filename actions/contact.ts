@@ -5,6 +5,7 @@ import nodemailer from 'nodemailer';
 import { z } from 'zod';
 import hbs from 'nodemailer-express-handlebars';
 import path from 'path';
+import handlebars from 'handlebars';
 
 export async function contact(values: z.infer<typeof contactSchema>) {
 
@@ -20,29 +21,35 @@ export async function contact(values: z.infer<typeof contactSchema>) {
     },
   });
 
-  transporter.use('compile', hbs({
-    viewEngine: {
-      extname: '.hbs',
-      layoutsDir: path.join(process.cwd(), 'public/templates'),
-      defaultLayout: false,
-    },
-    viewPath: path.join(process.cwd(), 'public/templates'),
-    extName: '.hbs',
-  }));
+  // Template d'e-mail en ligne
+  const htmlTemplate = `
+    <h3>Nouveau message de {{name}}</h3>
+    <ul>
+      <li>Nom: {{name}}</li>
+      <li>Email: {{email}}</li>
+      <li>Téléphone: {{phoneNumber}}</li>
+      <li>Société: {{company}}</li>
+      <li>Service demandé: {{service}}</li>
+      <li>Description du projet: {{description}}</li>
+    </ul>
+  `;
+
+  // Compiler le template
+  const compiledTemplate = handlebars.compile(htmlTemplate);
+  const htmlToSend = compiledTemplate({
+    name: values.name,
+    email: values.email,
+    phoneNumber: values.phoneNumber || "Non fourni",
+    company: values.company || "Non fourni",
+    service: values.service,
+    description: values.description,
+  });
 
   const mailOptions = {
     from: parsedValues.email,
     to: 'info@mhmdigital.us',
     subject: `Nouveau message de ${parsedValues.name}`,
-    template: 'contact_email',
-    context: { 
-      name: parsedValues.name,
-      email: parsedValues.email,
-      phoneNumber: parsedValues.phoneNumber || "Non fourni",
-      company: parsedValues.company || "Non fourni",
-      service: parsedValues.service,
-      description: parsedValues.description,
-    },
+    html: htmlToSend, 
   };
 
   try {
