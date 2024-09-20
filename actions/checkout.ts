@@ -11,9 +11,9 @@ import path from 'path';
 const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
 
     const transporter = nodemailer.createTransport({
-        host: 'nodels2-fr.n0c.com',
-        port: 465,
-        secure: true,
+        host: process.env.SMTP_HOST,
+        port: parseInt(process.env.SMTP_PORT || "465"),
+        secure: process.env.SMTP_PORT === "465",
         auth: {
             user: process.env.SMTP_USER,
             pass: process.env.SMTP_PASS,
