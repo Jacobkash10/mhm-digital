@@ -80,10 +80,10 @@ const Banner = () => {
                         </h5> 
                   </div>
                   <h1 className='text-[40px] sm:text-[64px] text-white font-bold leading-tight mb-3 text-center '>
-                  We Help startups and businesses achieve exponential growth.
+                  We Help startups and businesses growth.
                   </h1>
                   <p className='text-base font-semibold text-slate-200 text-center max-w-md lg:max-w-xl'>
-                  At MHM Digital, we drive your success with tailored strategies, innovative designs, and cutting-edge digital 
+                  We drive your success with tailored strategies, innovative designs, and cutting-edge digital 
                   solutions to elevate your brand.
                   </p>
                   <div className='flex flex-col justify-center gap-5 sm:flex sm:flex-row sm:justify-start items-center sm:gap-4 mt-10'>
