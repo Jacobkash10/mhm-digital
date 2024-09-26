@@ -227,9 +227,12 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
                     <h5 className="text-gray-500 mb-2 text-2xl">{pack.name || 'Default name'}</h5>
 
                     <h4 className="text-2xl font-bold mb-6">
-                      {isPriceTypeSwitchOn
-                        ? `$ ${pack.priceByMonth || '1000'}.00 USD / Month`
-                        : `$ ${pack.priceByYear || '12000'}.00 USD / Year`}
+                    {pack.priceByMonth !== null && pack.priceByYear !== null
+                      ? isPriceTypeSwitchOn
+                        ? `$ ${pack.priceByMonth}.00 USD / Month`
+                        : `$ ${pack.priceByYear}.00 USD / Year`
+                      : `$ ${pack.price || '1000'}.00 USD`
+                    }
                     </h4>
 
                     <p className="text-gray-500 text-lg mb-8">{pack.description || 'Default description'}</p>
