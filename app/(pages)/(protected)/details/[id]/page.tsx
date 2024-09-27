@@ -60,12 +60,15 @@ const page = async ({ params }: { params: { id: string } }) => {
                   </td>
                   <td className='px-6 py-4'>{order.packages.map((item) => item.package.service?.name)}</td>
                 </tr>
-                <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
-                  <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-                    Sub service
-                  </td>
-                  <td className='px-6 py-4'>{order.packages.map((item) => item.package.subService?.name) || 'Pas de sous-service'}</td>
-                </tr>
+                {order.packages.some(item => item.package.subService) && (
+                  <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b 
+                  dark:border-gray-700'>
+                    <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>Sub service</td>
+                    <td className='px-6 py-4'>
+                      {order.packages.map(item => item.package.subService?.name).join(', ')}
+                    </td>
+                  </tr>
+                )}
                 <tr className='odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700'>
                   <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                     Package
@@ -88,7 +91,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                   <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                     Date
                   </td>
-                  <td className='px-6 py-4'>Date</td>
+                  <td className='px-6 py-4'>{new Date(order.createdAt).toLocaleDateString()}</td>
                 </tr>
               </tbody>
             </table>

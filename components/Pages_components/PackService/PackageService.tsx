@@ -9,6 +9,17 @@ import image3 from "@/public/images/image-project-overview-marketing-template.sv
 import { addToCart } from "@/lib/cartUtils";
 import { CartItem } from "@/types/carts";
 import { useRouter } from "next/navigation";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 interface Props {
   servicePack: Packages;
@@ -50,6 +61,8 @@ const PackageService = ({ servicePack }: Props) => {
     }
   };
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
   const handleAddToCart = () => {
     const item: CartItem = {
       package: servicePack,
@@ -58,8 +71,7 @@ const PackageService = ({ servicePack }: Props) => {
       packageId: servicePack.id,
     };
     addToCart(item);
-    alert("Package ajouté au panier!");
-    window.location.reload();
+    setIsDialogOpen(true);
   };
 
   return (
@@ -217,6 +229,24 @@ const PackageService = ({ servicePack }: Props) => {
           </div>
         </div>
       </div>
+      <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <AlertDialogTrigger asChild>
+                  <button className='hidden' onClick={() => handleAddToCart}>Add to Cart</button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Package Added to Cart</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      The package has been successfully added to your cart!
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogAction onClick={() => window.location.reload()}>
+                      <p className='text-white'>0K</p>
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
     </>
   );
 };

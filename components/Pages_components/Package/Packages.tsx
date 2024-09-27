@@ -11,6 +11,17 @@ import { addToCart } from '@/lib/cartUtils';
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import Contact from './Conctact';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 interface Package {
   id: string;
@@ -44,7 +55,8 @@ const Packages: React.FC<Props> = ({ services }) => {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
   const [selectedSubServiceId, setSelectedSubServiceId] = useState<string | null>(null);
   const [selectedPriceType, setSelectedPriceType] = useState<'monthly' | 'yearly'>('monthly');
-  const [isPriceTypeSwitchOn, setIsPriceTypeSwitchOn] = useState(true); // État pour le switch
+  const [isPriceTypeSwitchOn, setIsPriceTypeSwitchOn] = useState(true);
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
 
   useEffect(() => {
     if (services.length > 0) {
@@ -66,7 +78,7 @@ const Packages: React.FC<Props> = ({ services }) => {
 
   const handleAddToCart = (pack: Package) => {
     if (!selectedService) {
-      console.error('Le service sélectionné est introuvable');
+      console.error('The selected service cannot be found');
       return;
     }
 
@@ -85,7 +97,7 @@ const Packages: React.FC<Props> = ({ services }) => {
         service: {
           id: selectedService.id,
           name: selectedService.name,
-          description: "Description du service",
+          description: "Service description",
           icon: "path_to_icon"
         },
         serviceId: selectedService.id,
@@ -94,8 +106,7 @@ const Packages: React.FC<Props> = ({ services }) => {
 
     addToCart(item);
 
-    alert(`Le package a été ajouté au panier!`);
-    window.location.reload();
+    setIsDialogOpen(true);
   };
 
   return (
@@ -172,11 +183,11 @@ const Packages: React.FC<Props> = ({ services }) => {
 
       {/* Vérifie s'il y a des packages à afficher */}
       {filteredPackages.length > 0 ? (
-        <div className="mt-10 py-16 px-2 bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] border rounded-[40px]
+        <div className="mt-10 py-16 px-2 bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] rounded-[40px]
         flex flex-col gap-10 xl:grid grid-cols-3 xl:gap-0 mx-4 xl:mx-14">
           {filteredPackages.map((pack, index) => (
             <div
-              className="border-b-2 xl:border-r-2 last:border-none xl:border-b-0 pb-10 xl:pb-0 px-10
+              className="border-b xl:border-r last:border-none xl:border-b-0 pb-10 xl:pb-0 px-10
               flex md:flex-row flex-col xl:flex-col items-center"
               key={index}
             >
@@ -223,10 +234,10 @@ const Packages: React.FC<Props> = ({ services }) => {
           ))}
         </div>
       ) : (
-        // Formulaire à afficher si aucun package disponible
+        
         <>
           <div className='mt-5 flex flex-col items-center justify-center'>
-              <h1 className="text-[20px] text-center text-gray-500 font-normal mb-2 max-w-xl">
+              <h1 className="text-[20px] text-center text-gray-500 font-normal mb-2 max-w-xl leading-snug">
                 <span className='font-bold text-black'>{selectedService?.name} </span> 
                 services, please contact us directly. We're here to assist you with all your notarial needs.
               </h1>
@@ -234,6 +245,24 @@ const Packages: React.FC<Props> = ({ services }) => {
           </div>
         </>
       )}
+      <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <AlertDialogTrigger asChild>
+                  <button className='hidden' onClick={() => handleAddToCart}>Add to Cart</button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Package Added to Cart</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      The package has been successfully added to your cart!
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogAction onClick={() => window.location.reload()}>
+                      <p className='text-white'>0K</p>
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
     </div>
   );
 };

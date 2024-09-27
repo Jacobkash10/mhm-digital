@@ -29,7 +29,9 @@ const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
             <li>Téléphone : {{phoneNumber}}</li>
             <li>Montant total : {{price}}€</li>
             <li>Adresse de facturation : {{billingAddress}}</li>
+            <li>Ville de l'adresse de facturation : {{billingCity}}</li>
             <li>Adresse de livraison : {{shippingAddress}}</li>
+            <li>Ville de l'adresse de livraison : {{shippingCity}}</li>
             <li>Paquets commandés : {{packages}}</li>
         </ul>
         <p>Nous vous contacterons bientôt pour plus de détails.</p>
@@ -45,7 +47,9 @@ const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
         phoneNumber: orderDetails.phoneNumber,
         price: orderDetails.price,
         billingAddress: orderDetails.billingAddress,
+        billingCity: orderDetails.billingCity,
         shippingAddress: orderDetails.shippingAddress,
+        shippingCity: orderDetails.shippingCity,
         packages: orderDetails.packages.join(', '),
     });
 

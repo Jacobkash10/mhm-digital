@@ -9,12 +9,20 @@ import Image from 'next/image'
 import { Carts } from '../../types/carts';
 import { CartContext } from '@/context/CartContext'
 import { removeFromCart } from '@/lib/cartUtils'
+import { useToast } from '../ui/use-toast'
 
 const CartView = ({openCart, open, carts}: {openCart: () => void, open: boolean, carts: Carts}) => {
 
+      const {toast} = useToast()
+
       const handleRemoveFromCart = (packageId: string) => {
             removeFromCart(packageId);
-            alert('Package a été supprimé du panier!');
+            toast({
+                  title: "",
+                  description: "Package has been removed from the cart!",
+                  variant: "default"
+            });
+            window.location.reload()
           };
 
   return (

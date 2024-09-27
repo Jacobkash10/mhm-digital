@@ -14,6 +14,17 @@ import { CartItem } from "@/types/carts";
 import Contact from './Contact';
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 interface Service {
   id: string;
@@ -71,7 +82,8 @@ interface Props {
 const PackagesComponent: React.FC<Props> = ({ service }) => {
   const [selectedSubServiceId, setSelectedSubServiceId] = useState<string | null>(null);
   const [selectedPriceType, setSelectedPriceType] = useState<'monthly' | 'yearly'>('monthly');
-  const [isPriceTypeSwitchOn, setIsPriceTypeSwitchOn] = useState(true); // État pour le switch
+  const [isPriceTypeSwitchOn, setIsPriceTypeSwitchOn] = useState(true);
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
 
   useEffect(() => {
     if (service?.subServices && service?.subServices.length > 0) {
@@ -102,8 +114,7 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
 
     addToCart(item);
 
-    alert(`Le package a été ajouté au panier!`);
-    window.location.reload(); 
+    setIsDialogOpen(true);
   };
 
   return (
@@ -112,7 +123,7 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
         service.packages.length <= 0 ? 
         (
           <div className='mt-32 flex flex-col items-center justify-center'>
-              <h1 className="text-[20px] text-gray-500 font-normal text-center mb-5 max-w-xl">
+              <h1 className="text-[20px] text-gray-500 font-normal text-center mb-5 max-w-xl leading-snug">
                 <span className='font-bold text-black'>{service.name} </span> 
                 services, please contact us directly. We're here to assist you with all your notarial needs.
               </h1>
@@ -174,11 +185,11 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
               </>
             )}
 
-            <div className="mt-10 py-16 px-2 bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] border 
+            <div className="mt-10 py-16 px-2 bg-white shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] 
             rounded-[40px] flex flex-col gap-10 xl:grid grid-cols-3 xl:gap-0">
               {filteredPackages.map((pack, index) => (
                 <div
-                  className="border-b-2 xl:border-r-2 last:border-none xl:border-b-0 pb-10 xl:pb-0 px-10 
+                  className="border-b xl:border-r last:border-none xl:border-b-0 pb-10 xl:pb-0 px-10 
                   flex md:flex-row flex-col xl:flex-col items-center"
                   key={index}
                 >
@@ -260,6 +271,24 @@ const PackagesComponent: React.FC<Props> = ({ service }) => {
                   </div>
                 </div>
               ))}
+              <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <AlertDialogTrigger asChild>
+                  <button className='hidden' onClick={() => handleAddToCart}>Add to Cart</button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Package Added to Cart</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      The package has been successfully added to your cart!
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogAction onClick={() => window.location.reload()}>
+                      <p className='text-white'>0K</p>
+                    </AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           </motion.div>
         )

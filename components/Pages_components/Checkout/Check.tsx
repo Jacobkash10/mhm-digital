@@ -16,6 +16,17 @@ import { checkOut } from '@/actions/checkout';
 import image1 from '@/public/images/icon-1-packages-marketing-template.png'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react';
+import {
+      AlertDialog,
+      AlertDialogAction,
+      AlertDialogCancel,
+      AlertDialogContent,
+      AlertDialogDescription,
+      AlertDialogFooter,
+      AlertDialogHeader,
+      AlertDialogTitle,
+      AlertDialogTrigger,
+    } from "@/components/ui/alert-dialog"
 
 type Input = z.infer<typeof checkoutSchema>;
 
@@ -36,6 +47,7 @@ const Check = () => {
   const router = useRouter()
   const {toast} = useToast()
   const [carts, setCarts] = useState<Carts>(getCart());
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
 
   const [error, setError] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition()
@@ -68,7 +80,7 @@ const Check = () => {
             if (!session) {
                   toast({
                     title: "Error",
-                    description: "Vous devez être connecté pour commander!",
+                    description: "You must be logged in to order!",
                     variant: "destructive"
                   });
                   router.push("/connexion");
@@ -88,18 +100,13 @@ const Check = () => {
                         handleRemoveFromCart(packageId);
                     }
         
-                    toast({
-                        title: "Success",
-                        description: "Package commandé!",
-                        variant: "default"
-                    });
-
-                    const orderId = data.orderId;
+                    setIsDialogOpen(true);
+                    
+                  //   const orderId = data.orderId;
         
-                    router.push(`/details/${orderId}`);
-                    window.location.reload()
+                  //   router.push(`/details/${orderId}`);
                 } catch (error) {
-                    setError("Une erreur s'est produite.");
+                    setError("An error has occurred.");
                 }
             });
       }
@@ -424,6 +431,21 @@ const Check = () => {
                               </div>
                         </form>
                   </Form>
+                  <AlertDialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                        <AlertDialogTrigger asChild>
+                              <button className='hidden'></button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                              <AlertDialogHeader>
+                              <AlertDialogTitle>Package ordered!</AlertDialogTitle>
+                              </AlertDialogHeader>
+                              <AlertDialogFooter>
+                              <AlertDialogAction onClick={() => window.location.reload()}>
+                              <p className='text-white'>0K</p>
+                              </AlertDialogAction>
+                              </AlertDialogFooter>
+                        </AlertDialogContent>
+                  </AlertDialog>
             </div>
       </motion.div>
   )

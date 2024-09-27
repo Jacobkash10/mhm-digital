@@ -53,7 +53,7 @@ export default function UserButton({ user }: UserButtonProps) {
         <DropdownMenuLabel>{user.name || "User"}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-        <DropdownMenuItem asChild>
+          <DropdownMenuItem asChild>
             <Link href={`/user/${user.id}`} className="cursor-pointer">
               <Use className="mr-2 h-4 w-4" />
               <span>Profil</span>
