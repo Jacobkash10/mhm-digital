@@ -13,7 +13,7 @@ variable: '--font-jetBrainsMomo'
  });
 
 export const metadata: Metadata = {
-  title: "Mhm Digital",
+  title: "MHM Digital Agency",
   description: "",
 };
 
