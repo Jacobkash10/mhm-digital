@@ -28,7 +28,11 @@ model User {
   phoneNumber     String?
   company         String?
   billingAddress  String?
+  billingCity     String?
+  billingPostal   String?
   shippingAddress String?
+  shippingCity    String?
+  shippingPostal  String?
   emailVerified   DateTime?
   image           String?
   role            UserRole  @default(USER)
@@ -137,6 +141,8 @@ model Order {
   status   String?
   packages OrderPackage[]
   user     User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
 }
 
 model OrderPackage {

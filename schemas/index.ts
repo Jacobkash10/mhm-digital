@@ -37,7 +37,11 @@ export const checkoutSchema = z.object({
       price: z.number(),
       packageIds: z.array(z.string()).nonempty("At least one package ID is required"),
       billingAddress: z.string().min(1, "Billing address is required"),
+      billingCity: z.string().min(1, "Billing city address is required"),
+      billingPostal: z.string().min(1, "Billing postal code address is required"),
       shippingAddress: z.string().min(1, "Shipping address is required"),
+      shippingCity: z.string().min(1, "Shipping city is required"),
+      shippingPostal: z.string().min(1, "Shipping postal code is required"),
     });
 
 export const contactSchema = z.object({

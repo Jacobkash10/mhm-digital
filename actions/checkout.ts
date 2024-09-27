@@ -88,7 +88,9 @@ const sendAdminEmail = async (orderDetails: any) => {
             <li>ID de la commande : {{orderId}}</li>
             <li>Montant total : {{price}}€</li>
             <li>Adresse de facturation : {{billingAddress}}</li>
+            <li>Ville de l'adresse de facturation : {{billingCity}}</li>
             <li>Adresse de livraison : {{shippingAddress}}</li>
+            <li>Ville de l'adresse de livraison : {{shippingCity}}</li>
             <li>Paquets commandés : {{packages}}</li>
         </ul>
     `;
@@ -102,7 +104,9 @@ const sendAdminEmail = async (orderDetails: any) => {
         orderId: orderDetails.id,
         price: orderDetails.price,
         billingAddress: orderDetails.billingAddress,
+        billingCity: orderDetails.billingCity,
         shippingAddress: orderDetails.shippingAddress,
+        shippingCity: orderDetails.shippingCity,
         packages: orderDetails.packages.join(', '),
     });
 
@@ -135,13 +139,21 @@ export const checkOut = async (values: z.infer<typeof checkoutSchema>) => {
         return { error: "Invalid fields!" };
     }
 
-    const { name, email, phoneNumber, packageIds, price, billingAddress, shippingAddress } = validateFields.data;
+    const { 
+        name, 
+        email, 
+        phoneNumber, 
+        packageIds, 
+        price, 
+        billingAddress, 
+        billingCity, 
+        billingPostal, shippingAddress, shippingCity, shippingPostal } = validateFields.data;
 
     // Mise à jour ou création de l'utilisateur dans la base de données
     const existingUser = await db.user.upsert({
         where: { email },
-        update: { name, phoneNumber, billingAddress, shippingAddress },
-        create: { name, phoneNumber, email, billingAddress, shippingAddress }
+        update: { name, phoneNumber, billingAddress, shippingAddress, billingCity, billingPostal, shippingCity, shippingPostal },
+        create: { name, phoneNumber, email, billingAddress, shippingAddress, billingCity, billingPostal, shippingCity, shippingPostal }
     });
 
     // Préparation des données de commande
@@ -168,7 +180,11 @@ export const checkOut = async (values: z.infer<typeof checkoutSchema>) => {
         id: newOrder.id,
         price,
         billingAddress,
+        billingCity,
+        billingPostal,
         shippingAddress,
+        shippingCity,
+        shippingPostal,
         packages: packageIds,
     }, email);
 
@@ -179,7 +195,11 @@ export const checkOut = async (values: z.infer<typeof checkoutSchema>) => {
         id: newOrder.id,
         price,
         billingAddress,
+        billingCity,
+        billingPostal,
         shippingAddress,
+        shippingCity,
+        shippingPostal,
         packages: packageIds,
     });
 

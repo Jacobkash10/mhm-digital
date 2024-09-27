@@ -47,7 +47,11 @@ const Check = () => {
           email: session?.user.email || '',
           phoneNumber: "",
           billingAddress: "",
+          billingCity: "",
+          billingPostal: "",
           shippingAddress: "",
+          shippingCity: "",
+          shippingPostal: "",
           price: carts.items?.map((item) => Number(item.packageDuration) * item.quantity)?.reduce((total, item) => 
             { return total + item}, 0),
           packageIds: carts.items.map((item) => item.packageId)
@@ -213,6 +217,44 @@ const Check = () => {
                                                       )}
                                                       />
                                                 </div>
+                                                <div className='w-full mt-8 flex items-center justify-between gap-5'>
+                                                      <FormField
+                                                      control={form.control}
+                                                      name="shippingCity"
+                                                      render={({ field }) => (
+                                                            <FormItem className='w-full'>
+                                                                  <FormLabel className='text-base font-bold'>City*</FormLabel>
+                                                                  <FormControl>
+                                                                        <Input placeholder="" {...field}
+                                                                              disabled={isPending} 
+                                                                              className='border rounded-full text-xl px-4 py-7 
+                                                                              placeholder:text-base hover:border-black/50 transition-all
+                                                                              duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
+                                                                        />
+                                                                  </FormControl>
+                                                                  <FormMessage />
+                                                            </FormItem>
+                                                      )}
+                                                      />
+                                                      <FormField
+                                                      control={form.control}
+                                                      name="shippingPostal"
+                                                      render={({ field }) => (
+                                                            <FormItem className='w-full'>
+                                                                  <FormLabel className='text-base font-bold'>Postal code*</FormLabel>
+                                                                  <FormControl>
+                                                                        <Input placeholder="" {...field}
+                                                                              disabled={isPending} 
+                                                                              className='border rounded-full text-xl px-4 py-7 
+                                                                              placeholder:text-base hover:border-black/50 transition-all
+                                                                              duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
+                                                                        />
+                                                                  </FormControl>
+                                                                  <FormMessage />
+                                                            </FormItem>
+                                                      )}
+                                                      />
+                                                </div>
                                                 <div className='w-full mt-8'>
                                                       <FormField
                                                       control={form.control}
@@ -220,6 +262,44 @@ const Check = () => {
                                                       render={({ field }) => (
                                                             <FormItem className='w-full'>
                                                                   <FormLabel className='text-base font-bold'>Billing address*</FormLabel>
+                                                                  <FormControl>
+                                                                        <Input placeholder="" {...field}
+                                                                              disabled={isPending} 
+                                                                              className='border rounded-full text-xl px-4 py-7 
+                                                                              placeholder:text-base hover:border-black/50 transition-all
+                                                                              duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
+                                                                        />
+                                                                  </FormControl>
+                                                                  <FormMessage />
+                                                            </FormItem>
+                                                      )}
+                                                      />
+                                                </div>
+                                                <div className='w-full mt-8 flex items-center justify-between gap-5'>
+                                                      <FormField
+                                                      control={form.control}
+                                                      name="billingCity"
+                                                      render={({ field }) => (
+                                                            <FormItem className='w-full'>
+                                                                  <FormLabel className='text-base font-bold'>City*</FormLabel>
+                                                                  <FormControl>
+                                                                        <Input placeholder="" {...field}
+                                                                              disabled={isPending} 
+                                                                              className='border rounded-full text-xl px-4 py-7 
+                                                                              placeholder:text-base hover:border-black/50 transition-all
+                                                                              duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)]' 
+                                                                        />
+                                                                  </FormControl>
+                                                                  <FormMessage />
+                                                            </FormItem>
+                                                      )}
+                                                      />
+                                                      <FormField
+                                                      control={form.control}
+                                                      name="billingPostal"
+                                                      render={({ field }) => (
+                                                            <FormItem className='w-full'>
+                                                                  <FormLabel className='text-base font-bold'>Postal code*</FormLabel>
                                                                   <FormControl>
                                                                         <Input placeholder="" {...field}
                                                                               disabled={isPending} 

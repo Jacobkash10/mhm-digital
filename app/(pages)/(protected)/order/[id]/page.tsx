@@ -18,6 +18,7 @@ interface PageProps {
                 userId: true,
                 price: true,
                 status: true,
+                createdAt: true
               }
             }
         }

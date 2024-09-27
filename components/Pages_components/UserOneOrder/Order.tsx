@@ -16,6 +16,7 @@ interface User {
             userId: string;
             price: number;
             status: string | null;
+            createdAt: Date
         }[];
 }
 
@@ -63,7 +64,7 @@ const Order = ({user}: Props) => {
                                 {order.id}
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                null
+                              {new Date(order.createdAt).toLocaleDateString()}
                             </td>
                             <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 $ {order.price}.00
