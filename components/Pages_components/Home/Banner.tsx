@@ -80,7 +80,7 @@ const Banner = () => {
                         </h5> 
                   </div>
                   <h1 className='text-[40px] sm:text-[64px] text-white font-bold leading-tight mb-3 text-center '>
-                  We Help startups and businesses growth.
+                  We Help startups & businesses grow.
                   </h1>
                   <p className='text-base font-semibold text-slate-200 text-center max-w-md lg:max-w-xl'>
                   We drive your success with tailored strategies, innovative designs, and cutting-edge digital 
