@@ -21,18 +21,18 @@ const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
 
     // Template d'e-mail pour le client
     const clientTemplate = `
-        <h2>Confirmation de votre commande</h2>
-        <p>Bonjour {{name}},</p>
-        <p>Merci pour votre commande. Voici les détails :</p>
+        <h2>Order confirmation</h2>
+        <p>Hello {{name}},</p>
+        <p>Thank you for your order. Here are the details :</p>
         <ul>
-            <li>ID de la commande : {{orderId}}</li>
-            <li>Téléphone : {{phoneNumber}}</li>
-            <li>Montant total : {{price}}€</li>
-            <li>Adresse de facturation : {{billingAddress}}</li>
-            <li>Ville de l'adresse de facturation : {{billingCity}}</li>
-            <li>Adresse de livraison : {{shippingAddress}}</li>
-            <li>Ville de l'adresse de livraison : {{shippingCity}}</li>
-            <li>Paquets commandés : {{packages}}</li>
+            <li>Order ID : {{orderId}}</li>
+            <li>Phone number : {{phoneNumber}}</li>
+            <li>Total price : {{price}}€</li>
+            <li>Billing address : {{billingAddress}}</li>
+            <li>Billing address city : {{billingCity}}</li>
+            <li>Shipping address : {{shippingAddress}}</li>
+            <li>Shipping address city : {{shippingCity}}</li>
+            <li>Packages ordered : {{packages}}</li>
         </ul>
         <p>Nous vous contacterons bientôt pour plus de détails.</p>
         <p>Cordialement,</p>
@@ -57,15 +57,15 @@ const sendConfirmationEmail = async (orderDetails: any, userEmail: string) => {
         from: 'info@mhmdigital.us',
         replyTo: orderDetails.email,
         to: userEmail,
-        subject: `Confirmation de votre commande - ID ${orderDetails.id}`,
+        subject: `Order confirmation - ID ${orderDetails.id}`,
         html: clientHtmlToSend,
     };
 
     try {
         await transporter.sendMail(mailOptions);
-        console.log('E-mail de confirmation envoyé avec succès.');
+        console.log('Confirmation e-mail sent successfully.');
     } catch (error) {
-        console.error('Erreur lors de l\'envoi de l\'e-mail de confirmation:', error);
+        console.error('Error sending confirmation e-mail : ', error);
     }
 };
 
@@ -83,19 +83,19 @@ const sendAdminEmail = async (orderDetails: any) => {
 
     // Template d'e-mail pour l'admin
     const adminTemplate = `
-        <h2>Nouvelle commande reçue</h2>
-        <p>Un utilisateur a passé une nouvelle commande. Voici les détails :</p>
+        <h2>New order received</h2>
+        <p>A user has placed a new order. Here are the details :</p>
         <ul>
-            <li>Nom du client : {{name}}</li>
-            <li>E-mail du client : {{email}}</li>
-            <li>Téléphone : {{phoneNumber}}</li>
-            <li>ID de la commande : {{orderId}}</li>
-            <li>Montant total : {{price}}€</li>
-            <li>Adresse de facturation : {{billingAddress}}</li>
-            <li>Ville de l'adresse de facturation : {{billingCity}}</li>
-            <li>Adresse de livraison : {{shippingAddress}}</li>
-            <li>Ville de l'adresse de livraison : {{shippingCity}}</li>
-            <li>Paquets commandés : {{packages}}</li>
+            <li>Client name : {{name}}</li>
+            <li>Client email : {{email}}</li>
+            <li>Phone number : {{phoneNumber}}</li>
+            <li>Order ID : {{orderId}}</li>
+            <li>Total price : {{price}}€</li>
+            <li>Billing address : {{billingAddress}}</li>
+            <li>Billing address city : {{billingCity}}</li>
+            <li>Shipping address : {{shippingAddress}}</li>
+            <li>Shipping address city : {{shippingCity}}</li>
+            <li>Packages ordered : {{packages}}</li>
         </ul>
     `;
 
@@ -117,15 +117,15 @@ const sendAdminEmail = async (orderDetails: any) => {
     const mailOptions = {
         from: 'info@mhmdigital.us',
         to: 'info@mhmdigital.us',
-        subject: `Nouvelle commande - ID ${orderDetails.id}`,
+        subject: `New order - ID ${orderDetails.id}`,
         html: adminHtmlToSend,
     };
 
     try {
         await transporter.sendMail(mailOptions);
-        console.log('E-mail récapitulatif envoyé à l\'admin avec succès.');
+        console.log('Summary e-mail successfully sent to l\'admin.');
     } catch (error) {
-        console.error('Erreur lors de l\'envoi de l\'e-mail à l\'admin:', error);
+        console.error('Error sending l\'e-mail to l\'admin : ', error);
     }
 };
 

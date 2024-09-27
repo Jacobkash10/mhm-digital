@@ -42,7 +42,11 @@ export default function SettingsPage({user}: SettingsPageProps) {
       name: user.name || "",
       phoneNumber: "",
       shippingAddress: "",
+      shippingCity: "",
+      shippingPostal: "",
       billingAddress: "",
+      billingCity: "",
+      billingPostal: "",
       company: "",
     },
   });
@@ -144,6 +148,40 @@ export default function SettingsPage({user}: SettingsPageProps) {
               />
               <FormField
                 control={form.control}
+                name="shippingCity"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500 ">City :</FormLabel>
+                    <FormControl>
+                      <Input 
+                      placeholder="Enter a city of shipping address" 
+                      {...field} 
+                      className="border rounded-full text-base px-5 py-6 placeholder:text-sm text-black font-normal" 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="shippingPostal"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500 ">Postal code :</FormLabel>
+                    <FormControl>
+                      <Input 
+                      placeholder="Enter a postal code of shipping address" 
+                      {...field} 
+                      className="border rounded-full text-base px-5 py-6 placeholder:text-sm text-black font-normal" 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
                 name="billingAddress"
                 render={({ field }) => (
                   <FormItem>
@@ -151,6 +189,40 @@ export default function SettingsPage({user}: SettingsPageProps) {
                     <FormControl>
                       <Input 
                       placeholder="Enter a billing address" 
+                      {...field} 
+                      className="border rounded-full text-base px-5 py-6 placeholder:text-sm text-black font-normal" 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="billingCity"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500 ">City :</FormLabel>
+                    <FormControl>
+                      <Input 
+                      placeholder="Enter a city of billing address" 
+                      {...field} 
+                      className="border rounded-full text-base px-5 py-6 placeholder:text-sm text-black font-normal" 
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="billingPostal"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-gray-500 ">Postal code :</FormLabel>
+                    <FormControl>
+                      <Input 
+                      placeholder="Enter a postal code of billing address" 
                       {...field} 
                       className="border rounded-full text-base px-5 py-6 placeholder:text-sm text-black font-normal" 
                       />

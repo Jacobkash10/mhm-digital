@@ -22,8 +22,12 @@ const getUser = cache(async (id: string) => {
       createdAt: true, 
       email: true, 
       phoneNumber: true, 
-      billingAddress: true, 
-      shippingAddress: true ,
+      billingAddress: true,
+      billingCity: true,
+      billingPostal: true, 
+      shippingAddress: true,
+      shippingCity: true,
+      shippingPostal: true,
       company: true
     },
   });
@@ -95,9 +99,21 @@ export default async function Page({ params: { id } }: PageProps) {
               </h1>
             </div>
             <div className='flex items-center gap-3 mb-2'>
+              <h2 className='text-base text-gray-500'>City of hhipping billing :</h2>
+              <h1 className="text-base font-bold">
+                {user?.shippingCity}
+              </h1>
+            </div>
+            <div className='flex items-center gap-3 mb-2'>
               <h2 className='text-base text-gray-500'>Billing billing :</h2>
               <h1 className="text-base font-bold">
                 {user?.billingAddress}
+              </h1>
+            </div>
+            <div className='flex items-center gap-3 mb-2'>
+              <h2 className='text-base text-gray-500'>City of billing billing :</h2>
+              <h1 className="text-base font-bold">
+                {user?.billingCity}
               </h1>
             </div>
             <div className='flex items-center gap-3 mb-2'>
