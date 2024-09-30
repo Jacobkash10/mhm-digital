@@ -107,19 +107,19 @@ const Footer = () => {
                               </div>
                         </div>
                         <div className='w-full'>
-                              <h5 className='text-xl font-bold'>Tools</h5>
+                              <h5 className='text-xl font-bold'>Marketing Tools</h5>
                               <div className='pt-6'>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'https://mhmdigital.io'}>Marketing Tools</Link>
+                                          <Link className='hover:underline' href={'https://mhmdigital.io'}>All in one </Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'https://ft.mhmdigital.io'}>File Transfer</Link>
+                                          <Link className='hover:underline' href={'https://mhmdigital.io/social-proof'}>Social Proof</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'https://sp.mhmdigital.io'}>Social Proof</Link>
+                                          <Link className='hover:underline' href={'https://mhmdigital.io/analytics'}>Analytics</Link>
                                     </p>
                                     <p className='mb-3 text-base sm:text-lg text-gray-500'>
-                                          <Link className='hover:underline' href={'https://an.mhmdigital.io'}>Analytics</Link>
+                                          <Link className='hover:underline' href={'https://mhmdigital.io/file-transfer'}>File Transfer</Link>
                                     </p>
                               </div>
                         </div>
