@@ -38,7 +38,8 @@ POSTGRES_URL=postgresql://postgres:pass@db.xxxx.supabase.co:5432/postgres
 
 ```bash
 npm run db:migrate   # Apply all migrations
-npm run db:seed      # Seed services, packages, CMS defaults
+npm run db:seed      # Seed services, packages, CMS defaults (destructive — wipes orders/leads)
+npm run db:update-pricing  # Sync package prices/descriptions from catalog (safe for production)
 # Or both at once:
 npm run db:setup
 ```
