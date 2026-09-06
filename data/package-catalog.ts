@@ -691,4 +691,4 @@ export const PACKAGES_CATALOG: PackageCatalogEntry[] = [
       image: "/images/icon-3-packages-marketing-template.png",
       position: 3,
     },
-  ];;
+  ];
