@@ -7,6 +7,38 @@ import {
   productsToCsv,
 } from "@/lib/ghl-product-export";
 
+function parseCsvLine(line: string): string[] {
+  const result: string[] = [];
+  let current = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    if (inQuotes) {
+      if (char === '"') {
+        if (line[i + 1] === '"') {
+          current += '"';
+          i++;
+        } else {
+          inQuotes = false;
+        }
+      } else {
+        current += char;
+      }
+    } else if (char === '"') {
+      inQuotes = true;
+    } else if (char === ",") {
+      result.push(current);
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+
+  result.push(current);
+  return result;
+}
+
 describe("ghl-product-export", () => {
   it("exports packages, print, and add-ons with required CSV columns", () => {
     const products = buildGhlExportProducts();
@@ -32,10 +64,17 @@ describe("ghl-product-export", () => {
     }
   });
 
-  it("produces valid CSV with exact column headers", () => {
+  it("produces valid CSV with exact GHL sample headers (29 columns)", () => {
+    expect(GHL_CSV_COLUMNS).toHaveLength(29);
+
     const csv = productsToCsv(buildGhlExportProducts());
-    const [header, ...rows] = csv.split("\n");
-    expect(header).toBe(GHL_CSV_COLUMNS.join(","));
-    expect(rows.length).toBeGreaterThan(80);
+    const rows = csv.trim().split("\n").map(parseCsvLine);
+
+    expect(rows[0]).toEqual([...GHL_CSV_COLUMNS]);
+    expect(rows.length - 1).toBeGreaterThan(90);
+
+    for (const row of rows.slice(1)) {
+      expect(row).toHaveLength(29);
+    }
   });
 });
