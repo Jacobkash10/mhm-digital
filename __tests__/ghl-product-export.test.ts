@@ -10,7 +10,7 @@ import {
 describe("ghl-product-export", () => {
   it("exports packages, print, and add-ons with required CSV columns", () => {
     const products = buildGhlExportProducts();
-    expect(products.length).toBeGreaterThan(80);
+    expect(products.length).toBeGreaterThan(90);
 
     const packages = products.filter((p) => p.source === "package");
     const print = products.filter((p) => p.source === "print");
