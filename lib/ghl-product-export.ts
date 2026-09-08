@@ -340,9 +340,9 @@ export function productToCsvRow(product: GhlExportProduct): GhlProductRow {
         : "";
 
   return {
-    Handle: product.handle,
-    Title: product.title,
-    "Body (HTML)": descriptionToHtml(product.description),
+    Handle: sanitizeForGhl(product.handle),
+    Title: sanitizeForGhl(product.title),
+    "Body (HTML)": sanitizeForGhl(descriptionToHtml(product.description)),
     "Included in Online Store": product.includeInStore ? "TRUE" : "FALSE",
     "Image Src": product.images[0] ?? "",
     "Option1 Name": option1Name,
@@ -356,7 +356,7 @@ export function productToCsvRow(product: GhlExportProduct): GhlProductRow {
     "Track Inventory": product.trackInventory ? "TRUE" : "FALSE",
     "Allow Out of Stock Purchases": "FALSE",
     "Available Quantity": "",
-    SKU: product.sku,
+    SKU: sanitizeForGhl(product.sku),
     "Weight Value": "",
     "Weight Unit": "",
     "Dimension Length": "",
@@ -364,11 +364,11 @@ export function productToCsvRow(product: GhlExportProduct): GhlProductRow {
     "Dimension Height": "",
     "Dimension Unit": "",
     "Product Label Enable": product.enableProductLabel ? "TRUE" : "FALSE",
-    "Label Title": product.productLabelContent ?? "",
+    "Label Title": sanitizeForGhl(product.productLabelContent ?? ""),
     "Label Start Date": product.labelStartDate ? formatGhlDateTime(product.labelStartDate) : "",
     "Label End Date": product.labelEndDate ? formatGhlDateTime(product.labelEndDate) : "",
-    "SEO Title": product.seoTitle,
-    "SEO Description": product.seoDescription,
+    "SEO Title": sanitizeForGhl(product.seoTitle),
+    "SEO Description": sanitizeForGhl(product.seoDescription),
   };
 }
 
@@ -376,7 +376,7 @@ export function productsToCsv(products: GhlExportProduct[]): string {
   const rows = products.map(productToCsvRow);
   const header = GHL_CSV_COLUMNS.join(",");
   const body = rows.map((row) => GHL_CSV_COLUMNS.map((col) => escapeCsv(row[col])).join(","));
-  return [header, ...body].join("\n");
+  return `${[header, ...body].join("\n")}\n`;
 }
 
 export function buildGhlExportManifest(products: GhlExportProduct[]) {
@@ -457,8 +457,13 @@ function descriptionToHtml(text: string): string {
   return html.join("");
 }
 
+function sanitizeForGhl(value: string): string {
+  // GHL CSV import splits on commas without RFC 4180 quoting — strip commas from values.
+  return value.replace(/,/g, "&#44;");
+}
+
 function escapeCsv(value: string): string {
-  if (value.includes('"') || value.includes(",") || value.includes("\n")) {
+  if (value.includes('"') || value.includes(",") || value.includes("\n") || value.includes("\r")) {
     return `"${value.replace(/"/g, '""')}"`;
   }
   return value;

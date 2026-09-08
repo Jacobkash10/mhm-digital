@@ -68,13 +68,22 @@ describe("ghl-product-export", () => {
     expect(GHL_CSV_COLUMNS).toHaveLength(29);
 
     const csv = productsToCsv(buildGhlExportProducts());
-    const rows = csv.trim().split("\n").map(parseCsvLine);
+    const lines = csv.trim().split(/\r?\n/).map(parseCsvLine);
 
-    expect(rows[0]).toEqual([...GHL_CSV_COLUMNS]);
-    expect(rows.length - 1).toBeGreaterThan(90);
+    expect(lines[0]).toEqual([...GHL_CSV_COLUMNS]);
+    expect(lines.length - 1).toBeGreaterThan(90);
 
-    for (const row of rows.slice(1)) {
+    for (const row of lines.slice(1)) {
       expect(row).toHaveLength(29);
+    }
+  });
+
+  it("has exactly 29 naive comma-separated columns per row (GHL parser compatibility)", () => {
+    const csv = productsToCsv(buildGhlExportProducts());
+    const rawLines = csv.trim().split(/\r?\n/);
+
+    for (const line of rawLines) {
+      expect(line.split(",").length).toBe(29);
     }
   });
 });
