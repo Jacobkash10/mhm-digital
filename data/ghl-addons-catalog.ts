@@ -169,7 +169,7 @@ export const GHL_ADDONS_CATALOG: GhlAddonEntry[] = [
     description:
       "In-office notarization at MHM Digital (Share Space MADDA WALABU, Seattle). Per notarial act. Valid ID required.",
     category: "Notary & Business Support",
-    price: 10,
+    price: 15,
     billingType: "one_time",
     image: "/images/portfolio/notary-public-1.svg",
     tags: ["notary", "business-support", "in-office"],
