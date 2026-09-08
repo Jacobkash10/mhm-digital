@@ -12,35 +12,37 @@ import {
 } from "@/lib/promotions";
 import { absoluteUrl } from "@/lib/seo/site";
 
-/** HighLevel CSV import columns — match GHL sample template field names. */
+/** HighLevel CSV import columns — must match GHL sample template exactly (29 columns). */
 export const GHL_CSV_COLUMNS = [
   "Handle",
   "Title",
-  "Description",
-  "Type",
-  "Category",
-  "SKU",
-  "Price",
-  "Compare Price",
-  "Billing Type",
-  "Billing Frequency",
-  "Currency",
-  "Images",
-  "Include in Online Store",
+  "Body (HTML)",
+  "Included in Online Store",
+  "Image Src",
+  "Option1 Name",
+  "Option1 Value",
+  "Option2 Name",
+  "Option2 Value",
+  "Option3 Name",
+  "Option3 Value",
+  "Variant Price",
+  "Variant Compare At Price",
   "Track Inventory",
+  "Allow Out of Stock Purchases",
+  "Available Quantity",
+  "SKU",
   "Weight Value",
   "Weight Unit",
   "Dimension Length",
   "Dimension Width",
   "Dimension Height",
   "Dimension Unit",
-  "Enable Product Label",
-  "Product Label Content",
+  "Product Label Enable",
+  "Label Title",
   "Label Start Date",
   "Label End Date",
   "SEO Title",
   "SEO Description",
-  "Tags",
 ] as const;
 
 export type GhlCsvColumn = (typeof GHL_CSV_COLUMNS)[number];
@@ -329,34 +331,44 @@ export function productToCsvRow(product: GhlExportProduct): GhlProductRow {
       ? formatPrice(product.comparePrice)
       : "";
 
+  const option1Name = product.billingFrequency ? "Billing" : "";
+  const option1Value =
+    product.billingFrequency === "monthly"
+      ? "Monthly"
+      : product.billingFrequency === "yearly"
+        ? "Yearly"
+        : "";
+
   return {
     Handle: product.handle,
     Title: product.title,
-    Description: product.description,
-    Type: product.type,
-    Category: product.category,
-    SKU: product.sku,
-    Price: priceValue,
-    "Compare Price": compareValue,
-    "Billing Type": product.billingType,
-    "Billing Frequency": product.billingFrequency ?? "",
-    Currency: product.currency,
-    Images: product.images.join(" | "),
-    "Include in Online Store": product.includeInStore ? "TRUE" : "FALSE",
+    "Body (HTML)": descriptionToHtml(product.description),
+    "Included in Online Store": product.includeInStore ? "TRUE" : "FALSE",
+    "Image Src": product.images[0] ?? "",
+    "Option1 Name": option1Name,
+    "Option1 Value": option1Value,
+    "Option2 Name": "",
+    "Option2 Value": "",
+    "Option3 Name": "",
+    "Option3 Value": "",
+    "Variant Price": priceValue,
+    "Variant Compare At Price": compareValue,
     "Track Inventory": product.trackInventory ? "TRUE" : "FALSE",
+    "Allow Out of Stock Purchases": "FALSE",
+    "Available Quantity": "",
+    SKU: product.sku,
     "Weight Value": "",
     "Weight Unit": "",
     "Dimension Length": "",
     "Dimension Width": "",
     "Dimension Height": "",
     "Dimension Unit": "",
-    "Enable Product Label": product.enableProductLabel ? "TRUE" : "FALSE",
-    "Product Label Content": product.productLabelContent ?? "",
-    "Label Start Date": product.labelStartDate ?? "",
-    "Label End Date": product.labelEndDate ?? "",
+    "Product Label Enable": product.enableProductLabel ? "TRUE" : "FALSE",
+    "Label Title": product.productLabelContent ?? "",
+    "Label Start Date": product.labelStartDate ? formatGhlDateTime(product.labelStartDate) : "",
+    "Label End Date": product.labelEndDate ? formatGhlDateTime(product.labelEndDate) : "",
     "SEO Title": product.seoTitle,
     "SEO Description": product.seoDescription,
-    Tags: product.tags.join(", "),
   };
 }
 
@@ -383,11 +395,10 @@ export function buildGhlExportManifest(products: GhlExportProduct[]) {
     promoLabel: isSitePromoActive() ? SITE_PROMO_LABEL : null,
     promoEndsAt: isSitePromoActive() ? SITE_PROMO_ENDS_AT.toISOString() : null,
     importNotes: [
-      "Download HighLevel sample CSV from Payments > Products > Import as CSV and verify column headers match.",
-      "If headers differ, map columns during import or rename headers to match your GHL sample file.",
+      "CSV columns match the official HighLevel sample template (29 columns).",
+      "Recurring packages use Billing option variants (Monthly / Yearly) — set recurring billing in GHL after import.",
       "Leave weight, dimension, and inventory fields blank for services.",
-      "Bulk print orders and quote-only items have empty Price — configure as quote products in GHL.",
-      "Recurring packages use separate monthly/yearly SKUs with Billing Type = recurring.",
+      "Bulk print orders have empty Variant Price — configure as quote products in GHL.",
     ],
     products,
   };
@@ -395,6 +406,55 @@ export function buildGhlExportManifest(products: GhlExportProduct[]) {
 
 function formatPrice(amount: number): string {
   return Number.isInteger(amount) ? String(amount) : amount.toFixed(2);
+}
+
+function formatGhlDateTime(iso: string): string {
+  const d = new Date(iso);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+/** Single-line HTML for GHL Body (HTML) — avoids multiline CSV cells. */
+function descriptionToHtml(text: string): string {
+  const lines = text.split("\n");
+  const html: string[] = [];
+  let inList = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      if (inList) {
+        html.push("</ul>");
+        inList = false;
+      }
+      continue;
+    }
+
+    if (trimmed.startsWith("•")) {
+      if (!inList) {
+        html.push("<ul>");
+        inList = true;
+      }
+      html.push(`<li>${escapeHtml(trimmed.slice(1).trim())}</li>`);
+    } else {
+      if (inList) {
+        html.push("</ul>");
+        inList = false;
+      }
+      html.push(`<p>${escapeHtml(trimmed)}</p>`);
+    }
+  }
+
+  if (inList) html.push("</ul>");
+  return html.join("");
 }
 
 function escapeCsv(value: string): string {
