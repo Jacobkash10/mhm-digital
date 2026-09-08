@@ -8,9 +8,14 @@ import {
   applySitePromo,
   isSitePromoActive,
   SITE_PROMO_ENDS_AT,
-  SITE_PROMO_LABEL,
 } from "@/lib/promotions";
 import { absoluteUrl } from "@/lib/seo/site";
+
+/** HighLevel Product Label Title character limit */
+export const GHL_LABEL_TITLE_MAX = 20;
+
+/** Promo badge text for GHL import (must be ≤20 characters) */
+export const GHL_PROMO_LABEL = "10% Off - Sep 30";
 
 /** HighLevel CSV import columns — must match GHL sample template exactly (29 columns). */
 export const GHL_CSV_COLUMNS = [
@@ -143,7 +148,7 @@ function promoLabelFields(slug: string, packageName: string, displayPrice: numbe
 
   return {
     enableProductLabel: true as const,
-    productLabelContent: SITE_PROMO_LABEL,
+    productLabelContent: GHL_PROMO_LABEL,
     labelStartDate: new Date().toISOString(),
     labelEndDate: SITE_PROMO_ENDS_AT.toISOString(),
     comparePrice: promo.originalPrice,
@@ -364,7 +369,7 @@ export function productToCsvRow(product: GhlExportProduct): GhlProductRow {
     "Dimension Height": "",
     "Dimension Unit": "",
     "Product Label Enable": product.enableProductLabel ? "TRUE" : "FALSE",
-    "Label Title": sanitizeForGhl(product.productLabelContent ?? ""),
+    "Label Title": ghlLabelTitle(product.productLabelContent ?? ""),
     "Label Start Date": product.labelStartDate ? formatGhlDateTime(product.labelStartDate) : "",
     "Label End Date": product.labelEndDate ? formatGhlDateTime(product.labelEndDate) : "",
     "SEO Title": sanitizeForGhl(product.seoTitle),
@@ -392,7 +397,7 @@ export function buildGhlExportManifest(products: GhlExportProduct[]) {
     totalProducts: products.length,
     counts: bySource,
     promoActive: isSitePromoActive(),
-    promoLabel: isSitePromoActive() ? SITE_PROMO_LABEL : null,
+    promoLabel: isSitePromoActive() ? GHL_PROMO_LABEL : null,
     promoEndsAt: isSitePromoActive() ? SITE_PROMO_ENDS_AT.toISOString() : null,
     importNotes: [
       "CSV columns match the official HighLevel sample template (29 columns).",
@@ -460,6 +465,13 @@ function descriptionToHtml(text: string): string {
 function sanitizeForGhl(value: string): string {
   // GHL CSV import splits on commas without RFC 4180 quoting — strip commas from values.
   return value.replace(/,/g, "&#44;");
+}
+
+function ghlLabelTitle(value: string): string {
+  const sanitized = sanitizeForGhl(value);
+  return sanitized.length <= GHL_LABEL_TITLE_MAX
+    ? sanitized
+    : sanitized.slice(0, GHL_LABEL_TITLE_MAX);
 }
 
 function escapeCsv(value: string): string {

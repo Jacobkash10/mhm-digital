@@ -86,4 +86,12 @@ describe("ghl-product-export", () => {
       expect(line.split(",").length).toBe(29);
     }
   });
+
+  it("keeps Label Title at or under 20 characters for GHL import", () => {
+    const products = buildGhlExportProducts();
+    for (const product of products) {
+      if (!product.enableProductLabel || !product.productLabelContent) continue;
+      expect(product.productLabelContent.length).toBeLessThanOrEqual(20);
+    }
+  });
 });
