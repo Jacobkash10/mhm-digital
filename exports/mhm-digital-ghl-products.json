@@ -1,0 +1,2621 @@
+{
+  "generatedAt": "2026-09-08T01:27:07.477Z",
+  "siteUrl": "https://mhmdigital.us",
+  "totalProducts": 92,
+  "counts": {
+    "packages": 50,
+    "print": 13,
+    "addons": 29
+  },
+  "promoActive": true,
+  "promoLabel": "10% off — ends Sep 30",
+  "promoEndsAt": "2026-10-01T06:59:59.999Z",
+  "importNotes": [
+    "Download HighLevel sample CSV from Payments > Products > Import as CSV and verify column headers match.",
+    "If headers differ, map columns during import or rename headers to match your GHL sample file.",
+    "Leave weight, dimension, and inventory fields blank for services.",
+    "Bulk print orders and quote-only items have empty Price — configure as quote products in GHL.",
+    "Recurring packages use separate monthly/yearly SKUs with Billing Type = recurring."
+  ],
+  "products": [
+    {
+      "handle": "branding-starter",
+      "title": "Branding — Starter",
+      "description": "Ideal for getting started with basic needs.\n\nBranding — Starter includes:\n• Logo design (2 initial concepts, 1 revision).\n• Basic brand style guide (logo usage, primary colors).\n• Business card design (print-ready file).\n• Digital files : Provided in PNG, JPEG, and PDF formats.",
+      "type": "Service",
+      "category": "Branding",
+      "sku": "branding-starter",
+      "price": 339,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/branding-graphic-design.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Branding — Starter | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "branding",
+        "starter"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "branding-growth",
+      "title": "Branding — Growth",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nBranding — Growth includes:\n• Logo design (3 initial concepts, 2 revisions).\n• Comprehensive brand style guide (logo, colors, fonts).\n• Business card and letterhead design (print-ready files).\n• Social media profile image design.\n• Basic stationery design (envelopes).\n• Brand Guidelines : Basic guide (logo, colors, and fonts only).\n• Digital Files : Provided in PNG, JPEG, SVG, and PDF formats.",
+      "type": "Service",
+      "category": "Branding",
+      "sku": "branding-growth",
+      "price": 759,
+      "comparePrice": 759,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/branding-graphic-design.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Branding — Growth | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "branding",
+        "growth"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "branding-ultimate",
+      "title": "Branding — Ultimate",
+      "description": "For those seeking the best, most complete package.\n\nBranding — Ultimate includes:\n• Premium logo design (unlimited concepts and revisions).\n• Full brand identity package (style guide, logo variations, color palette, typography, iconography).\n• Complete stationery set (business cards, letterheads, envelopes).\n• Social media kit (profile and banner images for 3 platforms).\n• Branded marketing materials (brochures, flyers).\n• Presentation Templates: Branded PowerPoint/Google Slides templates.\n• Email Signature: Custom HTML or image-based signature with social media links.\n• Brand Guidelines: Comprehensive guide covering all brand aspects, including voice and messaging.\n• Brand launch consultation and strategy session.\n• Digital Files: Provided in AI, EPS, PNG, JPEG, and PDF formats.",
+      "type": "Service",
+      "category": "Branding",
+      "sku": "branding-ultimate",
+      "price": 1459,
+      "comparePrice": 1459,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/branding-graphic-design.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Branding — Ultimate | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "branding",
+        "ultimate"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "web-design-and-development-starter",
+      "title": "Web Design and Development — Starter",
+      "description": "Ideal for getting started with basic needs.\n\nWeb Design and Development — Starter includes:\n• Up to 5-page website.\n• Security: Basic SSL certificate for secure browsing.\n• Built entirely from scratch — custom design tailored to your brand.\n• 1-year hosting included.\n• Mobile-friendly layout.\n• Basic SEO setup (meta tags, alt text).\n• Contact form integration.\n• One round of revisions.\n• Email: 2 professional email addresses (e.g., name@yourdomain.com).",
+      "type": "Service",
+      "category": "Web Design and Development",
+      "sku": "web-design-and-development-starter",
+      "price": 1639,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/website-design-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Web Design and Development — Starter | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "web-design-and-development",
+        "starter"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "web-design-and-development-growth",
+      "title": "Web Design and Development — Growth",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nWeb Design and Development — Growth includes:\n• Up to 8-page website.\n• Domain Name and Hosting.\n• Security: Basic SSL certificate for secure browsing.\n• Custom design built from scratch (unique layout, tailored to brand).\n• CMS integration (WordPress or similar).\n• Advanced SEO setup (keywords, speed optimization).\n• 1-year hosting included.\n• Blog setup and basic training.\n• Social media integration.\n• Two rounds of revisions.\n• Email: up to 5 professional email addresses (e.g., name@yourdomain.com).\n• Support and Training: 1-hour training session on how to update the website content.",
+      "type": "Service",
+      "category": "Web Design and Development",
+      "sku": "web-design-and-development-growth",
+      "price": 2309,
+      "comparePrice": 2309,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/website-design-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Web Design and Development — Growth | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "web-design-and-development",
+        "growth"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "web-design-and-development-ultimate",
+      "title": "Web Design and Development — Ultimate",
+      "description": "For those seeking the best, most complete package.\n\nWeb Design and Development — Ultimate includes:\n• Up to 18-page fully custom website.\n• No CMS, coded from scratch for unique needs.\n• Advanced features (animations, custom forms, e-commerce setup).\n• 1-year hosting included.\n• Email: Professional email setup (up to 10 accounts).\n• Full SEO optimization.\n• Three rounds of revisions.\n• Ongoing support for 3 months post-launch.\n• Support and Training: 1-hour training session on how to update the website content.",
+      "type": "Service",
+      "category": "Web Design and Development",
+      "sku": "web-design-and-development-ultimate",
+      "price": 5159,
+      "comparePrice": 5159,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/website-design-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Web Design and Development — Ultimate | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "web-design-and-development",
+        "ultimate"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "mobile-app-development-starter",
+      "title": "Mobile App Development — Starter",
+      "description": "Ideal for getting started with basic needs.\n\nMobile App Development — Starter includes:\n• Basic app for one platform (iOS or Android).\n• Core features (e.g., user login, simple UI, basic functionalities).\n• Standard design template.\n• Basic analytics integration.\n• One round of revisions.",
+      "type": "Service",
+      "category": "Mobile App Development",
+      "sku": "mobile-app-development-starter",
+      "price": 4859,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/mobile-app-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Mobile App Development — Starter | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "mobile-app-development",
+        "starter"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "mobile-app-development-growth",
+      "title": "Mobile App Development — Growth",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nMobile App Development — Growth includes:\n• Multi-platform app (iOS and Android).\n• Standard features (push notifications, user profiles, database integration).\n• Custom UI/UX design.\n• API integration (e.g., social login, payment gateway).\n• Intermediate analytics and reporting.\n• Two rounds of revisions.",
+      "type": "Service",
+      "category": "Mobile App Development",
+      "sku": "mobile-app-development-growth",
+      "price": 9359,
+      "comparePrice": 9359,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/mobile-app-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Mobile App Development — Growth | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "mobile-app-development",
+        "growth"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "mobile-app-development-ultimate",
+      "title": "Mobile App Development — Ultimate",
+      "description": "For those seeking the best, most complete package.\n\nMobile App Development — Ultimate includes:\n• Advanced app with full custom features (geolocation, advanced user interaction).\n• Multi-platform (iOS, Android) and web app if needed.\n• Advanced UI/UX design with animations.\n• Full backend development and integration.\n• 1-year support and maintenance.\n• Advanced analytics, performance tracking, and optimization.\n• Three rounds of revisions.",
+      "type": "Service",
+      "category": "Mobile App Development",
+      "sku": "mobile-app-development-ultimate",
+      "price": 17359,
+      "comparePrice": 17359,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/mobile-app-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Mobile App Development — Ultimate | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "mobile-app-development",
+        "ultimate"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "social-media-marketing-starter-monthly",
+      "title": "Digital Marketing › Social Media Marketing — Starter (Monthly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Social Media Marketing — Starter includes:\n• Management of 1-2 social media profiles.\n• 10 posts per month with basic graphics.\n• Monthly performance report.",
+      "type": "Service",
+      "category": "Digital Marketing › Social Media Marketing",
+      "sku": "social-media-marketing-starter-monthly",
+      "price": 129,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/social-media-management.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Social Media Marketing — Starter — Monthly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "social-media-marketing",
+        "starter",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "social-media-marketing-starter-yearly",
+      "title": "Digital Marketing › Social Media Marketing — Starter (Yearly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Social Media Marketing — Starter includes:\n• Management of 1-2 social media profiles.\n• 10 posts per month with basic graphics.\n• Monthly performance report.",
+      "type": "Service",
+      "category": "Digital Marketing › Social Media Marketing",
+      "sku": "social-media-marketing-starter-yearly",
+      "price": 13329,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/social-media-management.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Social Media Marketing — Starter — Yearly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "social-media-marketing",
+        "starter",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "social-media-marketing-growth-monthly",
+      "title": "Digital Marketing › Social Media Marketing — Growth (Monthly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Social Media Marketing — Growth includes:\n• Management of 3-4 social media profiles.\n• 20 posts per month with custom graphics and captions.\n• Paid ad management (up to $500 ad spend).\n• Bi-weekly performance report.",
+      "type": "Service",
+      "category": "Digital Marketing › Social Media Marketing",
+      "sku": "social-media-marketing-growth-monthly",
+      "price": 1329,
+      "comparePrice": 1329,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/social-media-management.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Social Media Marketing — Growth — Monthly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "social-media-marketing",
+        "growth",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "social-media-marketing-growth-yearly",
+      "title": "Digital Marketing › Social Media Marketing — Growth (Yearly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Social Media Marketing — Growth includes:\n• Management of 3-4 social media profiles.\n• 20 posts per month with custom graphics and captions.\n• Paid ad management (up to $500 ad spend).\n• Bi-weekly performance report.",
+      "type": "Service",
+      "category": "Digital Marketing › Social Media Marketing",
+      "sku": "social-media-marketing-growth-yearly",
+      "price": 27729,
+      "comparePrice": 27729,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/social-media-management.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Social Media Marketing — Growth — Yearly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "social-media-marketing",
+        "growth",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "social-media-marketing-ultimate-monthly",
+      "title": "Digital Marketing › Social Media Marketing — Ultimate (Monthly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Social Media Marketing — Ultimate includes:\n• Full management of up to 6 profiles.\n• 30+ posts per month with advanced graphics, videos, and engagement.\n• Comprehensive ad management (up to $1,000 ad spend).\n• Weekly performance analysis and strategy calls.",
+      "type": "Service",
+      "category": "Digital Marketing › Social Media Marketing",
+      "sku": "social-media-marketing-ultimate-monthly",
+      "price": 3429,
+      "comparePrice": 3429,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/social-media-management.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Social Media Marketing — Ultimate — Monthly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "social-media-marketing",
+        "ultimate",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "social-media-marketing-ultimate-yearly",
+      "title": "Digital Marketing › Social Media Marketing — Ultimate (Yearly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Social Media Marketing — Ultimate includes:\n• Full management of up to 6 profiles.\n• 30+ posts per month with advanced graphics, videos, and engagement.\n• Comprehensive ad management (up to $1,000 ad spend).\n• Weekly performance analysis and strategy calls.",
+      "type": "Service",
+      "category": "Digital Marketing › Social Media Marketing",
+      "sku": "social-media-marketing-ultimate-yearly",
+      "price": 52929,
+      "comparePrice": 52929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/social-media-management.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Social Media Marketing — Ultimate — Yearly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "social-media-marketing",
+        "ultimate",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "search-engine-optimization-starter-monthly",
+      "title": "Digital Marketing › Search Engine Optimization — Starter (Monthly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Search Engine Optimization — Starter includes:\n• Basic on-page SEO (keywords, meta tags for up to 5 pages).\n• Technical audit and basic fixes.\n• Monthly keyword tracking and report.",
+      "type": "Service",
+      "category": "Digital Marketing › Search Engine Optimization",
+      "sku": "search-engine-optimization-starter-monthly",
+      "price": 0,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/seo.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Search Engine Optimization — Starter — Monthly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "search-engine-optimization",
+        "starter",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "search-engine-optimization-starter-yearly",
+      "title": "Digital Marketing › Search Engine Optimization — Starter (Yearly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Search Engine Optimization — Starter includes:\n• Basic on-page SEO (keywords, meta tags for up to 5 pages).\n• Technical audit and basic fixes.\n• Monthly keyword tracking and report.",
+      "type": "Service",
+      "category": "Digital Marketing › Search Engine Optimization",
+      "sku": "search-engine-optimization-starter-yearly",
+      "price": 8529,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/seo.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Search Engine Optimization — Starter — Yearly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "search-engine-optimization",
+        "starter",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "search-engine-optimization-growth-monthly",
+      "title": "Digital Marketing › Search Engine Optimization — Growth (Monthly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Search Engine Optimization — Growth includes:\n• Comprehensive on-page and off-page SEO (10 pages).\n• Link building and local SEO optimization.\n• Monthly performance reports and strategy updates.",
+      "type": "Service",
+      "category": "Digital Marketing › Search Engine Optimization",
+      "sku": "search-engine-optimization-growth-monthly",
+      "price": 429,
+      "comparePrice": 429,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/seo.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Search Engine Optimization — Growth — Monthly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "search-engine-optimization",
+        "growth",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "search-engine-optimization-growth-yearly",
+      "title": "Digital Marketing › Search Engine Optimization — Growth (Yearly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Search Engine Optimization — Growth includes:\n• Comprehensive on-page and off-page SEO (10 pages).\n• Link building and local SEO optimization.\n• Monthly performance reports and strategy updates.",
+      "type": "Service",
+      "category": "Digital Marketing › Search Engine Optimization",
+      "sku": "search-engine-optimization-growth-yearly",
+      "price": 16929,
+      "comparePrice": 16929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/seo.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Search Engine Optimization — Growth — Yearly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "search-engine-optimization",
+        "growth",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "search-engine-optimization-ultimate-monthly",
+      "title": "Digital Marketing › Search Engine Optimization — Ultimate (Monthly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Search Engine Optimization — Ultimate includes:\n• Advanced SEO strategy (unlimited pages).\n• Technical SEO overhaul and content strategy.\n• Ongoing link-building campaigns and competitor analysis.\n• Weekly detailed performance reports.",
+      "type": "Service",
+      "category": "Digital Marketing › Search Engine Optimization",
+      "sku": "search-engine-optimization-ultimate-monthly",
+      "price": 1929,
+      "comparePrice": 1929,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/seo.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Search Engine Optimization — Ultimate — Monthly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "search-engine-optimization",
+        "ultimate",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "search-engine-optimization-ultimate-yearly",
+      "title": "Digital Marketing › Search Engine Optimization — Ultimate (Yearly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Search Engine Optimization — Ultimate includes:\n• Advanced SEO strategy (unlimited pages).\n• Technical SEO overhaul and content strategy.\n• Ongoing link-building campaigns and competitor analysis.\n• Weekly detailed performance reports.",
+      "type": "Service",
+      "category": "Digital Marketing › Search Engine Optimization",
+      "sku": "search-engine-optimization-ultimate-yearly",
+      "price": 34929,
+      "comparePrice": 34929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/seo.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Search Engine Optimization — Ultimate — Yearly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "search-engine-optimization",
+        "ultimate",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "pay-per-click-advertising-starter-monthly",
+      "title": "Digital Marketing › Pay-Per-Click Advertising — Starter (Monthly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Pay-Per-Click Advertising — Starter includes:\n• Setup and management of 1 Google Ads campaign.\n• Monthly ad spend management up to $500.\n• Basic ad copy and design.",
+      "type": "Service",
+      "category": "Digital Marketing › Pay-Per-Click Advertising",
+      "sku": "pay-per-click-advertising-starter-monthly",
+      "price": 0,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/paid-advertising.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Pay-Per-Click Advertising — Starter — Monthly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "pay-per-click-advertising",
+        "starter",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "pay-per-click-advertising-starter-yearly",
+      "title": "Digital Marketing › Pay-Per-Click Advertising — Starter (Yearly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Pay-Per-Click Advertising — Starter includes:\n• Setup and management of 1 Google Ads campaign.\n• Monthly ad spend management up to $500.\n• Basic ad copy and design.",
+      "type": "Service",
+      "category": "Digital Marketing › Pay-Per-Click Advertising",
+      "sku": "pay-per-click-advertising-starter-yearly",
+      "price": 10929,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/paid-advertising.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Pay-Per-Click Advertising — Starter — Yearly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "pay-per-click-advertising",
+        "starter",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "pay-per-click-advertising-growth-monthly",
+      "title": "Digital Marketing › Pay-Per-Click Advertising — Growth (Monthly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Pay-Per-Click Advertising — Growth includes:\n• Setup and management of multiple campaigns (Google, Bing).\n• Monthly ad spend management up to $1,500.\n• Advanced ad copy, split testing, and landing page optimization.",
+      "type": "Service",
+      "category": "Digital Marketing › Pay-Per-Click Advertising",
+      "sku": "pay-per-click-advertising-growth-monthly",
+      "price": 929,
+      "comparePrice": 929,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/paid-advertising.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Pay-Per-Click Advertising — Growth — Monthly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "pay-per-click-advertising",
+        "growth",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "pay-per-click-advertising-growth-yearly",
+      "title": "Digital Marketing › Pay-Per-Click Advertising — Growth (Yearly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Pay-Per-Click Advertising — Growth includes:\n• Setup and management of multiple campaigns (Google, Bing).\n• Monthly ad spend management up to $1,500.\n• Advanced ad copy, split testing, and landing page optimization.",
+      "type": "Service",
+      "category": "Digital Marketing › Pay-Per-Click Advertising",
+      "sku": "pay-per-click-advertising-growth-yearly",
+      "price": 22929,
+      "comparePrice": 22929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/paid-advertising.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Pay-Per-Click Advertising — Growth — Yearly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "pay-per-click-advertising",
+        "growth",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "pay-per-click-advertising-ultimate-monthly",
+      "title": "Digital Marketing › Pay-Per-Click Advertising — Ultimate (Monthly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Pay-Per-Click Advertising — Ultimate includes:\n• Comprehensive PPC strategy across multiple platforms (Google, Bing, Social Media).\n• Monthly ad spend management up to $5,000.\n• Custom landing pages, advanced analytics, and conversion tracking.",
+      "type": "Service",
+      "category": "Digital Marketing › Pay-Per-Click Advertising",
+      "sku": "pay-per-click-advertising-ultimate-monthly",
+      "price": 2929,
+      "comparePrice": 2929,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/paid-advertising.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Pay-Per-Click Advertising — Ultimate — Monthly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "pay-per-click-advertising",
+        "ultimate",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "pay-per-click-advertising-ultimate-yearly",
+      "title": "Digital Marketing › Pay-Per-Click Advertising — Ultimate (Yearly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Pay-Per-Click Advertising — Ultimate includes:\n• Comprehensive PPC strategy across multiple platforms (Google, Bing, Social Media).\n• Monthly ad spend management up to $5,000.\n• Custom landing pages, advanced analytics, and conversion tracking.",
+      "type": "Service",
+      "category": "Digital Marketing › Pay-Per-Click Advertising",
+      "sku": "pay-per-click-advertising-ultimate-yearly",
+      "price": 46929,
+      "comparePrice": 46929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/paid-advertising.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Pay-Per-Click Advertising — Ultimate — Yearly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "pay-per-click-advertising",
+        "ultimate",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "content-marketing-starter-monthly",
+      "title": "Digital Marketing › Content Marketing — Starter (Monthly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Content Marketing — Starter includes:\n• 2 blog posts or articles per month (up to 500 words each).\n• Basic SEO optimization for content.\n• Monthly content performance report.",
+      "type": "Service",
+      "category": "Digital Marketing › Content Marketing",
+      "sku": "content-marketing-starter-monthly",
+      "price": 0,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Content Marketing — Starter — Monthly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "content-marketing",
+        "starter",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "content-marketing-starter-yearly",
+      "title": "Digital Marketing › Content Marketing — Starter (Yearly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Content Marketing — Starter includes:\n• 2 blog posts or articles per month (up to 500 words each).\n• Basic SEO optimization for content.\n• Monthly content performance report.",
+      "type": "Service",
+      "category": "Digital Marketing › Content Marketing",
+      "sku": "content-marketing-starter-yearly",
+      "price": 7929,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Content Marketing — Starter — Yearly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "content-marketing",
+        "starter",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "content-marketing-growth-monthly",
+      "title": "Digital Marketing › Content Marketing — Growth (Monthly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Content Marketing — Growth includes:\n• 4 blog posts or articles per month (up to 1,000 words each).\n• SEO-optimized content and infographics.\n• Social media content distribution.\n• Bi-weekly performance analysis.",
+      "type": "Service",
+      "category": "Digital Marketing › Content Marketing",
+      "sku": "content-marketing-growth-monthly",
+      "price": 429,
+      "comparePrice": 429,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Content Marketing — Growth — Monthly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "content-marketing",
+        "growth",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "content-marketing-growth-yearly",
+      "title": "Digital Marketing › Content Marketing — Growth (Yearly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Content Marketing — Growth includes:\n• 4 blog posts or articles per month (up to 1,000 words each).\n• SEO-optimized content and infographics.\n• Social media content distribution.\n• Bi-weekly performance analysis.",
+      "type": "Service",
+      "category": "Digital Marketing › Content Marketing",
+      "sku": "content-marketing-growth-yearly",
+      "price": 16929,
+      "comparePrice": 16929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Content Marketing — Growth — Yearly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "content-marketing",
+        "growth",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "content-marketing-ultimate-monthly",
+      "title": "Digital Marketing › Content Marketing — Ultimate (Monthly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Content Marketing — Ultimate includes:\n• High-volume content strategy and production.\n• SEO content calendar and advanced optimization.\n• Multi-channel distribution support.\n• Detailed analytics and strategy reporting.",
+      "type": "Service",
+      "category": "Digital Marketing › Content Marketing",
+      "sku": "content-marketing-ultimate-monthly",
+      "price": 1929,
+      "comparePrice": 1929,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Content Marketing — Ultimate — Monthly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "content-marketing",
+        "ultimate",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "content-marketing-ultimate-yearly",
+      "title": "Digital Marketing › Content Marketing — Ultimate (Yearly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Content Marketing — Ultimate includes:\n• High-volume content strategy and production.\n• SEO content calendar and advanced optimization.\n• Multi-channel distribution support.\n• Detailed analytics and strategy reporting.",
+      "type": "Service",
+      "category": "Digital Marketing › Content Marketing",
+      "sku": "content-marketing-ultimate-yearly",
+      "price": 34929,
+      "comparePrice": 34929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Content Marketing — Ultimate — Yearly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "content-marketing",
+        "ultimate",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "email-marketing-starter-monthly",
+      "title": "Digital Marketing › Email Marketing — Starter (Monthly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Email Marketing — Starter includes:\n• 1 email campaign per month.\n• Basic template design and content creation.\n• Performance tracking (open rates, click rates).",
+      "type": "Service",
+      "category": "Digital Marketing › Email Marketing",
+      "sku": "email-marketing-starter-monthly",
+      "price": 0,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-automation.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Email Marketing — Starter — Monthly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "email-marketing",
+        "starter",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "email-marketing-starter-yearly",
+      "title": "Digital Marketing › Email Marketing — Starter (Yearly)",
+      "description": "Ideal for getting started with basic needs.\n\nDigital Marketing › Email Marketing — Starter includes:\n• 1 email campaign per month.\n• Basic template design and content creation.\n• Performance tracking (open rates, click rates).",
+      "type": "Service",
+      "category": "Digital Marketing › Email Marketing",
+      "sku": "email-marketing-starter-yearly",
+      "price": 4929,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-automation.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Email Marketing — Starter — Yearly | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "email-marketing",
+        "starter",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "email-marketing-growth-monthly",
+      "title": "Digital Marketing › Email Marketing — Growth (Monthly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Email Marketing — Growth includes:\n• 3 email campaigns per month.\n• Custom template design, list segmentation, and automation setup.\n• Monthly performance report with recommendations.",
+      "type": "Service",
+      "category": "Digital Marketing › Email Marketing",
+      "sku": "email-marketing-growth-monthly",
+      "price": 0,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-automation.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Marketing › Email Marketing — Growth — Monthly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "email-marketing",
+        "growth",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "email-marketing-growth-yearly",
+      "title": "Digital Marketing › Email Marketing — Growth (Yearly)",
+      "description": "Designed for businesses looking to expand and enhance their web presence.\n\nDigital Marketing › Email Marketing — Growth includes:\n• 3 email campaigns per month.\n• Custom template design, list segmentation, and automation setup.\n• Monthly performance report with recommendations.",
+      "type": "Service",
+      "category": "Digital Marketing › Email Marketing",
+      "sku": "email-marketing-growth-yearly",
+      "price": 10929,
+      "comparePrice": 10929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-automation.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Email Marketing — Growth — Yearly | MHM Digital",
+      "seoDescription": "Designed for businesses looking to expand and enhance their web presence.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "email-marketing",
+        "growth",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "email-marketing-ultimate-monthly",
+      "title": "Digital Marketing › Email Marketing — Ultimate (Monthly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Email Marketing — Ultimate includes:\n• 5+ email campaigns per month with advanced automation and personalization.\n• A/B testing of subject lines, content, and send times.\n• Detailed analytics and strategy sessions.",
+      "type": "Service",
+      "category": "Digital Marketing › Email Marketing",
+      "sku": "email-marketing-ultimate-monthly",
+      "price": 929,
+      "comparePrice": 929,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-automation.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Email Marketing — Ultimate — Monthly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "email-marketing",
+        "ultimate",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "email-marketing-ultimate-yearly",
+      "title": "Digital Marketing › Email Marketing — Ultimate (Yearly)",
+      "description": "For those seeking the best, most complete package.\n\nDigital Marketing › Email Marketing — Ultimate includes:\n• 5+ email campaigns per month with advanced automation and personalization.\n• A/B testing of subject lines, content, and send times.\n• Detailed analytics and strategy sessions.",
+      "type": "Service",
+      "category": "Digital Marketing › Email Marketing",
+      "sku": "email-marketing-ultimate-yearly",
+      "price": 22929,
+      "comparePrice": 22929,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-automation.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.475Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Marketing › Email Marketing — Ultimate — Yearly | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "digital-marketing",
+        "email-marketing",
+        "ultimate",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "animation-2d-and-3d-starter",
+      "title": "Animation (2D & 3D) — Starter",
+      "description": "Ideal for getting started with basic needs.\n\nAnimation (2D & 3D) — Starter includes:\n• 2D animation (up to 30 seconds).\n• Basic animation style (simple characters or icons).\n• Scriptwriting and voiceover included.\n• One round of revisions.",
+      "type": "Service",
+      "category": "Animation (2D & 3D)",
+      "sku": "animation-2d-and-3d-starter",
+      "price": 459,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Animation (2D & 3D) — Starter | MHM Digital",
+      "seoDescription": "Ideal for getting started with basic needs.",
+      "tags": [
+        "package",
+        "animation-2d-and-3d",
+        "starter"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "animation-2d-and-3d-ultimate",
+      "title": "Animation (2D & 3D) — Ultimate",
+      "description": "For those seeking the best, most complete package.\n\nAnimation (2D & 3D) — Ultimate includes:\n• 3D animation (up to 1 minute).\n• Advanced animation (detailed characters, complex movements).\n• Scriptwriting, professional voiceover, and sound effects.\n• Two rounds of revisions.\n• Storyboarding and concept art included.",
+      "type": "Service",
+      "category": "Animation (2D & 3D)",
+      "sku": "animation-2d-and-3d-ultimate",
+      "price": 1859,
+      "comparePrice": 1859,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.476Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Animation (2D & 3D) — Ultimate | MHM Digital",
+      "seoDescription": "For those seeking the best, most complete package.",
+      "tags": [
+        "package",
+        "animation-2d-and-3d",
+        "ultimate"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "digital-signage-starter",
+      "title": "Digital Signage — Starter",
+      "description": "Ideal for a single-screen setup with essential branded content.\n\nDigital Signage — Starter includes:\n• 1 display screen configured (up to 55\").\n• 3 custom slide designs (menus, promos, or announcements).\n• Basic playlist setup and scheduling.\n• On-site or remote display configuration.\n• One round of content revisions.",
+      "type": "Service",
+      "category": "Digital Signage",
+      "sku": "digital-signage-starter",
+      "price": 680,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-signage.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Digital Signage — Starter | MHM Digital",
+      "seoDescription": "Ideal for a single-screen setup with essential branded content.",
+      "tags": [
+        "package",
+        "digital-signage",
+        "starter"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "digital-signage-growth",
+      "title": "Digital Signage — Growth",
+      "description": "For businesses needing multiple screens and ongoing content support.\n\nDigital Signage — Growth includes:\n• Up to 3 display screens configured.\n• 10 custom slide or video designs.\n• Scheduled playlists for daypart messaging.\n• 3 months of content updates (2 updates per month).\n• Remote management setup and training.\n• Two rounds of revisions.",
+      "type": "Service",
+      "category": "Digital Signage",
+      "sku": "digital-signage-growth",
+      "price": 1450,
+      "comparePrice": 1450,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-signage.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.476Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Signage — Growth | MHM Digital",
+      "seoDescription": "For businesses needing multiple screens and ongoing content support.",
+      "tags": [
+        "package",
+        "digital-signage",
+        "growth"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "digital-signage-ultimate",
+      "title": "Digital Signage — Ultimate",
+      "description": "Full signage network with premium content and long-term management.\n\nDigital Signage — Ultimate includes:\n• Up to 6 display screens across locations.\n• Unlimited initial slide designs (first month).\n• Motion graphics and animated promos.\n• 6 months of content management and updates.\n• Priority remote support and display monitoring.\n• Quarterly content strategy review.",
+      "type": "Service",
+      "category": "Digital Signage",
+      "sku": "digital-signage-ultimate",
+      "price": 2800,
+      "comparePrice": 2800,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-signage.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.476Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "Digital Signage — Ultimate | MHM Digital",
+      "seoDescription": "Full signage network with premium content and long-term management.",
+      "tags": [
+        "package",
+        "digital-signage",
+        "ultimate"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "all-in-marketing-platform-starter-monthly",
+      "title": "All-in Marketing Platform — Starter (Monthly)",
+      "description": "Launch your marketing hub for less than a single tool subscription.\n\nAll-in Marketing Platform — Starter includes:\n• CRM with up to 500 contacts and lead tagging.\n• Contact forms and lead capture widgets for your website.\n• Email campaigns and basic automation sequences.\n• Sales pipeline with deal stages and follow-up reminders.\n• Online appointment booking and calendar sync.\n• Unified inbox for email and form submissions.\n• 1 team member included.",
+      "type": "Service",
+      "category": "All-in Marketing Platform",
+      "sku": "all-in-marketing-platform-starter-monthly",
+      "price": 49,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/crm-saas-solutions.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "All-in Marketing Platform — Starter — Monthly | MHM Digital",
+      "seoDescription": "Launch your marketing hub for less than a single tool subscription.",
+      "tags": [
+        "package",
+        "all-in-marketing-platform",
+        "starter",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "all-in-marketing-platform-starter-yearly",
+      "title": "All-in Marketing Platform — Starter (Yearly)",
+      "description": "Launch your marketing hub for less than a single tool subscription.\n\nAll-in Marketing Platform — Starter includes:\n• CRM with up to 500 contacts and lead tagging.\n• Contact forms and lead capture widgets for your website.\n• Email campaigns and basic automation sequences.\n• Sales pipeline with deal stages and follow-up reminders.\n• Online appointment booking and calendar sync.\n• Unified inbox for email and form submissions.\n• 1 team member included.",
+      "type": "Service",
+      "category": "All-in Marketing Platform",
+      "sku": "all-in-marketing-platform-starter-yearly",
+      "price": 490,
+      "comparePrice": null,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/crm-saas-solutions.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "All-in Marketing Platform — Starter — Yearly | MHM Digital",
+      "seoDescription": "Launch your marketing hub for less than a single tool subscription.",
+      "tags": [
+        "package",
+        "all-in-marketing-platform",
+        "starter",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "all-in-marketing-platform-growth-monthly",
+      "title": "All-in Marketing Platform — Growth (Monthly)",
+      "description": "Scale lead generation with SMS, funnels, and workflow automation.\n\nAll-in Marketing Platform — Growth includes:\n• Everything in Starter, plus up to 2,500 contacts.\n• SMS marketing and two-way text conversations.\n• Funnel and landing page builder with templates.\n• Workflow automations (triggers, tags, and follow-ups).\n• Review and reputation request campaigns.\n• Social media content planner and post scheduling.\n• Up to 3 team members included.",
+      "type": "Service",
+      "category": "All-in Marketing Platform",
+      "sku": "all-in-marketing-platform-growth-monthly",
+      "price": 97,
+      "comparePrice": 97,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/crm-saas-solutions.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.476Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "All-in Marketing Platform — Growth — Monthly | MHM Digital",
+      "seoDescription": "Scale lead generation with SMS, funnels, and workflow automation.",
+      "tags": [
+        "package",
+        "all-in-marketing-platform",
+        "growth",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "all-in-marketing-platform-growth-yearly",
+      "title": "All-in Marketing Platform — Growth (Yearly)",
+      "description": "Scale lead generation with SMS, funnels, and workflow automation.\n\nAll-in Marketing Platform — Growth includes:\n• Everything in Starter, plus up to 2,500 contacts.\n• SMS marketing and two-way text conversations.\n• Funnel and landing page builder with templates.\n• Workflow automations (triggers, tags, and follow-ups).\n• Review and reputation request campaigns.\n• Social media content planner and post scheduling.\n• Up to 3 team members included.",
+      "type": "Service",
+      "category": "All-in Marketing Platform",
+      "sku": "all-in-marketing-platform-growth-yearly",
+      "price": 970,
+      "comparePrice": 970,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/crm-saas-solutions.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.476Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "All-in Marketing Platform — Growth — Yearly | MHM Digital",
+      "seoDescription": "Scale lead generation with SMS, funnels, and workflow automation.",
+      "tags": [
+        "package",
+        "all-in-marketing-platform",
+        "growth",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "all-in-marketing-platform-ultimate-monthly",
+      "title": "All-in Marketing Platform — Ultimate (Monthly)",
+      "description": "Full marketing operating system with advanced automation and priority support.\n\nAll-in Marketing Platform — Ultimate includes:\n• Everything in Growth, plus unlimited contacts.\n• Advanced multi-step automations and conditional workflows.\n• Custom domains for funnels, forms, and booking pages.\n• Invoicing, payment links, and proposal templates.\n• Call tracking and conversation analytics.\n• White-label client portal option.\n• Priority onboarding and up to 10 team members.",
+      "type": "Service",
+      "category": "All-in Marketing Platform",
+      "sku": "all-in-marketing-platform-ultimate-monthly",
+      "price": 197,
+      "comparePrice": 197,
+      "billingType": "recurring",
+      "billingFrequency": "monthly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/crm-saas-solutions.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.476Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "All-in Marketing Platform — Ultimate — Monthly | MHM Digital",
+      "seoDescription": "Full marketing operating system with advanced automation and priority support.",
+      "tags": [
+        "package",
+        "all-in-marketing-platform",
+        "ultimate",
+        "monthly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "all-in-marketing-platform-ultimate-yearly",
+      "title": "All-in Marketing Platform — Ultimate (Yearly)",
+      "description": "Full marketing operating system with advanced automation and priority support.\n\nAll-in Marketing Platform — Ultimate includes:\n• Everything in Growth, plus unlimited contacts.\n• Advanced multi-step automations and conditional workflows.\n• Custom domains for funnels, forms, and booking pages.\n• Invoicing, payment links, and proposal templates.\n• Call tracking and conversation analytics.\n• White-label client portal option.\n• Priority onboarding and up to 10 team members.",
+      "type": "Service",
+      "category": "All-in Marketing Platform",
+      "sku": "all-in-marketing-platform-ultimate-yearly",
+      "price": 1970,
+      "comparePrice": 1970,
+      "billingType": "recurring",
+      "billingFrequency": "yearly",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/crm-saas-solutions.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": true,
+      "productLabelContent": "10% off — ends Sep 30",
+      "labelStartDate": "2026-09-08T01:27:07.476Z",
+      "labelEndDate": "2026-10-01T06:59:59.999Z",
+      "seoTitle": "All-in Marketing Platform — Ultimate — Yearly | MHM Digital",
+      "seoDescription": "Full marketing operating system with advanced automation and priority support.",
+      "tags": [
+        "package",
+        "all-in-marketing-platform",
+        "ultimate",
+        "yearly"
+      ],
+      "source": "package"
+    },
+    {
+      "handle": "print-business-cards",
+      "title": "Business Cards (Starting at)",
+      "description": "Premium card stock, finishes, and custom quantities.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-business-cards",
+      "price": 35,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/business-cards.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Business Cards | MHM Digital Printing",
+      "seoDescription": "Premium card stock, finishes, and custom quantities.",
+      "tags": [
+        "print",
+        "business-cards",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-flyers",
+      "title": "Flyers (Starting at)",
+      "description": "Promotional handouts for events, sales, and campaigns.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-flyers",
+      "price": 45,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/flyers.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Flyers | MHM Digital Printing",
+      "seoDescription": "Promotional handouts for events, sales, and campaigns.",
+      "tags": [
+        "print",
+        "flyers",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-brochures",
+      "title": "Brochures (Starting at)",
+      "description": "Tri-fold and multi-page layouts for your business.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-brochures",
+      "price": 85,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/brochures.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Brochures | MHM Digital Printing",
+      "seoDescription": "Tri-fold and multi-page layouts for your business.",
+      "tags": [
+        "print",
+        "brochures",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-posters",
+      "title": "Posters (Starting at)",
+      "description": "High-impact posters for retail, events, and promotions.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-posters",
+      "price": 25,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/posters.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Posters | MHM Digital Printing",
+      "seoDescription": "High-impact posters for retail, events, and promotions.",
+      "tags": [
+        "print",
+        "posters",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-banners",
+      "title": "Banners (Starting at)",
+      "description": "Indoor and outdoor banners with durable materials.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-banners",
+      "price": 120,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/banners.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Banners | MHM Digital Printing",
+      "seoDescription": "Indoor and outdoor banners with durable materials.",
+      "tags": [
+        "print",
+        "banners",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-signs",
+      "title": "Signs (Starting at)",
+      "description": "Wayfinding, storefront, and promotional signage.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-signs",
+      "price": 150,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/signs.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Signs | MHM Digital Printing",
+      "seoDescription": "Wayfinding, storefront, and promotional signage.",
+      "tags": [
+        "print",
+        "signs",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-stickers",
+      "title": "Stickers (Starting at)",
+      "description": "Custom die-cut stickers for products and branding.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-stickers",
+      "price": 20,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/stickers.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Stickers | MHM Digital Printing",
+      "seoDescription": "Custom die-cut stickers for products and branding.",
+      "tags": [
+        "print",
+        "stickers",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-labels",
+      "title": "Labels (Starting at)",
+      "description": "Product, shipping, and packaging labels.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-labels",
+      "price": 30,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/labels.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Labels | MHM Digital Printing",
+      "seoDescription": "Product, shipping, and packaging labels.",
+      "tags": [
+        "print",
+        "labels",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-apparel-dtf",
+      "title": "Apparel & DTF Transfers (Starting at)",
+      "description": "Custom apparel printing and DTF transfer orders.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-apparel-dtf",
+      "price": 18,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/apparel-dtf.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Apparel & DTF Transfers | MHM Digital Printing",
+      "seoDescription": "Custom apparel printing and DTF transfer orders.",
+      "tags": [
+        "print",
+        "apparel-dtf",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-marketing-materials",
+      "title": "Marketing Materials (Starting at)",
+      "description": "Campaign collateral for launches and promotions.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-marketing-materials",
+      "price": 50,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/marketing-materials.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Marketing Materials | MHM Digital Printing",
+      "seoDescription": "Campaign collateral for launches and promotions.",
+      "tags": [
+        "print",
+        "marketing-materials",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-custom-packaging",
+      "title": "Custom Packaging (Starting at)",
+      "description": "Branded boxes, sleeves, and product packaging.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-custom-packaging",
+      "price": 200,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/custom-packaging.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Custom Packaging | MHM Digital Printing",
+      "seoDescription": "Branded boxes, sleeves, and product packaging.",
+      "tags": [
+        "print",
+        "custom-packaging",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-large-format",
+      "title": "Large-Format Printing (Starting at)",
+      "description": "Posters, displays, and oversized print projects.\n\nStarting price for standard quantity. Final quote based on quantity, size, material, and finishing options.",
+      "type": "Physical",
+      "category": "Print › Standard",
+      "sku": "print-large-format",
+      "price": 80,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/large-format.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Large-Format Printing | MHM Digital Printing",
+      "seoDescription": "Posters, displays, and oversized print projects.",
+      "tags": [
+        "print",
+        "large-format",
+        "starting-price"
+      ],
+      "source": "print",
+      "quoteOnly": false
+    },
+    {
+      "handle": "print-bulk-orders",
+      "title": "Corporate & Bulk Orders",
+      "description": "High-volume commercial printing with dedicated support.\n\nContact us for volume pricing and dedicated account support.",
+      "type": "Service",
+      "category": "Print › Bulk & Corporate",
+      "sku": "print-bulk-orders",
+      "price": null,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/bulk-orders.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Corporate & Bulk Orders | MHM Digital Printing",
+      "seoDescription": "High-volume commercial printing with dedicated support.",
+      "tags": [
+        "print",
+        "bulk-orders",
+        "quote"
+      ],
+      "source": "print",
+      "quoteOnly": true
+    },
+    {
+      "handle": "addon-extra-website-page",
+      "title": "Extra Website Page",
+      "description": "Add one additional custom-designed page to your website project. Includes layout, mobile optimization, and basic on-page SEO.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-extra-website-page",
+      "price": 150,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/website-design-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Extra Website Page | MHM Digital",
+      "seoDescription": "Add one additional custom-designed page to your website project. Includes layout, mobile optimization, and basic on-page SEO.",
+      "tags": [
+        "website",
+        "add-on",
+        "pages"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-ecommerce-setup",
+      "title": "E-commerce Setup",
+      "description": "Product catalog, secure checkout, payment gateway integration, and order notification setup for your website.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-ecommerce-setup",
+      "price": 800,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/ecommerce-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "E-commerce Setup | MHM Digital",
+      "seoDescription": "Product catalog, secure checkout, payment gateway integration, and order notification setup for your website.",
+      "tags": [
+        "website",
+        "add-on",
+        "ecommerce"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-blog-setup",
+      "title": "Blog Setup & Training",
+      "description": "Blog section configuration, categories, RSS feed, and a 30-minute training session on publishing posts.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-blog-setup",
+      "price": 200,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/website-design-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Blog Setup & Training | MHM Digital",
+      "seoDescription": "Blog section configuration, categories, RSS feed, and a 30-minute training session on publishing posts.",
+      "tags": [
+        "website",
+        "add-on",
+        "blog"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-custom-contact-form",
+      "title": "Custom Contact Form",
+      "description": "Multi-field contact or lead form with conditional logic, spam protection, and CRM/email integration.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-custom-contact-form",
+      "price": 150,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/icon-2-contact-marketing-template.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Custom Contact Form | MHM Digital",
+      "seoDescription": "Multi-field contact or lead form with conditional logic, spam protection, and CRM/email integration.",
+      "tags": [
+        "website",
+        "add-on",
+        "forms"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-leadconnector-chat-widget",
+      "title": "Live Chat Widget Integration",
+      "description": "LeadConnector chat widget installation, styling to match your brand, and basic routing setup.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-leadconnector-chat-widget",
+      "price": 100,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/crm-saas-solutions.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Live Chat Widget Integration | MHM Digital",
+      "seoDescription": "LeadConnector chat widget installation, styling to match your brand, and basic routing setup.",
+      "tags": [
+        "website",
+        "add-on",
+        "chat"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-booking-calendar",
+      "title": "Online Booking & Calendar",
+      "description": "Appointment booking page with calendar sync, confirmation emails, and embed on your website.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-booking-calendar",
+      "price": 250,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-automation.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Online Booking & Calendar | MHM Digital",
+      "seoDescription": "Appointment booking page with calendar sync, confirmation emails, and embed on your website.",
+      "tags": [
+        "website",
+        "add-on",
+        "booking"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-advanced-seo-package",
+      "title": "Advanced SEO Package",
+      "description": "Keyword research, schema markup, sitemap optimization, and speed improvements for up to 10 pages.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-advanced-seo-package",
+      "price": 500,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/seo.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Advanced SEO Package | MHM Digital",
+      "seoDescription": "Keyword research, schema markup, sitemap optimization, and speed improvements for up to 10 pages.",
+      "tags": [
+        "website",
+        "add-on",
+        "seo"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-professional-email-5",
+      "title": "Professional Email (5 accounts)",
+      "description": "Setup of up to 5 branded email addresses (e.g. name@yourdomain.com) with DNS configuration.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-professional-email-5",
+      "price": 75,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/icon-1-contact-marketing-template.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Professional Email (5 accounts) | MHM Digital",
+      "seoDescription": "Setup of up to 5 branded email addresses (e.g. name@yourdomain.com) with DNS configuration.",
+      "tags": [
+        "website",
+        "add-on",
+        "email"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-additional-revision-round",
+      "title": "Additional Revision Round",
+      "description": "One extra round of design or content revisions beyond your package allowance.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-additional-revision-round",
+      "price": 200,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/icon-3-service-marketing-template.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Additional Revision Round | MHM Digital",
+      "seoDescription": "One extra round of design or content revisions beyond your package allowance.",
+      "tags": [
+        "website",
+        "add-on",
+        "revisions"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-motion-animations",
+      "title": "Motion & Animation Effects",
+      "description": "Scroll animations, micro-interactions, and hero motion effects for a polished website experience.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-motion-animations",
+      "price": 400,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/digital-marketing.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Motion & Animation Effects | MHM Digital",
+      "seoDescription": "Scroll animations, micro-interactions, and hero motion effects for a polished website experience.",
+      "tags": [
+        "website",
+        "add-on",
+        "animation"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-multilingual-support",
+      "title": "Multi-language Support",
+      "description": "Secondary language setup with language switcher and translated page structure (content translation not included).",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-multilingual-support",
+      "price": 600,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/website-design-development.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Multi-language Support | MHM Digital",
+      "seoDescription": "Secondary language setup with language switcher and translated page structure (content translation not included).",
+      "tags": [
+        "website",
+        "add-on",
+        "i18n"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "addon-extended-hosting-1yr",
+      "title": "Extended Hosting (1 year)",
+      "description": "Additional year of managed hosting, SSL, and basic maintenance after your included hosting period.",
+      "type": "Service",
+      "category": "Website Add-ons",
+      "sku": "addon-extended-hosting-1yr",
+      "price": 120,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/icon-4-service-marketing-template.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Extended Hosting (1 year) | MHM Digital",
+      "seoDescription": "Additional year of managed hosting, SSL, and basic maintenance after your included hosting period.",
+      "tags": [
+        "website",
+        "add-on",
+        "hosting"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "notary-in-office-signature",
+      "title": "Notary — In-Office Signature",
+      "description": "In-office notarization at MHM Digital. Per signature/stamp. Valid ID required.",
+      "type": "Service",
+      "category": "Notary & Business Support",
+      "sku": "notary-in-office-signature",
+      "price": 15,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/portfolio/notary-public-1.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Notary — In-Office Signature | MHM Digital",
+      "seoDescription": "In-office notarization at MHM Digital. Per signature/stamp. Valid ID required.",
+      "tags": [
+        "notary",
+        "business-support"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "notary-mobile-visit-base",
+      "title": "Notary — Mobile Visit (1–2 documents)",
+      "description": "Mobile notary visit within the Seattle metro area. Includes travel and notarization for up to 2 documents.",
+      "type": "Service",
+      "category": "Notary & Business Support",
+      "sku": "notary-mobile-visit-base",
+      "price": 75,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/portfolio/notary-public-2.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Notary — Mobile Visit (1–2 documents) | MHM Digital",
+      "seoDescription": "Mobile notary visit within the Seattle metro area. Includes travel and notarization for up to 2 documents.",
+      "tags": [
+        "notary",
+        "mobile",
+        "business-support"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "notary-additional-signature",
+      "title": "Notary — Additional Signature",
+      "description": "Each additional notarized signature beyond the base mobile or in-office service.",
+      "type": "Service",
+      "category": "Notary & Business Support",
+      "sku": "notary-additional-signature",
+      "price": 10,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/portfolio/notary-public-1.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Notary — Additional Signature | MHM Digital",
+      "seoDescription": "Each additional notarized signature beyond the base mobile or in-office service.",
+      "tags": [
+        "notary",
+        "business-support"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "notary-loan-signing-package",
+      "title": "Notary — Loan Signing Package",
+      "description": "Full loan signing appointment with document review, signing, and return instructions.",
+      "type": "Service",
+      "category": "Notary & Business Support",
+      "sku": "notary-loan-signing-package",
+      "price": 150,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/portfolio/notary-public-cover.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Notary — Loan Signing Package | MHM Digital",
+      "seoDescription": "Full loan signing appointment with document review, signing, and return instructions.",
+      "tags": [
+        "notary",
+        "loan-signing",
+        "business-support"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "notary-apostille-coordination",
+      "title": "Notary — Apostille Coordination",
+      "description": "Coordination of apostille processing for notarized documents (state fees billed separately).",
+      "type": "Service",
+      "category": "Notary & Business Support",
+      "sku": "notary-apostille-coordination",
+      "price": 50,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/portfolio/notary-public-3.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Notary — Apostille Coordination | MHM Digital",
+      "seoDescription": "Coordination of apostille processing for notarized documents (state fees billed separately).",
+      "tags": [
+        "notary",
+        "apostille",
+        "business-support"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "notary-document-preparation",
+      "title": "Document Preparation",
+      "description": "Formatting and preparation of business documents prior to notarization or filing.",
+      "type": "Service",
+      "category": "Notary & Business Support",
+      "sku": "notary-document-preparation",
+      "price": 35,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-support.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Document Preparation | MHM Digital",
+      "seoDescription": "Formatting and preparation of business documents prior to notarization or filing.",
+      "tags": [
+        "notary",
+        "documents",
+        "business-support"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "business-consulting-hourly",
+      "title": "Business Consulting (1 hour)",
+      "description": "One hour of business consulting — operations, compliance, or digital strategy guidance.",
+      "type": "Service",
+      "category": "Notary & Business Support",
+      "sku": "business-consulting-hourly",
+      "price": 95,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-support.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Business Consulting (1 hour) | MHM Digital",
+      "seoDescription": "One hour of business consulting — operations, compliance, or digital strategy guidance.",
+      "tags": [
+        "consulting",
+        "business-support"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "business-compliance-review",
+      "title": "Business Compliance Review",
+      "description": "Review of business documentation, filings, and compliance checklist with written summary.",
+      "type": "Service",
+      "category": "Notary & Business Support",
+      "sku": "business-compliance-review",
+      "price": 150,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/business-support.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Business Compliance Review | MHM Digital",
+      "seoDescription": "Review of business documentation, filings, and compliance checklist with written summary.",
+      "tags": [
+        "compliance",
+        "business-support"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-addon-rush-turnaround",
+      "title": "Print — Rush Turnaround (2–3 days)",
+      "description": "Priority production queue for 2–3 business day turnaround. Applied per print order.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-addon-rush-turnaround",
+      "price": 35,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/marketing-materials.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — Rush Turnaround (2–3 days) | MHM Digital",
+      "seoDescription": "Priority production queue for 2–3 business day turnaround. Applied per print order.",
+      "tags": [
+        "print",
+        "add-on",
+        "rush"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-addon-same-week-priority",
+      "title": "Print — Same-Week Priority",
+      "description": "Expedited same-week production when schedule allows. Applied per print order.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-addon-same-week-priority",
+      "price": 20,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/flyers.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — Same-Week Priority | MHM Digital",
+      "seoDescription": "Expedited same-week production when schedule allows. Applied per print order.",
+      "tags": [
+        "print",
+        "add-on",
+        "priority"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-addon-matte-lamination",
+      "title": "Print — Matte Lamination",
+      "description": "Matte lamination finish for business cards, flyers, or brochures.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-addon-matte-lamination",
+      "price": 25,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/business-cards.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — Matte Lamination | MHM Digital",
+      "seoDescription": "Matte lamination finish for business cards, flyers, or brochures.",
+      "tags": [
+        "print",
+        "add-on",
+        "finishing"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-addon-gloss-lamination",
+      "title": "Print — Gloss Lamination",
+      "description": "Gloss lamination finish for a premium, durable print surface.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-addon-gloss-lamination",
+      "price": 25,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/brochures.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — Gloss Lamination | MHM Digital",
+      "seoDescription": "Gloss lamination finish for a premium, durable print surface.",
+      "tags": [
+        "print",
+        "add-on",
+        "finishing"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-addon-uv-coating",
+      "title": "Print — UV Coating",
+      "description": "UV coating for vibrant color and added protection on marketing materials.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-addon-uv-coating",
+      "price": 35,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/posters.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — UV Coating | MHM Digital",
+      "seoDescription": "UV coating for vibrant color and added protection on marketing materials.",
+      "tags": [
+        "print",
+        "add-on",
+        "finishing"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-addon-rounded-corners",
+      "title": "Print — Rounded Corners",
+      "description": "Rounded corner die-cut for business cards or postcards.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-addon-rounded-corners",
+      "price": 15,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/business-cards.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — Rounded Corners | MHM Digital",
+      "seoDescription": "Rounded corner die-cut for business cards or postcards.",
+      "tags": [
+        "print",
+        "add-on",
+        "finishing"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-addon-die-cut",
+      "title": "Print — Custom Die Cut",
+      "description": "Custom die-cut shape for stickers, labels, or marketing pieces.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-addon-die-cut",
+      "price": 45,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/stickers.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — Custom Die Cut | MHM Digital",
+      "seoDescription": "Custom die-cut shape for stickers, labels, or marketing pieces.",
+      "tags": [
+        "print",
+        "add-on",
+        "finishing"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-design-support",
+      "title": "Print — Design Support",
+      "description": "Professional design layout and file preparation for your print order.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-design-support",
+      "price": 75,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/services/branding-graphic-design.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — Design Support | MHM Digital",
+      "seoDescription": "Professional design layout and file preparation for your print order.",
+      "tags": [
+        "print",
+        "add-on",
+        "design"
+      ],
+      "source": "addon"
+    },
+    {
+      "handle": "print-proof-revision",
+      "title": "Print — Extra Proof Revision",
+      "description": "One additional proof revision beyond the standard included proof round.",
+      "type": "Service",
+      "category": "Print Add-ons",
+      "sku": "print-proof-revision",
+      "price": 25,
+      "comparePrice": null,
+      "billingType": "one_time",
+      "currency": "USD",
+      "images": [
+        "https://mhmdigital.us/images/print/labels.svg"
+      ],
+      "includeInStore": true,
+      "trackInventory": false,
+      "enableProductLabel": false,
+      "seoTitle": "Print — Extra Proof Revision | MHM Digital",
+      "seoDescription": "One additional proof revision beyond the standard included proof round.",
+      "tags": [
+        "print",
+        "add-on",
+        "proof"
+      ],
+      "source": "addon"
+    }
+  ]
+}

@@ -4,26 +4,10 @@ import { ServiceType } from "@/app/generated/prisma/client";
 import { PACKAGES_CATALOG } from "@/data/package-catalog";
 import { computeFinalPackagePrices } from "@/lib/package-pricing";
 
+import { DEFAULT_PRINT_PRICES } from "@/data/print-pricing";
 import { PRINT_SERVICES } from "@/lib/constants/services-data";
 
 const printImage = (slug: string) => `/images/print/${slug}.jpg`;
-
-/** Default starting prices in cents for print catalog */
-const DEFAULT_PRINT_PRICES: Record<string, number | null> = {
-  "business-cards": 3500,
-  flyers: 4500,
-  brochures: 8500,
-  posters: 2500,
-  banners: 12000,
-  signs: 15000,
-  stickers: 2000,
-  labels: 3000,
-  "apparel-dtf": 1800,
-  "marketing-materials": 5000,
-  "custom-packaging": 20000,
-  "large-format": 8000,
-  "bulk-orders": null,
-};
 
 function slugify(value: string) {
   return value
