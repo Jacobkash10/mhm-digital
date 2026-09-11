@@ -1,4 +1,5 @@
 import React from 'react'
+import { CONTACT_PHONE } from "@/lib/constants/site";
 
 const page = () => {
   return (
@@ -85,7 +86,7 @@ const page = () => {
             <ul>
               <li>Address: Share Space MADDA WALABU, 9040 Rainier Ave S #2, Seattle, WA 98118</li>
               <li>Email: contact@mhmdigital.us</li>
-              <li>Phone: +1 206 771 0038</li>
+              <li>Phone: {CONTACT_PHONE}</li>
             </ul>
         </div>
       </div>

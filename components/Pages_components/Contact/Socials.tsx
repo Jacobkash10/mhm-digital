@@ -5,12 +5,13 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import React from "react";
+import { CONTACT_PHONE_DIAL } from "@/lib/constants/site";
 
 const SOCIAL_LINKS = [
   { href: "https://www.linkedin.com/company/mhm-digital/", icon: FaLinkedin, label: "LinkedIn", color: "bg-[#0A66C2]" },
   { href: "https://www.facebook.com/mhmdigital.agency", icon: FaFacebook, label: "Facebook", color: "bg-[#1877F2]" },
   { href: "https://x.com/mhm_digital", icon: FaXTwitter, label: "X", color: "bg-gray-900" },
-  { href: "http://wa.me/12067710038", icon: FaWhatsapp, label: "WhatsApp", color: "bg-[#25D366]" },
+  { href: `http://wa.me/${CONTACT_PHONE_DIAL}`, icon: FaWhatsapp, label: "WhatsApp", color: "bg-[#25D366]" },
   { href: "https://www.instagram.com/mhmdigital/", icon: FaInstagram, label: "Instagram", color: "bg-linear-to-br from-[#833ab4] via-[#fd1d1d] to-[#fcb045]" },
 ];
 
